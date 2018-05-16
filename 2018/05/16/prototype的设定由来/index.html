@@ -5,15 +5,20 @@
   
 
   
-  <title>Category: hexo | CHY</title>
+  <title>prototype的设定由来 | CHY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CHY">
-<meta property="og:url" content="https://githuanyu.github.io/categories/hexo/index.html">
+  <meta name="description" content="在js语言中，new命令之后跟的不是类，而是构造函数 对构造函数使用 new，会生成一个对象的实例 构造函数中的 this 关键字，它代表新创建的实例对象 但是用构造函数生成实例对象，有一个缺点，就是无法共享属性和方法 考虑到这一点，构造函数有了一个 prototype 属性 这个属性包含一个对象（以下简称”prototype对象”），所有实例对象需要共享的属性和方法，都放在这个对象里面；那些不需">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="prototype的设定由来">
+<meta property="og:url" content="https://githuanyu.github.io/2018/05/16/prototype的设定由来/index.html">
 <meta property="og:site_name" content="CHY">
+<meta property="og:description" content="在js语言中，new命令之后跟的不是类，而是构造函数 对构造函数使用 new，会生成一个对象的实例 构造函数中的 this 关键字，它代表新创建的实例对象 但是用构造函数生成实例对象，有一个缺点，就是无法共享属性和方法 考虑到这一点，构造函数有了一个 prototype 属性 这个属性包含一个对象（以下简称”prototype对象”），所有实例对象需要共享的属性和方法，都放在这个对象里面；那些不需">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-16T09:31:07.473Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CHY">
+<meta name="twitter:title" content="prototype的设定由来">
+<meta name="twitter:description" content="在js语言中，new命令之后跟的不是类，而是构造函数 对构造函数使用 new，会生成一个对象的实例 构造函数中的 this 关键字，它代表新创建的实例对象 但是用构造函数生成实例对象，有一个缺点，就是无法共享属性和方法 考虑到这一点，构造函数有了一个 prototype 属性 这个属性包含一个对象（以下简称”prototype对象”），所有实例对象需要共享的属性和方法，都放在这个对象里面；那些不需">
   
     <link rel="alternate" href="/atom.xml" title="CHY" type="application/atom+xml">
   
@@ -70,59 +75,64 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/05/15/hexo命令/" class="archive-article-date">
-  <time datetime="2018-05-15T08:10:21.000Z" itemprop="datePublished">5月 15</time>
+        <section id="main"><article id="post-prototype的设定由来" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/16/prototype的设定由来/" class="article-date">
+  <time datetime="2018-05-16T09:30:08.000Z" itemprop="datePublished">2018-05-16</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS高级/">JS高级</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/15/hexo命令/">hexo命令</a>
+    <h1 class="article-title" itemprop="name">
+      prototype的设定由来
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/05/15/hello-world/" class="archive-article-date">
-  <time datetime="2018-05-14T16:00:00.000Z" itemprop="datePublished">5月 15</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/15/hello-world/">Hello World</a>
-    </h1>
-  
+        <p>在js语言中，new命令之后跟的不是类，而是构造函数</p>
+<p>对构造函数使用 <em>new</em>，会生成一个对象的实例</p>
+<p>构造函数中的 <em>this</em> 关键字，它代表新创建的实例对象</p>
+<p>但是用构造函数生成实例对象，有一个缺点，就是无法共享属性和方法</p>
+<p>考虑到这一点，构造函数有了一个 <em>prototype</em> 属性</p>
+<p>这个属性包含一个对象（以下简称”prototype对象”），所有实例对象需要共享的属性和方法，都放在这个对象里面；那些不需要共享的属性和方法，就放在构造函数里面。</p>
+<p>实例对象一旦创建，将自动引用prototype对象的属性和方法。也就是说，实例对象的属性和方法，分成两种，一种是本地的，另一种是引用的。</p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://githuanyu.github.io/2018/05/16/prototype的设定由来/" data-id="cjh8wpkik00091s9gb232b1ks" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/05/16/animate-css/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">animate.css</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
