@@ -5,15 +5,20 @@
   
 
   
-  <title>归档 | CHY</title>
+  <title>animate.css | CHY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CHY">
-<meta property="og:url" content="https://githuanyu.github.io/archives/index.html">
+  <meta name="description" content="A cross-browser library of CSS animations项目地址https://github.com/daneden/animate.css 演示地址https://daneden.github.io/animate.css/ 12345678910111213141516171819//为元素添加动画效果$(&apos;#yourElement&apos;).addClass(&apos;anima">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="animate.css">
+<meta property="og:url" content="https://githuanyu.github.io/2018/05/16/animate-css/index.html">
 <meta property="og:site_name" content="CHY">
+<meta property="og:description" content="A cross-browser library of CSS animations项目地址https://github.com/daneden/animate.css 演示地址https://daneden.github.io/animate.css/ 12345678910111213141516171819//为元素添加动画效果$(&apos;#yourElement&apos;).addClass(&apos;anima">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-16T05:57:26.660Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CHY">
+<meta name="twitter:title" content="animate.css">
+<meta name="twitter:description" content="A cross-browser library of CSS animations项目地址https://github.com/daneden/animate.css 演示地址https://daneden.github.io/animate.css/ 12345678910111213141516171819//为元素添加动画效果$(&apos;#yourElement&apos;).addClass(&apos;anima">
   
     <link rel="alternate" href="/atom.xml" title="CHY" type="application/atom+xml">
   
@@ -70,154 +75,69 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/05/16/prototype/" class="archive-article-date">
-  <time datetime="2018-05-16T06:03:55.000Z" itemprop="datePublished">5月 16</time>
+        <section id="main"><article id="post-animate-css" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/16/animate-css/" class="article-date">
+  <time datetime="2018-05-16T05:47:25.000Z" itemprop="datePublished">2018-05-16</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS插件/">JS插件</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/16/prototype/">prototype</a>
+    <h1 class="article-title" itemprop="name">
+      animate.css
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/05/16/animate-css/" class="archive-article-date">
-  <time datetime="2018-05-16T05:47:25.000Z" itemprop="datePublished">5月 16</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/16/animate-css/">animate.css</a>
-    </h1>
-  
+        <h2 id="A-cross-browser-library-of-CSS-animations"><a href="#A-cross-browser-library-of-CSS-animations" class="headerlink" title="A cross-browser library of CSS animations"></a>A cross-browser library of CSS animations</h2><p><a href="https://github.com/daneden/animate.css" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/daneden/animate.css" target="_blank" rel="noopener">https://github.com/daneden/animate.css</a></p>
+<p><a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">演示地址</a><br><a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">https://daneden.github.io/animate.css/</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//为元素添加动画效果</span></span><br><span class="line">$(<span class="string">'#yourElement'</span>).addClass(<span class="string">'animated bounceOutLeft'</span>);</span><br><span class="line">or</span><br><span class="line">$(<span class="string">'#yourElement'</span>).animateCss(<span class="string">'bounce'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加动画执行之后的回调</span></span><br><span class="line">$(<span class="string">'#yourElement'</span>).animateCss(<span class="string">'bounce'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Do somthing after animation</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//调整动画执行的参数</span></span><br><span class="line">#yourElement &#123;</span><br><span class="line">    <span class="comment">//持续时间</span></span><br><span class="line">  -vendor-animation-duration: <span class="number">3</span>s;</span><br><span class="line">    <span class="comment">//延迟多久后执行</span></span><br><span class="line">  -vendor-animation-delay: <span class="number">2</span>s;</span><br><span class="line">    <span class="comment">//执行次数</span></span><br><span class="line">  -vendor-animation-iteration-count: infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/05/16/Notyf/" class="archive-article-date">
-  <time datetime="2018-05-16T03:28:05.000Z" itemprop="datePublished">5月 16</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/16/Notyf/">Notyf</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/05/16/jqPaginator/" class="archive-article-date">
-  <time datetime="2018-05-16T03:05:47.000Z" itemprop="datePublished">5月 16</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://githuanyu.github.io/2018/05/16/animate-css/" data-id="cjh8opggg00002o9gx8i61kq1" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/16/jqPaginator/">jqPaginator</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/05/15/hexo命令/" class="archive-article-date">
-  <time datetime="2018-05-15T08:10:21.000Z" itemprop="datePublished">5月 15</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/15/hexo命令/">hexo命令</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/05/15/first-demo/" class="archive-article-date">
-  <time datetime="2018-05-15T03:11:15.000Z" itemprop="datePublished">5月 15</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/15/first-demo/">first demo</a>
-    </h1>
+    <a href="/2018/05/16/prototype/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          prototype
+        
+      </div>
+    </a>
   
+  
+    <a href="/2018/05/16/Notyf/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Notyf</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/05/15/hello-world/" class="archive-article-date">
-  <time datetime="2018-05-14T16:00:00.000Z" itemprop="datePublished">5月 15</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 
 </section>
         
