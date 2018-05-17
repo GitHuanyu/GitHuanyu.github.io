@@ -5,20 +5,20 @@
   
 
   
-  <title>Notyf | CHY</title>
+  <title>构造函数的继承 | CHY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required.项目地址https://github.com/caroso1222/notyf 123456789101112131415//实例化var notyf = new Notyf();//实例化传入配置参数var">
+  <meta name="description" content="12345678function Animal()&amp;#123;  this.species = &apos;动物&apos;;&amp;#125;function Cat(name,color)&amp;#123;  this.name = name;  this.color = color;&amp;#125; 如何使Cat()继承Animal()???如果Cat()的prototype对象，指向一个Animal()的实例，那么所有Cat">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Notyf">
-<meta property="og:url" content="https://githuanyu.github.io/2018/05/16/Notyf/index.html">
+<meta property="og:title" content="构造函数的继承">
+<meta property="og:url" content="https://githuanyu.github.io/2018/05/17/构造函数的继承/index.html">
 <meta property="og:site_name" content="CHY">
-<meta property="og:description" content="Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required.项目地址https://github.com/caroso1222/notyf 123456789101112131415//实例化var notyf = new Notyf();//实例化传入配置参数var">
+<meta property="og:description" content="12345678function Animal()&amp;#123;  this.species = &apos;动物&apos;;&amp;#125;function Cat(name,color)&amp;#123;  this.name = name;  this.color = color;&amp;#125; 如何使Cat()继承Animal()???如果Cat()的prototype对象，指向一个Animal()的实例，那么所有Cat">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-16T03:37:19.722Z">
+<meta property="og:updated_time" content="2018-05-17T07:03:34.094Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Notyf">
-<meta name="twitter:description" content="Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required.项目地址https://github.com/caroso1222/notyf 123456789101112131415//实例化var notyf = new Notyf();//实例化传入配置参数var">
+<meta name="twitter:title" content="构造函数的继承">
+<meta name="twitter:description" content="12345678function Animal()&amp;#123;  this.species = &apos;动物&apos;;&amp;#125;function Cat(name,color)&amp;#123;  this.name = name;  this.color = color;&amp;#125; 如何使Cat()继承Animal()???如果Cat()的prototype对象，指向一个Animal()的实例，那么所有Cat">
   
     <link rel="alternate" href="/atom.xml" title="CHY" type="application/atom+xml">
   
@@ -75,14 +75,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Notyf" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-构造函数的继承" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/16/Notyf/" class="article-date">
-  <time datetime="2018-05-16T03:28:05.000Z" itemprop="datePublished">2018-05-16</time>
+    <a href="/2018/05/17/构造函数的继承/" class="article-date">
+  <time datetime="2018-05-17T02:15:58.000Z" itemprop="datePublished">2018-05-17</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/JS插件/">JS插件</a>
+    <a class="article-category-link" href="/categories/JS高级/">JS高级</a>
   </div>
 
   </div>
@@ -93,7 +93,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Notyf
+      构造函数的继承
     </h1>
   
 
@@ -101,13 +101,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Notyf-is-a-dead-simple-responsive-vanilla-javascript-notification-plugin-No-jQuery-required"><a href="#Notyf-is-a-dead-simple-responsive-vanilla-javascript-notification-plugin-No-jQuery-required" class="headerlink" title="Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required."></a>Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required.</h2><p><a href="https://github.com/caroso1222/notyf" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/caroso1222/notyf" target="_blank" rel="noopener">https://github.com/caroso1222/notyf</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实例化</span></span><br><span class="line"><span class="keyword">var</span> notyf = <span class="keyword">new</span> Notyf();</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化传入配置参数</span></span><br><span class="line"><span class="keyword">var</span> notyf = <span class="keyword">new</span> Notyf(&#123;</span><br><span class="line">  delay:<span class="number">1000</span>,</span><br><span class="line">  alertIcon: <span class="string">'fa fa-exclamation-circle'</span>,</span><br><span class="line">  confirmIcon: <span class="string">'fa fa-check-circle'</span>  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//警告弹框，红色</span></span><br><span class="line">notyf.alert(<span class="string">'aaa'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//通知弹框，绿色</span></span><br><span class="line">notyf.confirm(<span class="string">'bbb'</span>);</span><br></pre></td></tr></table></figure>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.species = <span class="string">'动物'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name,color</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如何使Cat()继承Animal()???<br>如果Cat()的prototype对象，指向一个Animal()的实例，那么所有Cat()的实例，就能继承Animal()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure>
+<h3 id="line1"><a href="#line1" class="headerlink" title="line1"></a>line1</h3><p>将Cat的prototype对象指向了一个Animal()的实例，它相当于完全删除了prototype对象原先的值，然后赋予一个新值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是Cat原先的prototype对象</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">constructor</span>: Cat,</span><br><span class="line">  // 任何一个prototype对象都有一个<span class="keyword">constructor</span>属性，指向它的构造函数</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 指向Animal()实例后的新prototype对象</span><br><span class="line">&#123;</span><br><span class="line">  species: <span class="string">'动物'</span>,</span><br><span class="line">  prototype: &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: Animal</span><br><span class="line">  &#125;</span><br><span class="line">  // 每一个实例也有一个<span class="keyword">constructor</span>属性，默认调用prototype对象的<span class="keyword">constructor</span>属性</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="line2"><a href="#line2" class="headerlink" title="line2"></a>line2</h3><p>此时Cat()的实例的<strong> constructor </strong>会指向 Animal()，会导致继承链的紊乱，需要手动纠正</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果替换了prototype对象</span></span><br><span class="line">o.prototype = &#123;&#125;;</span><br><span class="line"><span class="comment">// 下一步必然是为新的prototype对象加上constructor属性，并将这个属性指回原来的构造函数。</span></span><br><span class="line">o.prototype.constructor = o;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/16/Notyf/" data-id="cjha6vzj10000z09gast3gwaf" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/17/构造函数的继承/" data-id="cjha6vzl0000dz09g60uvwblr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -118,19 +123,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/05/16/animate-css/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          animate.css
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/16/jqPaginator/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/05/16/prototype的设定由来/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">jqPaginator</div>
+      <div class="article-nav-title">prototype的设定由来</div>
     </a>
   
 </nav>
