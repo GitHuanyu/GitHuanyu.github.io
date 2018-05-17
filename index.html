@@ -72,6 +72,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JS模块化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/17/JS模块化/" class="article-date">
+  <time datetime="2018-05-17T09:01:24.000Z" itemprop="datePublished">2018-05-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS高级/">JS高级</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/17/JS模块化/">JS模块化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ES6在语言规格的层面上，实现了模块功能，而且实现得相当简单，完全可以取代现有的CommonJS和AMD规范，成为浏览器和服务器通用的模块解决方案。</p>
+<p>ES6模块主要有两个功能：export和import</p>
+<p>export用于对外输出本模块（一个文件可以理解为一个模块）变量的接口</p>
+<p>import用于在一个模块中加载另一个含有export接口的模块。</p>
+<h3 id="使用大括号指定所要输出的一组变量"><a href="#使用大括号指定所要输出的一组变量" class="headerlink" title="使用大括号指定所要输出的一组变量"></a>使用大括号指定所要输出的一组变量</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// profile.js</span></span><br><span class="line"><span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">var</span> year = <span class="number">1958</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;firstName, lastName, year&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="输出函数或类"><a href="#输出函数或类" class="headerlink" title="输出函数或类"></a>输出函数或类</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// profile.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://githuanyu.github.io/2018/05/17/JS模块化/" data-id="cjhab36i700002g9goxa165co" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-构造函数的继承" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/17/构造函数的继承/" class="article-date">
@@ -109,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/17/构造函数的继承/" data-id="cjha6vzl0000dz09g60uvwblr" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/17/构造函数的继承/" data-id="cjhab36ks000h2g9gni0040lq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -164,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/16/prototype的设定由来/" data-id="cjha6vzl9000iz09gnod9ltm4" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/16/prototype的设定由来/" data-id="cjhab36lz000m2g9geg1ivkw2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -209,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/16/animate-css/" data-id="cjha6vzl3000ez09gne1oqpi3" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/16/animate-css/" data-id="cjhab36kh000f2g9gg3vadnoy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -253,7 +300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/16/Notyf/" data-id="cjha6vzj10000z09gast3gwaf" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/16/Notyf/" data-id="cjhab36iq00022g9g0jthgjno" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -297,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/16/jqPaginator/" data-id="cjha6vzkg0007z09ghnsl6fl3" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/16/jqPaginator/" data-id="cjhab36js00062g9gapxaqhqj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -340,7 +387,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/15/hexo命令/" data-id="cjha6vzkn000az09gkf53285x" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/15/hexo命令/" data-id="cjhab36n4000z2g9gihg6tbz2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cmd/">cmd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -382,7 +429,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/15/first-demo/" data-id="cjha6vzka0005z09g90imhik2" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/15/first-demo/" data-id="cjhab36j500032g9gszy3bn7q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -431,7 +478,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/15/hello-world/" data-id="cjha6vzle000lz09g8qjfm0lo" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/15/hello-world/" data-id="cjhab36ls000j2g9gnr5zsr2l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cmd/">cmd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -453,7 +500,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS插件/">JS插件</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS高级/">JS高级</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲聊/">闲聊</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS插件/">JS插件</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS高级/">JS高级</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲聊/">闲聊</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -463,7 +510,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -482,7 +529,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -493,6 +540,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/05/17/JS模块化/">JS模块化</a>
+          </li>
         
           <li>
             <a href="/2018/05/17/构造函数的继承/">构造函数的继承</a>
@@ -508,10 +559,6 @@
         
           <li>
             <a href="/2018/05/16/Notyf/">Notyf</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/16/jqPaginator/">jqPaginator</a>
           </li>
         
       </ul>
