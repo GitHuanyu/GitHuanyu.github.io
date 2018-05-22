@@ -5,15 +5,20 @@
   
 
   
-  <title>Tag: jQuery | CHY</title>
+  <title>VUE计算属性 | CHY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CHY">
-<meta property="og:url" content="https://githuanyu.github.io/tags/jQuery/index.html">
+  <meta name="description" content="computed12345678910111213var vm = new Vue(&amp;#123;  el: &apos;#app&apos;,  data: &amp;#123;    message: &apos;Runoob!&apos;  &amp;#125;,  computed: &amp;#123;    // 计算属性的 getter    reversedMessage: function () &amp;#123;      // `this` 指向">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VUE计算属性">
+<meta property="og:url" content="https://githuanyu.github.io/2018/05/22/VUE计算属性/index.html">
 <meta property="og:site_name" content="CHY">
+<meta property="og:description" content="computed12345678910111213var vm = new Vue(&amp;#123;  el: &apos;#app&apos;,  data: &amp;#123;    message: &apos;Runoob!&apos;  &amp;#125;,  computed: &amp;#123;    // 计算属性的 getter    reversedMessage: function () &amp;#123;      // `this` 指向">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-22T02:30:05.558Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CHY">
+<meta name="twitter:title" content="VUE计算属性">
+<meta name="twitter:description" content="computed12345678910111213var vm = new Vue(&amp;#123;  el: &apos;#app&apos;,  data: &amp;#123;    message: &apos;Runoob!&apos;  &amp;#125;,  computed: &amp;#123;    // 计算属性的 getter    reversedMessage: function () &amp;#123;      // `this` 指向">
   
     <link rel="alternate" href="/atom.xml" title="CHY" type="application/atom+xml">
   
@@ -70,59 +75,60 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/05/16/animate-css/" class="archive-article-date">
-  <time datetime="2018-05-16T05:47:25.000Z" itemprop="datePublished">5月 16</time>
+        <section id="main"><article id="post-VUE计算属性" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/22/VUE计算属性/" class="article-date">
+  <time datetime="2018-05-22T02:24:30.000Z" itemprop="datePublished">2018-05-22</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/VUE/">VUE</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/16/animate-css/">animate.css</a>
+    <h1 class="article-title" itemprop="name">
+      VUE计算属性
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/05/16/jqPaginator/" class="archive-article-date">
-  <time datetime="2018-05-16T03:05:47.000Z" itemprop="datePublished">5月 16</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/16/jqPaginator/">jqPaginator</a>
-    </h1>
-  
+        <h3 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">'Runoob!'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// 计算属性的 getter</span></span><br><span class="line">    reversedMessage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// `this` 指向 vm 实例</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>声明了一个计算属性 reversedMessage 。<br>提供的函数将用作属性 vm.reversedMessage 的 getter 。<br>vm.reversedMessage 依赖于 vm.message，在 vm.message 发生改变时，vm.reversedMessage 也会更新。</p>
+<p>我们可以使用 methods 来替代 computed，效果上两个都是一样的，但是 computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。<br>而使用 methods ，在重新渲染的时候，函数总会重新调用执行。</p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://githuanyu.github.io/2018/05/22/VUE计算属性/" data-id="cjhh2ds660007689ggi06qdte" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/05/18/VUE生命周期/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">VUE生命周期</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         

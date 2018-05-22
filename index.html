@@ -72,6 +72,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-VUE计算属性" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/22/VUE计算属性/" class="article-date">
+  <time datetime="2018-05-22T02:24:30.000Z" itemprop="datePublished">2018-05-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/VUE/">VUE</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/22/VUE计算属性/">VUE计算属性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">'Runoob!'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// 计算属性的 getter</span></span><br><span class="line">    reversedMessage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// `this` 指向 vm 实例</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>声明了一个计算属性 reversedMessage 。<br>提供的函数将用作属性 vm.reversedMessage 的 getter 。<br>vm.reversedMessage 依赖于 vm.message，在 vm.message 发生改变时，vm.reversedMessage 也会更新。</p>
+<p>我们可以使用 methods 来替代 computed，效果上两个都是一样的，但是 computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。<br>而使用 methods ，在重新渲染的时候，函数总会重新调用执行。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://githuanyu.github.io/2018/05/22/VUE计算属性/" data-id="cjhh2ds660007689ggi06qdte" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-VUE生命周期" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/18/VUE生命周期/" class="article-date">
@@ -98,14 +143,43 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-基本的生命周期概述"><a href="#1-基本的生命周期概述" class="headerlink" title="1.基本的生命周期概述"></a>1.基本的生命周期概述</h3><p><img src="https://sfault-image.b0.upaiyun.com/334/606/3346068135-580822cd52898_articlex" alt="生命周期"></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/vue/2.1.3/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">      el: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">      data: &#123;</span></span><br><span class="line"><span class="javascript">        message : <span class="string">"HELLO WORLD"</span> </span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="javascript">       beforeCreate: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">'beforeCreate 创建前状态===============》'</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span> , <span class="string">"el     : "</span> + <span class="keyword">this</span>.$el); <span class="comment">//undefined</span></span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); <span class="comment">//undefined </span></span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message)  </span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="javascript">        created: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">'created 创建完毕状态===============》'</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"el     : "</span> + <span class="keyword">this</span>.$el); <span class="comment">//undefined</span></span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); <span class="comment">//已被初始化 </span></span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="javascript">        beforeMount: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">'beforeMount 挂载前状态===============》'</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"el     : "</span> + (<span class="keyword">this</span>.$el)); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); <span class="comment">//已被初始化  </span></span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message); <span class="comment">//已被初始化  </span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="javascript">        mounted: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">'mounted 挂载结束状态===============》'</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"el     : "</span> + <span class="keyword">this</span>.$el); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);    </span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message); <span class="comment">//已被初始化 </span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="javascript">        beforeUpdate: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">'beforeUpdate 更新前状态===============》'</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);   </span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); </span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message); </span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="javascript">        updated: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">'updated 更新完成状态===============》'</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el); </span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); </span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message); </span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="javascript">        beforeDestroy: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">'beforeDestroy 销毁前状态===============》'</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);    </span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); </span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message); </span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="javascript">        destroyed: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">'destroyed 销毁完成状态===============》'</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);  </span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"data   : "</span> + <span class="keyword">this</span>.$data); </span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>,<span class="string">"message: "</span> + <span class="keyword">this</span>.message)</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-create和-mounted相关"><a href="#2-create和-mounted相关" class="headerlink" title="2.create和 mounted相关"></a>2.create和 mounted相关</h3><p><img src="https://sfault-image.b0.upaiyun.com/130/248/1302481017-586cddaf83195_articlex" alt="控制台输出结果"></p>
+        <h2 id="创建-》挂载-》更新-》销毁"><a href="#创建-》挂载-》更新-》销毁" class="headerlink" title="创建=》挂载=》更新=》销毁"></a>创建=》挂载=》更新=》销毁</h2><p>类似于一种回调，在执行到一定的阶段时触发，扔出一个钩子，让需要在此阶段执行的方法调用</p>
+<h3 id="beforeCreate"><a href="#beforeCreate" class="headerlink" title="beforeCreate"></a>beforeCreate</h3><p>创建vue对象，methods和data属性初始化到vue对象之上</p>
+<h3 id="created"><a href="#created" class="headerlink" title="created"></a>created</h3><p>vue对象创建完成，进行数据初始化，可以发送ajax来对vue对象静态属性进行初始化</p>
+<h3 id="beforeMount"><a href="#beforeMount" class="headerlink" title="beforeMount"></a>beforeMount</h3><p>通过虚拟dom(数据结构)来构造真实dom(html)，可以操作真实dom结构了</p>
+<h3 id="mounted"><a href="#mounted" class="headerlink" title="mounted"></a>mounted</h3><p>将渲染出的真实dom挂载，是一个appendChild的过程</p>
+<h3 id="beforeUpdate"><a href="#beforeUpdate" class="headerlink" title="beforeUpdate"></a>beforeUpdate</h3><h3 id="updated"><a href="#updated" class="headerlink" title="updated"></a>updated</h3><h3 id="beforeDestroy"><a href="#beforeDestroy" class="headerlink" title="beforeDestroy"></a>beforeDestroy</h3><h3 id="destroyed"><a href="#destroyed" class="headerlink" title="destroyed"></a>destroyed</h3><table>
+<thead>
+<tr>
+<th>钩子</th>
+<th style="text-align:right">特性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>beforeCreate</td>
+<td style="text-align:right">none</td>
+</tr>
+<tr>
+<td>created</td>
+<td style="text-align:right">data</td>
+</tr>
+<tr>
+<td>beforeMount</td>
+<td style="text-align:right">el</td>
+</tr>
+<tr>
+<td>mounted</td>
+<td style="text-align:right">data+el</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="vue生命周期图示"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/18/VUE生命周期/" data-id="cjhbobxls0000yw9g1k21c0rr" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/18/VUE生命周期/" data-id="cjhh2ds4h0000689gqz06cyo5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -159,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/17/JS模块化/" data-id="cjhab36i700002g9goxa165co" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/17/JS模块化/" data-id="cjhh2ds6i000e689gbbzaw2qu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -208,7 +282,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/17/构造函数的继承/" data-id="cjhab36ks000h2g9gni0040lq" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/17/构造函数的继承/" data-id="cjhh2ds75000p689gkvdgduux" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -263,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/16/prototype的设定由来/" data-id="cjhab36lz000m2g9geg1ivkw2" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/16/prototype的设定由来/" data-id="cjhh2ds6m000f689g8p88rn2j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -308,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/16/animate-css/" data-id="cjhab36kh000f2g9gg3vadnoy" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/16/animate-css/" data-id="cjhh2ds6q000j689gtf3q7anb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -352,7 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/16/Notyf/" data-id="cjhab36iq00022g9g0jthgjno" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/16/Notyf/" data-id="cjhh2ds5t0005689gs73jqj66" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -396,7 +470,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/16/jqPaginator/" data-id="cjhab36js00062g9gapxaqhqj" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/16/jqPaginator/" data-id="cjhh2ds7e000u689g8qcu6m30" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -439,7 +513,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/15/hexo命令/" data-id="cjhab36n4000z2g9gihg6tbz2" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/15/hexo命令/" data-id="cjhh2ds79000q689glczwys6f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cmd/">cmd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -481,7 +555,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/15/first-demo/" data-id="cjhab36j500032g9gszy3bn7q" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/15/first-demo/" data-id="cjhh2ds6c000b689gvo8cq115" class="article-share-link">Share</a>
       
       
     </footer>
@@ -491,58 +565,12 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/15/hello-world/" class="article-date">
-  <time datetime="2018-05-14T16:00:00.000Z" itemprop="datePublished">2018-05-15</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/15/hello-world/" data-id="cjhab36ls000j2g9gnr5zsr2l" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cmd/">cmd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
 
 </section>
         
@@ -552,7 +580,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS插件/">JS插件</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS高级/">JS高级</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VUE/">VUE</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲聊/">闲聊</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS插件/">JS插件</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS高级/">JS高级</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VUE/">VUE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲聊/">闲聊</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -562,7 +590,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">5</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -581,7 +609,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">10</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">11</span></li></ul>
     </div>
   </div>
 
@@ -592,6 +620,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/05/22/VUE计算属性/">VUE计算属性</a>
+          </li>
         
           <li>
             <a href="/2018/05/18/VUE生命周期/">VUE生命周期</a>
@@ -607,10 +639,6 @@
         
           <li>
             <a href="/2018/05/16/prototype的设定由来/">prototype的设定由来</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/16/animate-css/">animate.css</a>
           </li>
         
       </ul>
