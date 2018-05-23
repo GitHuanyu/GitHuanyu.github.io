@@ -5,14 +5,14 @@
   
 
   
-  <title>VUE生命周期 | CHY</title>
+  <title>VUE生命周期 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="创建=》挂载=》更新=》销毁类似于一种回调，在执行到一定的阶段时触发，扔出一个钩子，让需要在此阶段执行的方法调用 beforeCreate创建vue对象，methods和data属性初始化到vue对象之上 createdvue对象创建完成，进行数据初始化，可以发送ajax来对vue对象静态属性进行初始化 beforeMount通过虚拟dom(数据结构)来构造真实dom(html)，可以操作真实do">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VUE生命周期">
 <meta property="og:url" content="https://githuanyu.github.io/2018/05/18/VUE生命周期/index.html">
-<meta property="og:site_name" content="CHY">
+<meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="创建=》挂载=》更新=》销毁类似于一种回调，在执行到一定的阶段时触发，扔出一个钩子，让需要在此阶段执行的方法调用 beforeCreate创建vue对象，methods和data属性初始化到vue对象之上 createdvue对象创建完成，进行数据初始化，可以发送ajax来对vue对象静态属性进行初始化 beforeMount通过虚拟dom(数据结构)来构造真实dom(html)，可以操作真实do">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="创建=》挂载=》更新=》销毁类似于一种回调，在执行到一定的阶段时触发，扔出一个钩子，让需要在此阶段执行的方法调用 beforeCreate创建vue对象，methods和data属性初始化到vue对象之上 createdvue对象创建完成，进行数据初始化，可以发送ajax来对vue对象静态属性进行初始化 beforeMount通过虚拟dom(数据结构)来构造真实dom(html)，可以操作真实do">
 <meta name="twitter:image" content="https://cn.vuejs.org/images/lifecycle.png">
   
-    <link rel="alternate" href="/atom.xml" title="CHY" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -41,12 +41,8 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">CHY</a>
+        <a href="/" id="logo">Hexo</a>
       </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">CHY&amp;ZYC</a>
-        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -139,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/18/VUE生命周期/" data-id="cjhh2ds4h0000689gqz06cyo5" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/18/VUE生命周期/" data-id="cjhijslip000mdc9g5s1b49uf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -178,7 +174,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS插件/">JS插件</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS高级/">JS高级</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VUE/">VUE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲聊/">闲聊</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS插件/">JS插件</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS高级/">JS高级</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VUE/">VUE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲聊/">闲聊</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -188,7 +184,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">6</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -198,7 +194,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
+      <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
     </div>
   </div>
 
@@ -207,7 +203,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">11</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 
@@ -220,6 +216,14 @@
       <ul>
         
           <li>
+            <a href="/2018/05/23/JS时间戳/">JS时间戳</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/23/jquery-form/">jquery-form</a>
+          </li>
+        
+          <li>
             <a href="/2018/05/22/VUE计算属性/">VUE计算属性</a>
           </li>
         
@@ -229,14 +233,6 @@
         
           <li>
             <a href="/2018/05/17/JS模块化/">JS模块化</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/17/构造函数的继承/">构造函数的继承</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/16/prototype的设定由来/">prototype的设定由来</a>
           </li>
         
       </ul>
