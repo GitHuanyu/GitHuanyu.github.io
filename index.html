@@ -68,6 +68,117 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-webpack入门" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/24/webpack入门/" class="article-date">
+  <time datetime="2018-05-24T07:40:26.000Z" itemprop="datePublished">2018-05-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/辅助/">辅助</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/24/webpack入门/">webpack入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。<br>当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，<br>其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://githuanyu.github.io/2018/05/24/webpack入门/" data-id="cjhk89w57000qe09gtmai1bsp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-基本类型和引用类型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/23/基本类型和引用类型/" class="article-date">
+  <time datetime="2018-05-23T06:55:29.000Z" itemprop="datePublished">2018-05-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS高级/">JS高级</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/23/基本类型和引用类型/">基本类型和引用类型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th style="text-align:right">引用数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>简单的数据段</td>
+<td style="text-align:right">多个值构成的对象</td>
+</tr>
+<tr>
+<td>按值访问</td>
+<td style="text-align:right">按内存地址访问，操作对象实际上是操作对象的引用</td>
+</tr>
+</tbody>
+</table>
+<p>值指的是，而引用数据类型值指的是那些可能由。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Function对象（类）</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"alert(a + b);"</span>);</span><br><span class="line">foo(<span class="number">1</span>, <span class="number">5</span>);</span><br><span class="line"><span class="comment">//由于字符串的关系，这种形式写起来很困难，但是说明了函数只不过是一种引用类型</span></span><br><span class="line"><span class="comment">//它的行为与用Function类明确创建的函数行为是相同的</span></span><br></pre></td></tr></table></figure>
+<p>引用类型通常叫做类，遇到引用值，所处理的就是对象</p>
+<h3 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h3><p>基本类型 Number Boolean String undefined null<br>基本类型的数据存放在栈内存中<br>基本类型的复制就是在栈内存中开辟了一个新的存储区域来存储新的变量，这个变量有他自己的值，只不过和前面的值一样，所以如果其中一个值改变了不会影响到另一个</p>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><p>引用类型 Object Function<br>引用类型的数据存放在堆内存中<br>定义了一个对象其实是在栈内存中存储了一个指针，这个指针指向堆内存中该对象的存储地址，复制给另一个对象的过程其实是把该对象的地址复制给了另一个对象变量，两个指针都指向同一个对象，如果其中一个修改了，另一个也会改变    </p>
+<p>基本类型的数据是没有属性和方法的，引用类型才有，但是为什么String类型有方法呢？<br>var string = ‘aaa’;<br>var string2 = string.substring(0);<br>基本类型的确没有方法和属性，因为一旦创建了属性或者方法就会被立刻销毁，但是为了方便对基本类型数据进行操作，在底层做了一些工作，其实这段代码相当于<br>var string = new String(‘aaa’);<br>var string2 = string.substring(0);<br>string = null;</p>
+<p>1.创建了一个String类型的实例，使用new操作符创建的引用类型的实例，在执行流离开当前作用域之前都一直保存在内存中。而自动创建的基本包装类型的对象，则只存在于一行代码的瞬间，然后立即被销毁<br>2.在实例上调用指定方法<br>3.销毁该实例</p>
+<p>经过这三步，字符串值就变得和对象一样了，在Boolean，Number中也是一样<br>String, Boolean, Number 这三种类型也叫做 基本包装类型    </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://githuanyu.github.io/2018/05/23/基本类型和引用类型/" data-id="cjhk89w6f001ke09gfeq89bnd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JS时间戳" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/23/JS时间戳/" class="article-date">
@@ -94,11 +205,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="获取当前时间戳"><a href="#获取当前时间戳" class="headerlink" title="获取当前时间戳"></a>获取当前时间戳</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timestamp1 = <span class="built_in">Date</span>.parse(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line"><span class="keyword">var</span> timestamp2 = (<span class="keyword">new</span> <span class="built_in">Date</span>()).valueOf();</span><br><span class="line"><span class="keyword">var</span> timestamp3 = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br></pre></td></tr></table></figure>
+<h3 id="获取指定时间戳"><a href="#获取指定时间戳" class="headerlink" title="获取指定时间戳"></a>获取指定时间戳</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oldTime = (<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2015/06/23 08:00:20"</span>)).getTime()/<span class="number">1000</span>;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/23/JS时间戳/" data-id="cjhijslhr0006dc9gvzc2qk6m" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/23/JS时间戳/" data-id="cjhk89w3i0000e09gerhlr7lr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -136,14 +248,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="异步提交表单"><a href="#异步提交表单" class="headerlink" title="异步提交表单"></a>异步提交表单</h2><p><a href="https://github.com/jquery-form/form" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/jquery-form/form" target="_blank" rel="noopener">https://github.com/jquery-form/form</a></p>
+        <h2 id="异步提交表单-引入jquery-form-min-js"><a href="#异步提交表单-引入jquery-form-min-js" class="headerlink" title="异步提交表单 (引入jquery.form.min.js)"></a>异步提交表单 (引入jquery.form.min.js)</h2><p><a href="https://github.com/jquery-form/form" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/jquery-form/form" target="_blank" rel="noopener">https://github.com/jquery-form/form</a></p>
 <h3 id="ajaxForm-options"><a href="#ajaxForm-options" class="headerlink" title="ajaxForm( options )"></a>ajaxForm( options )</h3><p>通过submit的button直接提交<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// prepare all forms for ajax submission</span></span><br><span class="line">$(<span class="string">'form'</span>).ajaxForm(&#123;</span><br><span class="line">  target: <span class="string">'#myResultsDiv'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <h3 id="ajaxSubmit-options"><a href="#ajaxSubmit-options" class="headerlink" title="ajaxSubmit( options )"></a>ajaxSubmit( options )</h3><p>通过提交的事件触发<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bind submit handler to form</span></span><br><span class="line">$(<span class="string">'form'</span>).on(<span class="string">'submit'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e.preventDefault(); <span class="comment">// prevent native submit</span></span><br><span class="line">  $(<span class="keyword">this</span>).ajaxSubmit(&#123;</span><br><span class="line">    target: <span class="string">'myResultsDiv'</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/23/jquery-form/" data-id="cjhijsljs001idc9g2lzrsjqp" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/23/jquery-form/" data-id="cjhk89w4s000fe09gyi0f0gzy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -188,7 +300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/22/VUE计算属性/" data-id="cjhijslig000fdc9gi3x0s4ir" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/22/VUE计算属性/" data-id="cjhk89w4a0008e09grqkns50z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -262,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/18/VUE生命周期/" data-id="cjhijslip000mdc9g5s1b49uf" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/18/VUE生命周期/" data-id="cjhk89w59000re09gk4823969" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -316,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/17/JS模块化/" data-id="cjhijslhy0008dc9giefw6ctp" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/17/JS模块化/" data-id="cjhk89w3u0002e09gjejbbc6s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -365,7 +477,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/17/构造函数的继承/" data-id="cjhijslj1000zdc9g9vm72pa4" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/17/构造函数的继承/" data-id="cjhk89w6h001le09g3jzbd9u1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -420,7 +532,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/16/prototype的设定由来/" data-id="cjhijslim000kdc9g3hlwkxkm" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/16/prototype的设定由来/" data-id="cjhk89w5h000ye09gdhmpxkqm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -465,95 +577,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/16/animate-css/" data-id="cjhijslix000udc9g99kgpndn" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Notyf" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/16/Notyf/" class="article-date">
-  <time datetime="2018-05-16T03:28:05.000Z" itemprop="datePublished">2018-05-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JS插件/">JS插件</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/Notyf/">Notyf</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Notyf-is-a-dead-simple-responsive-vanilla-javascript-notification-plugin-No-jQuery-required"><a href="#Notyf-is-a-dead-simple-responsive-vanilla-javascript-notification-plugin-No-jQuery-required" class="headerlink" title="Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required."></a>Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required.</h2><p><a href="https://github.com/caroso1222/notyf" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/caroso1222/notyf" target="_blank" rel="noopener">https://github.com/caroso1222/notyf</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实例化</span></span><br><span class="line"><span class="keyword">var</span> notyf = <span class="keyword">new</span> Notyf();</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化传入配置参数</span></span><br><span class="line"><span class="keyword">var</span> notyf = <span class="keyword">new</span> Notyf(&#123;</span><br><span class="line">  delay:<span class="number">1000</span>,</span><br><span class="line">  alertIcon: <span class="string">'fa fa-exclamation-circle'</span>,</span><br><span class="line">  confirmIcon: <span class="string">'fa fa-check-circle'</span>  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//警告弹框，红色</span></span><br><span class="line">notyf.alert(<span class="string">'aaa'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//通知弹框，绿色</span></span><br><span class="line">notyf.confirm(<span class="string">'bbb'</span>);</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/16/Notyf/" data-id="cjhijslh20000dc9gd2gzp2xh" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-jqPaginator" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/16/jqPaginator/" class="article-date">
-  <time datetime="2018-05-16T03:05:47.000Z" itemprop="datePublished">2018-05-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JS插件/">JS插件</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/jqPaginator/">jqPaginator</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="基于jquery的分页组件"><a href="#基于jquery的分页组件" class="headerlink" title="基于jquery的分页组件"></a>基于jquery的分页组件</h2><p><a href="https://github.com/keenwon/jqPaginator" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/keenwon/jqPaginator" target="_blank" rel="noopener">https://github.com/keenwon/jqPaginator</a></p>
-<p><a href="http://jqpaginator.keenwon.com/" target="_blank" rel="noopener">演示地址</a><br><a href="http://jqpaginator.keenwon.com/" target="_blank" rel="noopener">http://jqpaginator.keenwon.com/</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"pagination"</span> id=<span class="string">"pagination"</span>&gt;&lt;/ul&gt;</span><br><span class="line">$(<span class="string">'#pagination'</span>).jqPaginator(&#123;</span><br><span class="line">	totalPages: <span class="number">100</span>,</span><br><span class="line">	visiblePages: <span class="number">10</span>,</span><br><span class="line">	currentPage: <span class="number">1</span>,</span><br><span class="line">	onPageChange: <span class="function"><span class="keyword">function</span>(<span class="params">num, type</span>) </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/16/jqPaginator/" data-id="cjhijslia000ddc9grueleslx" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/16/animate-css/" data-id="cjhk89w50000ke09gtn95ids4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -580,7 +604,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS插件/">JS插件</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS高级/">JS高级</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VUE/">VUE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲聊/">闲聊</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS插件/">JS插件</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS高级/">JS高级</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VUE/">VUE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/辅助/">辅助</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲聊/">闲聊</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -590,7 +614,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">7</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -600,7 +624,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
+      <a href="/tags/cmd/" style="font-size: 13.33px;">cmd</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
     </div>
   </div>
 
@@ -609,7 +633,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">15</span></li></ul>
     </div>
   </div>
 
@@ -622,6 +646,14 @@
       <ul>
         
           <li>
+            <a href="/2018/05/24/webpack入门/">webpack入门</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/23/基本类型和引用类型/">基本类型和引用类型</a>
+          </li>
+        
+          <li>
             <a href="/2018/05/23/JS时间戳/">JS时间戳</a>
           </li>
         
@@ -631,14 +663,6 @@
         
           <li>
             <a href="/2018/05/22/VUE计算属性/">VUE计算属性</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/18/VUE生命周期/">VUE生命周期</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/17/JS模块化/">JS模块化</a>
           </li>
         
       </ul>

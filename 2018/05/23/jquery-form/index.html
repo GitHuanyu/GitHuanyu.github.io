@@ -7,18 +7,18 @@
   
   <title>jquery-form | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="异步提交表单项目地址https://github.com/jquery-form/form ajaxForm( options )通过submit的button直接提交1234// prepare all forms for ajax submission$(&apos;form&apos;).ajaxForm(&amp;#123;  target: &apos;#myResultsDiv&apos;&amp;#125;); ajaxSubmit( o">
+  <meta name="description" content="异步提交表单 (引入jquery.form.min.js)项目地址https://github.com/jquery-form/form ajaxForm( options )通过submit的button直接提交1234// prepare all forms for ajax submission$(&apos;form&apos;).ajaxForm(&amp;#123;  target: &apos;#myResultsDiv">
 <meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jquery-form">
 <meta property="og:url" content="https://githuanyu.github.io/2018/05/23/jquery-form/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="异步提交表单项目地址https://github.com/jquery-form/form ajaxForm( options )通过submit的button直接提交1234// prepare all forms for ajax submission$(&apos;form&apos;).ajaxForm(&amp;#123;  target: &apos;#myResultsDiv&apos;&amp;#125;); ajaxSubmit( o">
+<meta property="og:description" content="异步提交表单 (引入jquery.form.min.js)项目地址https://github.com/jquery-form/form ajaxForm( options )通过submit的button直接提交1234// prepare all forms for ajax submission$(&apos;form&apos;).ajaxForm(&amp;#123;  target: &apos;#myResultsDiv">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-23T02:43:06.260Z">
+<meta property="og:updated_time" content="2018-05-23T06:34:52.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jquery-form">
-<meta name="twitter:description" content="异步提交表单项目地址https://github.com/jquery-form/form ajaxForm( options )通过submit的button直接提交1234// prepare all forms for ajax submission$(&apos;form&apos;).ajaxForm(&amp;#123;  target: &apos;#myResultsDiv&apos;&amp;#125;); ajaxSubmit( o">
+<meta name="twitter:description" content="异步提交表单 (引入jquery.form.min.js)项目地址https://github.com/jquery-form/form ajaxForm( options )通过submit的button直接提交1234// prepare all forms for ajax submission$(&apos;form&apos;).ajaxForm(&amp;#123;  target: &apos;#myResultsDiv">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -97,14 +97,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="异步提交表单"><a href="#异步提交表单" class="headerlink" title="异步提交表单"></a>异步提交表单</h2><p><a href="https://github.com/jquery-form/form" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/jquery-form/form" target="_blank" rel="noopener">https://github.com/jquery-form/form</a></p>
+        <h2 id="异步提交表单-引入jquery-form-min-js"><a href="#异步提交表单-引入jquery-form-min-js" class="headerlink" title="异步提交表单 (引入jquery.form.min.js)"></a>异步提交表单 (引入jquery.form.min.js)</h2><p><a href="https://github.com/jquery-form/form" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/jquery-form/form" target="_blank" rel="noopener">https://github.com/jquery-form/form</a></p>
 <h3 id="ajaxForm-options"><a href="#ajaxForm-options" class="headerlink" title="ajaxForm( options )"></a>ajaxForm( options )</h3><p>通过submit的button直接提交<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// prepare all forms for ajax submission</span></span><br><span class="line">$(<span class="string">'form'</span>).ajaxForm(&#123;</span><br><span class="line">  target: <span class="string">'#myResultsDiv'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <h3 id="ajaxSubmit-options"><a href="#ajaxSubmit-options" class="headerlink" title="ajaxSubmit( options )"></a>ajaxSubmit( options )</h3><p>通过提交的事件触发<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bind submit handler to form</span></span><br><span class="line">$(<span class="string">'form'</span>).on(<span class="string">'submit'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e.preventDefault(); <span class="comment">// prevent native submit</span></span><br><span class="line">  $(<span class="keyword">this</span>).ajaxSubmit(&#123;</span><br><span class="line">    target: <span class="string">'myResultsDiv'</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/23/jquery-form/" data-id="cjhijsljs001idc9g2lzrsjqp" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/23/jquery-form/" data-id="cjhk89w4s000fe09gyi0f0gzy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -143,7 +143,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS插件/">JS插件</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS高级/">JS高级</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VUE/">VUE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲聊/">闲聊</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS插件/">JS插件</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS高级/">JS高级</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VUE/">VUE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/辅助/">辅助</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲聊/">闲聊</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -153,7 +153,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">7</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -163,7 +163,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a>
+      <a href="/tags/cmd/" style="font-size: 13.33px;">cmd</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 16.67px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
     </div>
   </div>
 
@@ -172,7 +172,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">15</span></li></ul>
     </div>
   </div>
 
@@ -185,6 +185,14 @@
       <ul>
         
           <li>
+            <a href="/2018/05/24/webpack入门/">webpack入门</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/23/基本类型和引用类型/">基本类型和引用类型</a>
+          </li>
+        
+          <li>
             <a href="/2018/05/23/JS时间戳/">JS时间戳</a>
           </li>
         
@@ -194,14 +202,6 @@
         
           <li>
             <a href="/2018/05/22/VUE计算属性/">VUE计算属性</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/18/VUE生命周期/">VUE生命周期</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/17/JS模块化/">JS模块化</a>
           </li>
         
       </ul>

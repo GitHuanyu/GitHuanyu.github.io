@@ -5,20 +5,20 @@
   
 
   
-  <title>hexo命令 | Hexo</title>
+  <title>基本类型和引用类型 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123456789101112131415161718192021222324npm install hexo-cli -gnpm install hexo --savehexo init//进入空白文件夹搭建脚手架，生成hexo项目框架hexo g//generate新的文件关系hexo s//server本地展示hexo d  // 部署到github.iohexo d -g//在部署前先生成">
-<meta name="keywords" content="hexo,cmd">
+  <meta name="description" content="基本数据类型 引用数据类型     简单的数据段 多个值构成的对象   按值访问 按内存地址访问，操作对象实际上是操作对象的引用    值指的是，而引用数据类型值指的是那些可能由。 12345//Function对象（类）var foo = new Function(&quot;a&quot;, &quot;b&quot;, &quot;alert(a + b);&quot;);foo(1, 5);//由于字符串的关系，这种形式写起来很困难，但是说明">
+<meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo命令">
-<meta property="og:url" content="https://githuanyu.github.io/2018/05/15/hexo命令/index.html">
+<meta property="og:title" content="基本类型和引用类型">
+<meta property="og:url" content="https://githuanyu.github.io/2018/05/23/基本类型和引用类型/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="123456789101112131415161718192021222324npm install hexo-cli -gnpm install hexo --savehexo init//进入空白文件夹搭建脚手架，生成hexo项目框架hexo g//generate新的文件关系hexo s//server本地展示hexo d  // 部署到github.iohexo d -g//在部署前先生成">
+<meta property="og:description" content="基本数据类型 引用数据类型     简单的数据段 多个值构成的对象   按值访问 按内存地址访问，操作对象实际上是操作对象的引用    值指的是，而引用数据类型值指的是那些可能由。 12345//Function对象（类）var foo = new Function(&quot;a&quot;, &quot;b&quot;, &quot;alert(a + b);&quot;);foo(1, 5);//由于字符串的关系，这种形式写起来很困难，但是说明">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-16T03:12:15.867Z">
+<meta property="og:updated_time" content="2018-05-23T07:40:42.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo命令">
-<meta name="twitter:description" content="123456789101112131415161718192021222324npm install hexo-cli -gnpm install hexo --savehexo init//进入空白文件夹搭建脚手架，生成hexo项目框架hexo g//generate新的文件关系hexo s//server本地展示hexo d  // 部署到github.iohexo d -g//在部署前先生成">
+<meta name="twitter:title" content="基本类型和引用类型">
+<meta name="twitter:description" content="基本数据类型 引用数据类型     简单的数据段 多个值构成的对象   按值访问 按内存地址访问，操作对象实际上是操作对象的引用    值指的是，而引用数据类型值指的是那些可能由。 12345//Function对象（类）var foo = new Function(&quot;a&quot;, &quot;b&quot;, &quot;alert(a + b);&quot;);foo(1, 5);//由于字符串的关系，这种形式写起来很困难，但是说明">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -71,14 +71,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hexo命令" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-基本类型和引用类型" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/15/hexo命令/" class="article-date">
-  <time datetime="2018-05-15T08:10:21.000Z" itemprop="datePublished">2018-05-15</time>
+    <a href="/2018/05/23/基本类型和引用类型/" class="article-date">
+  <time datetime="2018-05-23T06:55:29.000Z" itemprop="datePublished">2018-05-23</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+    <a class="article-category-link" href="/categories/JS高级/">JS高级</a>
   </div>
 
   </div>
@@ -89,7 +89,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hexo命令
+      基本类型和引用类型
     </h1>
   
 
@@ -97,15 +97,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line"></span><br><span class="line">npm install hexo --save</span><br><span class="line"></span><br><span class="line">hexo init</span><br><span class="line">//进入空白文件夹搭建脚手架，生成hexo项目框架</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line">//generate新的文件关系</span><br><span class="line"></span><br><span class="line">hexo s</span><br><span class="line">//server本地展示</span><br><span class="line"></span><br><span class="line">hexo d  </span><br><span class="line">// 部署到github.io</span><br><span class="line"></span><br><span class="line">hexo d -g</span><br><span class="line">//在部署前先生成</span><br><span class="line"></span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">//安装扩展，否则 deloyer not found:git</span><br><span class="line"></span><br><span class="line">hexo new post &quot;article title&quot;</span><br><span class="line">//发布新文章</span><br></pre></td></tr></table></figure>
+        <table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th style="text-align:right">引用数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>简单的数据段</td>
+<td style="text-align:right">多个值构成的对象</td>
+</tr>
+<tr>
+<td>按值访问</td>
+<td style="text-align:right">按内存地址访问，操作对象实际上是操作对象的引用</td>
+</tr>
+</tbody>
+</table>
+<p>值指的是，而引用数据类型值指的是那些可能由。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Function对象（类）</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"alert(a + b);"</span>);</span><br><span class="line">foo(<span class="number">1</span>, <span class="number">5</span>);</span><br><span class="line"><span class="comment">//由于字符串的关系，这种形式写起来很困难，但是说明了函数只不过是一种引用类型</span></span><br><span class="line"><span class="comment">//它的行为与用Function类明确创建的函数行为是相同的</span></span><br></pre></td></tr></table></figure>
+<p>引用类型通常叫做类，遇到引用值，所处理的就是对象</p>
+<h3 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h3><p>基本类型 Number Boolean String undefined null<br>基本类型的数据存放在栈内存中<br>基本类型的复制就是在栈内存中开辟了一个新的存储区域来存储新的变量，这个变量有他自己的值，只不过和前面的值一样，所以如果其中一个值改变了不会影响到另一个</p>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><p>引用类型 Object Function<br>引用类型的数据存放在堆内存中<br>定义了一个对象其实是在栈内存中存储了一个指针，这个指针指向堆内存中该对象的存储地址，复制给另一个对象的过程其实是把该对象的地址复制给了另一个对象变量，两个指针都指向同一个对象，如果其中一个修改了，另一个也会改变    </p>
+<p>基本类型的数据是没有属性和方法的，引用类型才有，但是为什么String类型有方法呢？<br>var string = ‘aaa’;<br>var string2 = string.substring(0);<br>基本类型的确没有方法和属性，因为一旦创建了属性或者方法就会被立刻销毁，但是为了方便对基本类型数据进行操作，在底层做了一些工作，其实这段代码相当于<br>var string = new String(‘aaa’);<br>var string2 = string.substring(0);<br>string = null;</p>
+<p>1.创建了一个String类型的实例，使用new操作符创建的引用类型的实例，在执行流离开当前作用域之前都一直保存在内存中。而自动创建的基本包装类型的对象，则只存在于一行代码的瞬间，然后立即被销毁<br>2.在实例上调用指定方法<br>3.销毁该实例</p>
+<p>经过这三步，字符串值就变得和对象一样了，在Boolean，Number中也是一样<br>String, Boolean, Number 这三种类型也叫做 基本包装类型    </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/15/hexo命令/" data-id="cjhk89w4c0009e09gaxpihs39" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/05/23/基本类型和引用类型/" data-id="cjhk89w6f001ke09gfeq89bnd" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cmd/">cmd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 
     </footer>
   </div>
@@ -113,19 +138,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/05/16/jqPaginator/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/24/webpack入门/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          jqPaginator
+          webpack入门
         
       </div>
     </a>
   
   
-    <a href="/2018/05/15/first-demo/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/05/23/JS时间戳/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">first demo</div>
+      <div class="article-nav-title">JS时间戳</div>
     </a>
   
 </nav>
