@@ -5,20 +5,22 @@
   
 
   
-  <title>构造函数的继承 | Hexo</title>
+  <title>http协议 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678function Animal()&amp;#123;  this.species = &apos;动物&apos;;&amp;#125;function Cat(name,color)&amp;#123;  this.name = name;  this.color = color;&amp;#125; 如何使Cat()继承Animal()???如果Cat()的prototype对象，指向一个Animal()的实例，那么所有Cat">
-<meta name="keywords" content="javascript">
+  <meta name="description" content="HTTP协议客户端和服务端进行数据传输的一种规则 URLhttp url包含了用于查找某个资源的详细信息,格式如下1http://host[&amp;quot;:&amp;quot;port][abs_path] http表示要通过HTTP协议来定位网络资源，host表示合法的Internet主机域名或者IP地址，port指定一个端口号，为空则使用缺省端口80，abs_path指定请求资源的URI。 HTTP请求">
+<meta name="keywords" content="web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="构造函数的继承">
-<meta property="og:url" content="https://githuanyu.github.io/2018/05/17/构造函数的继承/index.html">
+<meta property="og:title" content="http协议">
+<meta property="og:url" content="https://githuanyu.github.io/2018/06/29/http协议/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="12345678function Animal()&amp;#123;  this.species = &apos;动物&apos;;&amp;#125;function Cat(name,color)&amp;#123;  this.name = name;  this.color = color;&amp;#125; 如何使Cat()继承Animal()???如果Cat()的prototype对象，指向一个Animal()的实例，那么所有Cat">
+<meta property="og:description" content="HTTP协议客户端和服务端进行数据传输的一种规则 URLhttp url包含了用于查找某个资源的详细信息,格式如下1http://host[&amp;quot;:&amp;quot;port][abs_path] http表示要通过HTTP协议来定位网络资源，host表示合法的Internet主机域名或者IP地址，port指定一个端口号，为空则使用缺省端口80，abs_path指定请求资源的URI。 HTTP请求">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-17T07:03:34.094Z">
+<meta property="og:image" content="https://segmentfault.com/img/bVsRvt">
+<meta property="og:updated_time" content="2018-06-29T02:53:59.806Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="构造函数的继承">
-<meta name="twitter:description" content="12345678function Animal()&amp;#123;  this.species = &apos;动物&apos;;&amp;#125;function Cat(name,color)&amp;#123;  this.name = name;  this.color = color;&amp;#125; 如何使Cat()继承Animal()???如果Cat()的prototype对象，指向一个Animal()的实例，那么所有Cat">
+<meta name="twitter:title" content="http协议">
+<meta name="twitter:description" content="HTTP协议客户端和服务端进行数据传输的一种规则 URLhttp url包含了用于查找某个资源的详细信息,格式如下1http://host[&amp;quot;:&amp;quot;port][abs_path] http表示要通过HTTP协议来定位网络资源，host表示合法的Internet主机域名或者IP地址，port指定一个端口号，为空则使用缺省端口80，abs_path指定请求资源的URI。 HTTP请求">
+<meta name="twitter:image" content="https://segmentfault.com/img/bVsRvt">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -71,14 +73,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-构造函数的继承" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-http协议" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/17/构造函数的继承/" class="article-date">
-  <time datetime="2018-05-17T02:15:58.000Z" itemprop="datePublished">2018-05-17</time>
+    <a href="/2018/06/29/http协议/" class="article-date">
+  <time datetime="2018-06-29T02:52:18.000Z" itemprop="datePublished">2018-06-29</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/JS高级/">JS高级</a>
+    <a class="article-category-link" href="/categories/辅助/">辅助</a>
   </div>
 
   </div>
@@ -89,7 +91,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      构造函数的继承
+      http协议
     </h1>
   
 
@@ -97,21 +99,63 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.species = <span class="string">'动物'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name,color</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如何使Cat()继承Animal()???<br>如果Cat()的prototype对象，指向一个Animal()的实例，那么所有Cat()的实例，就能继承Animal()</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure>
-<h3 id="line1"><a href="#line1" class="headerlink" title="line1"></a>line1</h3><p>将Cat的prototype对象指向了一个Animal()的实例，它相当于完全删除了prototype对象原先的值，然后赋予一个新值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是Cat原先的prototype对象</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">constructor</span>: Cat,</span><br><span class="line">  // 任何一个prototype对象都有一个<span class="keyword">constructor</span>属性，指向它的构造函数</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 指向Animal()实例后的新prototype对象</span><br><span class="line">&#123;</span><br><span class="line">  species: <span class="string">'动物'</span>,</span><br><span class="line">  prototype: &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: Animal</span><br><span class="line">  &#125;</span><br><span class="line">  // 每一个实例也有一个<span class="keyword">constructor</span>属性，默认调用prototype对象的<span class="keyword">constructor</span>属性</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="line2"><a href="#line2" class="headerlink" title="line2"></a>line2</h3><p>此时Cat()的实例的<strong> constructor </strong>会指向 Animal()，会导致继承链的紊乱，需要手动纠正</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果替换了prototype对象</span></span><br><span class="line">o.prototype = &#123;&#125;;</span><br><span class="line"><span class="comment">// 下一步必然是为新的prototype对象加上constructor属性，并将这个属性指回原来的构造函数。</span></span><br><span class="line">o.prototype.constructor = o;</span><br></pre></td></tr></table></figure>
+        <h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><p>客户端和服务端进行数据传输的一种规则</p>
+<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p>http url包含了用于查找某个资源的详细信息,格式如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://host[&quot;:&quot;port][abs_path]</span><br></pre></td></tr></table></figure></p>
+<p>http表示要通过HTTP协议来定位网络资源，<br>host表示合法的Internet主机域名或者IP地址，<br>port指定一个端口号，为空则使用缺省端口80，<br>abs_path指定请求资源的URI。</p>
+<h2 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><p><img src="https://segmentfault.com/img/bVsRvt" alt="HTTP请求"></p>
+<h3 id="请求行"><a href="#请求行" class="headerlink" title="请求行"></a>请求行</h3><p>请求行由请求方法，URL字段和HTTP协议版本三部分构成，总的来说请求行就是定义了本次请求的请求方式，请求的地址，以及所遵循的HTTP协议版本例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /example.html HTTP/1.1 (CRLF)</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>请求获取Request-URI所标识的资源</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>在Request-URI所标识的资源后附加新的数据</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>请求获取由Request-URI所标识的资源的响应消息报头</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>请求服务器存储一个资源，并用Request-URI作为其标识</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>请求服务器删除Request-URI所标识的资源</td>
+</tr>
+<tr>
+<td>TRACE</td>
+<td>请求服务器回送收到的请求信息，主要用于测试或诊断</td>
+</tr>
+<tr>
+<td>CONNECT</td>
+<td>保留将来使用</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>请求查询服务器的性能，或者查询与资源相关的选项和需求</td>
+</tr>
+</tbody>
+</table>
+<h3 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h3><p>请求头由一系列的键值对组成，允许客户端向服务器端发送一些附加信息或者客户端自身的信息<br>| 信息        |  描述  |举例|<br>| ——–   | ——– | ——|<br>| Accept | 指定客户端接受哪些类型的信息|Accept：image/gif，表明客户端希望接受GIF图象格式的资源|<br>|Accept-Charset|指定客户端接受的字符集|Accept-Charset:iso-8859-1,gb2312.如果在请求消息中没有设置这个域，缺省是任何字符集都可以接受|<br>|Accept-Encoding|类似于Accept，但是它是用于指定可接受的内容编码|Accept-Encoding:gzip.deflate.如果请求消息中没有设置这个域服务器假定客户端对各种内容编码都可以接受|<br>|Accept-Language|类似于Accept，但是它是用于指定一种自然语言|Accept-Language:zh-cn.如果请求消息中没有设置这个报头域，服务器假定客户端对各种语言都可以接受|<br>|Authorization|用于证明客户端有权查看某个资源。当浏览器访问一个页面时，如果收到服务器的响应代码为401（未授权），可以发送一个包含Authorization请求报头域的请求，要求服务器对其进行验证|<br>|Host|发送请求时，该报头域是必需的,Host请求报头域主要用于指定被请求资源的Internet主机和端口号，它通常从HTTP URL中提取出来的<br>|User-Agent|我们上网登陆论坛的时候，往往会看到一些欢迎信息，其中列出了你的操作系统的名称和版本，你所使用的浏览器的名称和版本，这往往让很多人感到很神奇，实际上，服务器应用程序就是从User-Agent这个请求报头域中获取到这些信息。User-Agent请求报头域允许客户端将它的操作系统、浏览器和其它属性告诉服务器。不过，这个报头域不是必需的，如果我们自己编写一个浏览器，不使用User-Agent请求报头域，那么服务器端就无法得知我们的信息了</p>
+<h3 id="请求正文"><a href="#请求正文" class="headerlink" title="请求正文"></a>请求正文</h3><p>只有在发送post请求时才会有请求正文，get方法并没有请求正文</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/17/构造函数的继承/" data-id="cjizfceys000yn8qnkn5epwzv" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/06/29/http协议/" data-id="cjizfceyj000rn8qnu1s7jcus" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
 
     </footer>
   </div>
@@ -119,19 +163,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/05/17/JS模块化/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          JS模块化
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/16/prototype的设定由来/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/05/24/webpack入门/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">prototype的设定由来</div>
+      <div class="article-nav-title">webpack入门</div>
     </a>
   
 </nav>
