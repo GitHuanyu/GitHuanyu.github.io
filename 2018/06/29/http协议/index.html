@@ -16,7 +16,7 @@
 <meta property="og:description" content="HTTP协议客户端和服务端进行数据传输的一种规则 URLhttp url包含了用于查找某个资源的详细信息,格式如下1http://host[&amp;quot;:&amp;quot;port][abs_path] http表示要通过HTTP协议来定位网络资源，host表示合法的Internet主机域名或者IP地址，port指定一个端口号，为空则使用缺省端口80，abs_path指定请求资源的URI。 HTTP请求">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://segmentfault.com/img/bVsRvt">
-<meta property="og:updated_time" content="2018-06-29T02:53:59.806Z">
+<meta property="og:updated_time" content="2018-06-29T03:53:44.531Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="http协议">
 <meta name="twitter:description" content="HTTP协议客户端和服务端进行数据传输的一种规则 URLhttp url包含了用于查找某个资源的详细信息,格式如下1http://host[&amp;quot;:&amp;quot;port][abs_path] http表示要通过HTTP协议来定位网络资源，host表示合法的Internet主机域名或者IP地址，port指定一个端口号，为空则使用缺省端口80，abs_path指定请求资源的URI。 HTTP请求">
@@ -146,7 +146,52 @@
 </tr>
 </tbody>
 </table>
-<h3 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h3><p>请求头由一系列的键值对组成，允许客户端向服务器端发送一些附加信息或者客户端自身的信息<br>| 信息        |  描述  |举例|<br>| ——–   | ——– | ——|<br>| Accept | 指定客户端接受哪些类型的信息|Accept：image/gif，表明客户端希望接受GIF图象格式的资源|<br>|Accept-Charset|指定客户端接受的字符集|Accept-Charset:iso-8859-1,gb2312.如果在请求消息中没有设置这个域，缺省是任何字符集都可以接受|<br>|Accept-Encoding|类似于Accept，但是它是用于指定可接受的内容编码|Accept-Encoding:gzip.deflate.如果请求消息中没有设置这个域服务器假定客户端对各种内容编码都可以接受|<br>|Accept-Language|类似于Accept，但是它是用于指定一种自然语言|Accept-Language:zh-cn.如果请求消息中没有设置这个报头域，服务器假定客户端对各种语言都可以接受|<br>|Authorization|用于证明客户端有权查看某个资源。当浏览器访问一个页面时，如果收到服务器的响应代码为401（未授权），可以发送一个包含Authorization请求报头域的请求，要求服务器对其进行验证|<br>|Host|发送请求时，该报头域是必需的,Host请求报头域主要用于指定被请求资源的Internet主机和端口号，它通常从HTTP URL中提取出来的<br>|User-Agent|我们上网登陆论坛的时候，往往会看到一些欢迎信息，其中列出了你的操作系统的名称和版本，你所使用的浏览器的名称和版本，这往往让很多人感到很神奇，实际上，服务器应用程序就是从User-Agent这个请求报头域中获取到这些信息。User-Agent请求报头域允许客户端将它的操作系统、浏览器和其它属性告诉服务器。不过，这个报头域不是必需的，如果我们自己编写一个浏览器，不使用User-Agent请求报头域，那么服务器端就无法得知我们的信息了</p>
+<h3 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h3><p>请求头由一系列的键值对组成，允许客户端向服务器端发送一些附加信息或者客户端自身的信息</p>
+<table>
+<thead>
+<tr>
+<th>信息</th>
+<th>描述</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accept</td>
+<td>指定客户端接受哪些类型的信息</td>
+<td>Accept：image/gif，表明客户端希望接受GIF图象格式的资源</td>
+</tr>
+<tr>
+<td>Accept-Charset</td>
+<td>指定客户端接受的字符集</td>
+<td>Accept-Charset:iso-8859-1,gb2312.如果在请求消息中没有设置这个域，缺省是任何字符集都可以接受</td>
+</tr>
+<tr>
+<td>Accept-Encoding</td>
+<td>类似于Accept，但是它是用于指定可接受的内容编码</td>
+<td>Accept-Encoding:gzip.deflate.如果请求消息中没有设置这个域服务器假定客户端对各种内容编码都可以接受</td>
+</tr>
+<tr>
+<td>Accept-Language</td>
+<td>类似于Accept，但是它是用于指定一种自然语言</td>
+<td>Accept-Language:zh-cn.如果请求消息中没有设置这个报头域，服务器假定客户端对各种语言都可以接受</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>用于证明客户端有权查看某个资源。当浏览器访问一个页面时，如果收到服务器的响应代码为401（未授权），可以发送一个包含Authorization请求报头域的请求，要求服务器对其进行验证</td>
+<td></td>
+</tr>
+<tr>
+<td>Host</td>
+<td>发送请求时，该报头域是必需的,Host请求报头域主要用于指定被请求资源的Internet主机和端口号，它通常从HTTP URL中提取出来的</td>
+<td></td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>我们上网登陆论坛的时候，往往会看到一些欢迎信息，其中列出了你的操作系统的名称和版本，你所使用的浏览器的名称和版本，这往往让很多人感到很神奇，实际上，服务器应用程序就是从User-Agent这个请求报头域中获取到这些信息。User-Agent请求报头域允许客户端将它的操作系统、浏览器和其它属性告诉服务器。不过，这个报头域不是必需的，如果我们自己编写一个浏览器，不使用User-Agent请求报头域，那么服务器端就无法得知我们的信息了</td>
+</tr>
+</tbody>
+</table>
 <h3 id="请求正文"><a href="#请求正文" class="headerlink" title="请求正文"></a>请求正文</h3><p>只有在发送post请求时才会有请求正文，get方法并没有请求正文</p>
 
       
