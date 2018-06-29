@@ -5,20 +5,20 @@
   
 
   
-  <title>VUE计算属性 | Hexo</title>
+  <title>词法分析 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="computed12345678910111213var vm = new Vue(&amp;#123;  el: &apos;#app&apos;,  data: &amp;#123;    message: &apos;Runoob!&apos;  &amp;#125;,  computed: &amp;#123;    // 计算属性的 getter    reversedMessage: function () &amp;#123;      // `this` 指向">
+  <meta name="description" content="简介JS的代码运行，分为词法分析期和自上而下的运行期词法分析期分为三个部分1.分析参数2.分析变量声明3.分析函数声明 0.函数运行的瞬间生成一个空的活动对象(Active Object)， AO = {} 1.分析参数a.函数接收形参，添加到AO的属性之中，值为undefinedb.接收实参，添加到AO的属性之中，覆盖undefined123456789// 因为js的函数可以定义的形参和传递的">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VUE计算属性">
-<meta property="og:url" content="https://githuanyu.github.io/2018/05/22/VUE计算属性/index.html">
+<meta property="og:title" content="词法分析">
+<meta property="og:url" content="https://githuanyu.github.io/2018/06/29/词法分析/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="computed12345678910111213var vm = new Vue(&amp;#123;  el: &apos;#app&apos;,  data: &amp;#123;    message: &apos;Runoob!&apos;  &amp;#125;,  computed: &amp;#123;    // 计算属性的 getter    reversedMessage: function () &amp;#123;      // `this` 指向">
+<meta property="og:description" content="简介JS的代码运行，分为词法分析期和自上而下的运行期词法分析期分为三个部分1.分析参数2.分析变量声明3.分析函数声明 0.函数运行的瞬间生成一个空的活动对象(Active Object)， AO = {} 1.分析参数a.函数接收形参，添加到AO的属性之中，值为undefinedb.接收实参，添加到AO的属性之中，覆盖undefined123456789// 因为js的函数可以定义的形参和传递的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-22T02:30:05.558Z">
+<meta property="og:updated_time" content="2018-06-29T07:25:06.994Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VUE计算属性">
-<meta name="twitter:description" content="computed12345678910111213var vm = new Vue(&amp;#123;  el: &apos;#app&apos;,  data: &amp;#123;    message: &apos;Runoob!&apos;  &amp;#125;,  computed: &amp;#123;    // 计算属性的 getter    reversedMessage: function () &amp;#123;      // `this` 指向">
+<meta name="twitter:title" content="词法分析">
+<meta name="twitter:description" content="简介JS的代码运行，分为词法分析期和自上而下的运行期词法分析期分为三个部分1.分析参数2.分析变量声明3.分析函数声明 0.函数运行的瞬间生成一个空的活动对象(Active Object)， AO = {} 1.分析参数a.函数接收形参，添加到AO的属性之中，值为undefinedb.接收实参，添加到AO的属性之中，覆盖undefined123456789// 因为js的函数可以定义的形参和传递的">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -71,14 +71,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-VUE计算属性" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-词法分析" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/22/VUE计算属性/" class="article-date">
-  <time datetime="2018-05-22T02:24:30.000Z" itemprop="datePublished">2018-05-22</time>
+    <a href="/2018/06/29/词法分析/" class="article-date">
+  <time datetime="2018-06-29T05:53:54.000Z" itemprop="datePublished">2018-06-29</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/VUE/">VUE</a>
+    <a class="article-category-link" href="/categories/JS高级/">JS高级</a>
   </div>
 
   </div>
@@ -89,7 +89,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      VUE计算属性
+      词法分析
     </h1>
   
 
@@ -97,14 +97,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">'Runoob!'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// 计算属性的 getter</span></span><br><span class="line">    reversedMessage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// `this` 指向 vm 实例</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>声明了一个计算属性 reversedMessage 。<br>提供的函数将用作属性 vm.reversedMessage 的 getter 。<br>vm.reversedMessage 依赖于 vm.message，在 vm.message 发生改变时，vm.reversedMessage 也会更新。</p>
-<p>我们可以使用 methods 来替代 computed，效果上两个都是一样的，但是 computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。<br>而使用 methods ，在重新渲染的时候，函数总会重新调用执行。</p>
-
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>JS的代码运行，分为词法分析期和自上而下的运行期<br>词法分析期分为三个部分<br>1.分析参数<br>2.分析变量声明<br>3.分析函数声明</p>
+<h3 id="0-函数运行的瞬间"><a href="#0-函数运行的瞬间" class="headerlink" title="0.函数运行的瞬间"></a>0.函数运行的瞬间</h3><p>生成一个空的活动对象(Active Object)， AO = {}</p>
+<h3 id="1-分析参数"><a href="#1-分析参数" class="headerlink" title="1.分析参数"></a>1.分析参数</h3><p>a.函数接收<strong>形参</strong>，添加到AO的属性之中，值为undefined<br>b.接收<strong>实参</strong>，添加到AO的属性之中，覆盖undefined<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 因为js的函数可以定义的形参和传递的实参个数之间可以不相等</span><br><span class="line">function foo(a, b)&#123;&#125;</span><br><span class="line">foo(123)</span><br><span class="line"></span><br><span class="line">那么此时的</span><br><span class="line">AO = &#123;</span><br><span class="line">    a: 123,</span><br><span class="line">    b: undefined</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-分析变量声明"><a href="#2-分析变量声明" class="headerlink" title="2.分析变量声明"></a>2.分析变量声明</h3><p>比如var age = 123<br>a.如果分析参数时，AO还没有age属性，则AO.age = undefined<br>b.如果AO已经有了age属性，则不做任何修改</p>
+<h3 id="3分析函数声明"><a href="#3分析函数声明" class="headerlink" title="3分析函数声明"></a>3分析函数声明</h3><p>a.如果有function age(){}，则把函数赋给AO.age，覆盖上一步分析的值</p>
+<h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">function func(age) &#123;</span><br><span class="line">    console.log(age);</span><br><span class="line">    var age = 25;</span><br><span class="line">    console.log(age);</span><br><span class="line">    function age() &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(age);</span><br><span class="line">&#125;</span><br><span class="line">func(18);</span><br><span class="line"></span><br><span class="line">// 0</span><br><span class="line">&#123;&#125;</span><br><span class="line"> </span><br><span class="line">// 1 参数，形参，实参 </span><br><span class="line">&#123;</span><br><span class="line">    age: undefined</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    age: 18</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 2 变量 有 无</span><br><span class="line">&#123;</span><br><span class="line">    age: 18</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 3 函数 覆盖</span><br><span class="line">&#123;</span><br><span class="line">    age: function age()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://githuanyu.github.io/2018/05/22/VUE计算属性/" data-id="cjizfhyqv0000psqn6hoy64zs" class="article-share-link">Share</a>
+      <a data-url="https://githuanyu.github.io/2018/06/29/词法分析/" data-id="cjizkba7p0000lwqn9sn79pt9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -115,19 +117,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/05/23/jquery-form/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/06/29/前端性能优化/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          jquery-form
+          前端性能优化
         
       </div>
     </a>
   
   
-    <a href="/2018/05/18/VUE生命周期/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/06/29/http协议/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">VUE生命周期</div>
+      <div class="article-nav-title">http协议</div>
     </a>
   
 </nav>
