@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://githuanyu.github.io/page/3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+          <a class="main-nav-link" href="/categories">分类</a>
+        
+          <a class="main-nav-link" href="/tags">标签</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://githuanyu.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-JS模块化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/17/JS模块化/" class="article-date">
+  <time datetime="2018-05-17T09:01:24.000Z" itemprop="datePublished">2018-05-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS高级/">JS高级</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/17/JS模块化/">JS模块化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ES6在语言规格的层面上，实现了模块功能，而且实现得相当简单，完全可以取代现有的CommonJS和AMD规范，成为浏览器和服务器通用的模块解决方案。</p>
+<p>ES6模块主要有两个功能：export和import</p>
+<p>export用于对外输出本模块（一个文件可以理解为一个模块）变量的接口</p>
+<p>import用于在一个模块中加载另一个含有export接口的模块。</p>
+<h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><h3 id="1-使用大括号指定所要输出的一组变量"><a href="#1-使用大括号指定所要输出的一组变量" class="headerlink" title="1.使用大括号指定所要输出的一组变量"></a>1.使用大括号指定所要输出的一组变量</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// profile.js</span></span><br><span class="line"><span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">var</span> year = <span class="number">1958</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;firstName, lastName, year&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="2-输出函数或类"><a href="#2-输出函数或类" class="headerlink" title="2.输出函数或类"></a>2.输出函数或类</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// profile.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><h3 id="1-单独加载"><a href="#1-单独加载" class="headerlink" title="1.单独加载"></a>1.单独加载</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;firstName, lastName, year&#125; <span class="keyword">from</span> <span class="string">'./profile.js'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;foo&#125; <span class="keyword">from</span> <span class="string">'my_module'</span>;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<h3 id="2-整体加载"><a href="#2-整体加载" class="headerlink" title="2.整体加载"></a>2.整体加载</h3><p>即用星号（*）指定一个对象，所有输出值都加载在这个对象上面。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// circle.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">area</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.PI * radius * radius;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">circumference</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">2</span> * <span class="built_in">Math</span>.PI * radius;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//////////////</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> circle <span class="keyword">from</span> <span class="string">'./circle'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆面积：'</span> + circle.area(<span class="number">4</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆周长：'</span> + circle.circumference(<span class="number">14</span>));</span><br></pre></td></tr></table></figure>
+<h2 id="export-default"><a href="#export-default" class="headerlink" title="export default"></a>export default</h2><p>其他模块加载该模块时，import命令可以为该匿名函数指定任意名字<br>这时import命令后面，不使用大括号<br>一个模块只能有一个默认输出</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// export-default.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// import-default.js</span></span><br><span class="line"><span class="keyword">import</span> customName <span class="keyword">from</span> <span class="string">'./export-default'</span>;</span><br><span class="line">customName(); <span class="comment">// 'foo'</span></span><br></pre></td></tr></table></figure>
+<p>export default也可以用来输出类<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MyClass.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> </span>&#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> MyClass <span class="keyword">from</span> <span class="string">'MyClass'</span>;</span><br><span class="line"><span class="keyword">let</span> o = <span class="keyword">new</span> MyClass();</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://githuanyu.github.io/2018/05/17/JS模块化/" data-id="cjj3kxrra0005fgqnli3ypzt7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-构造函数的继承" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/17/构造函数的继承/" class="article-date">
+  <time datetime="2018-05-17T02:15:58.000Z" itemprop="datePublished">2018-05-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS高级/">JS高级</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/17/构造函数的继承/">构造函数的继承</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.species = <span class="string">'动物'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name,color</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如何使Cat()继承Animal()???<br>如果Cat()的prototype对象，指向一个Animal()的实例，那么所有Cat()的实例，就能继承Animal()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure>
+<h3 id="line1"><a href="#line1" class="headerlink" title="line1"></a>line1</h3><p>将Cat的prototype对象指向了一个Animal()的实例，它相当于完全删除了prototype对象原先的值，然后赋予一个新值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是Cat原先的prototype对象</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">constructor</span>: Cat,</span><br><span class="line">  // 任何一个prototype对象都有一个<span class="keyword">constructor</span>属性，指向它的构造函数</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 指向Animal()实例后的新prototype对象</span><br><span class="line">&#123;</span><br><span class="line">  species: <span class="string">'动物'</span>,</span><br><span class="line">  prototype: &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: Animal</span><br><span class="line">  &#125;</span><br><span class="line">  // 每一个实例也有一个<span class="keyword">constructor</span>属性，默认调用prototype对象的<span class="keyword">constructor</span>属性</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="line2"><a href="#line2" class="headerlink" title="line2"></a>line2</h3><p>此时Cat()的实例的<strong> constructor </strong>会指向 Animal()，会导致继承链的紊乱，需要手动纠正</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果替换了prototype对象</span></span><br><span class="line">o.prototype = &#123;&#125;;</span><br><span class="line"><span class="comment">// 下一步必然是为新的prototype对象加上constructor属性，并将这个属性指回原来的构造函数。</span></span><br><span class="line">o.prototype.constructor = o;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://githuanyu.github.io/2018/05/17/构造函数的继承/" data-id="cjj3kxrud001pfgqncpacqijw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-prototype的设定由来" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/16/prototype的设定由来/" class="article-date">
+  <time datetime="2018-05-16T09:30:08.000Z" itemprop="datePublished">2018-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS高级/">JS高级</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/16/prototype的设定由来/">prototype的设定由来</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在js语言中，new命令之后跟的不是类，而是构造函数</p>
+<p>对构造函数使用 <strong>new</strong>，会生成一个对象的实例</p>
+<p>构造函数中的 <strong>this</strong> 关键字，它代表新创建的实例对象</p>
+<p>但是用构造函数生成实例对象，有一个缺点，就是无法共享属性和方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">this</span>.name = name;</span><br><span class="line">   <span class="keyword">this</span>.species = <span class="string">'犬科'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dogA = <span class="keyword">new</span> Dog(<span class="string">'AA'</span>);</span><br><span class="line"><span class="keyword">var</span> dogB = <span class="keyword">new</span> Dog(<span class="string">'BB'</span>);</span><br><span class="line"></span><br><span class="line">dogA.species = <span class="string">'猫科'</span>;</span><br><span class="line">alert(dogB.species);  <span class="comment">//显示 犬科，而不会受到dogA的影响</span></span><br></pre></td></tr></table></figure>
+<p>此时dogA和dogB会自动含有一个 <strong>constructor</strong> 属性，指向它们的构造函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dogA.constructot == Dog</span><br></pre></td></tr></table></figure></p>
+<p>考虑到这一点，构造函数有了一个 <strong>prototype</strong> 属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Dog.prototype = &#123; <span class="attr">species</span> : <span class="string">'犬科'</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dogA = <span class="keyword">new</span> Dog(<span class="string">'大毛'</span>);</span><br><span class="line"><span class="keyword">var</span> dogB = <span class="keyword">new</span> Dog(<span class="string">'二毛'</span>);</span><br><span class="line"></span><br><span class="line">alert(dogA.species); <span class="comment">// 犬科</span></span><br><span class="line">alert(dogB.species); <span class="comment">// 犬科</span></span><br></pre></td></tr></table></figure>
+<p>这个属性包含一个对象（以下简称”prototype对象”），所有实例对象需要共享的属性和方法，都放在这个对象里面；那些不需要共享的属性和方法，就放在构造函数里面。</p>
+<p>实例对象一旦创建，将自动引用prototype对象的属性和方法。也就是说，实例对象的属性和方法，分成两种，一种是本地的，另一种是引用的。</p>
+<p>现在，species属性放在prototype对象里，是两个实例对象共享的。只要修改了prototype对象，就会同时影响到两个实例对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Dog.prototype.species = <span class="string">'猫科'</span>;</span><br><span class="line">Dog.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="string">'我在吃'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(dogA.species); <span class="comment">// 猫科</span></span><br><span class="line">alert(dogB.species); <span class="comment">// 猫科</span></span><br></pre></td></tr></table></figure>
+<p>此时实例中的species属性和eat()方法，其实都是一个内存地址，指向prototype对象，因此提高了运行效率</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://githuanyu.github.io/2018/05/16/prototype的设定由来/" data-id="cjj3kxrty001mfgqnr1c7tkbv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-animateCss" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/16/animateCss/" class="article-date">
+  <time datetime="2018-05-16T05:47:25.000Z" itemprop="datePublished">2018-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS插件/">JS插件</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/16/animateCss/">animateCss</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-cross-browser-library-of-CSS-animations"><a href="#A-cross-browser-library-of-CSS-animations" class="headerlink" title="A cross-browser library of CSS animations"></a>A cross-browser library of CSS animations</h2><p><a href="https://github.com/daneden/animate.css" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/daneden/animate.css" target="_blank" rel="noopener">https://github.com/daneden/animate.css</a></p>
+<p><a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">演示地址</a><br><a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">https://daneden.github.io/animate.css/</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//为元素添加动画效果</span></span><br><span class="line">$(<span class="string">'#yourElement'</span>).addClass(<span class="string">'animated bounceOutLeft'</span>);</span><br><span class="line">or</span><br><span class="line">$(<span class="string">'#yourElement'</span>).animateCss(<span class="string">'bounce'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加动画执行之后的回调</span></span><br><span class="line">$(<span class="string">'#yourElement'</span>).animateCss(<span class="string">'bounce'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Do somthing after animation</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//调整动画执行的参数</span></span><br><span class="line">#yourElement &#123;</span><br><span class="line">    <span class="comment">//持续时间</span></span><br><span class="line">  -vendor-animation-duration: <span class="number">3</span>s;</span><br><span class="line">    <span class="comment">//延迟多久后执行</span></span><br><span class="line">  -vendor-animation-delay: <span class="number">2</span>s;</span><br><span class="line">    <span class="comment">//执行次数</span></span><br><span class="line">  -vendor-animation-iteration-count: infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://githuanyu.github.io/2018/05/16/animateCss/" data-id="cjj40c76a003bfgqnxxzcmsm1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Notyf" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/16/Notyf/" class="article-date">
+  <time datetime="2018-05-16T03:28:05.000Z" itemprop="datePublished">2018-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS插件/">JS插件</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/16/Notyf/">Notyf</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Notyf-is-a-dead-simple-responsive-vanilla-javascript-notification-plugin-No-jQuery-required"><a href="#Notyf-is-a-dead-simple-responsive-vanilla-javascript-notification-plugin-No-jQuery-required" class="headerlink" title="Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required."></a>Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required.</h2><p><a href="https://github.com/caroso1222/notyf" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/caroso1222/notyf" target="_blank" rel="noopener">https://github.com/caroso1222/notyf</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实例化</span></span><br><span class="line"><span class="keyword">var</span> notyf = <span class="keyword">new</span> Notyf();</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化传入配置参数</span></span><br><span class="line"><span class="keyword">var</span> notyf = <span class="keyword">new</span> Notyf(&#123;</span><br><span class="line">  delay:<span class="number">1000</span>,</span><br><span class="line">  alertIcon: <span class="string">'fa fa-exclamation-circle'</span>,</span><br><span class="line">  confirmIcon: <span class="string">'fa fa-check-circle'</span>  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//警告弹框，红色</span></span><br><span class="line">notyf.alert(<span class="string">'aaa'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//通知弹框，绿色</span></span><br><span class="line">notyf.confirm(<span class="string">'bbb'</span>);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://githuanyu.github.io/2018/05/16/Notyf/" data-id="cjj3kxrqu0004fgqnkiaabpi0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-jqPaginator" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/16/jqPaginator/" class="article-date">
+  <time datetime="2018-05-16T03:05:47.000Z" itemprop="datePublished">2018-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS插件/">JS插件</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/16/jqPaginator/">jqPaginator</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基于jquery的分页组件"><a href="#基于jquery的分页组件" class="headerlink" title="基于jquery的分页组件"></a>基于jquery的分页组件</h2><p><a href="https://github.com/keenwon/jqPaginator" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/keenwon/jqPaginator" target="_blank" rel="noopener">https://github.com/keenwon/jqPaginator</a></p>
+<p><a href="http://jqpaginator.keenwon.com/" target="_blank" rel="noopener">演示地址</a><br><a href="http://jqpaginator.keenwon.com/" target="_blank" rel="noopener">http://jqpaginator.keenwon.com/</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"pagination"</span> id=<span class="string">"pagination"</span>&gt;&lt;/ul&gt;</span><br><span class="line">$(<span class="string">'#pagination'</span>).jqPaginator(&#123;</span><br><span class="line">	totalPages: <span class="number">100</span>,</span><br><span class="line">	visiblePages: <span class="number">10</span>,</span><br><span class="line">	currentPage: <span class="number">1</span>,</span><br><span class="line">	onPageChange: <span class="function"><span class="keyword">function</span>(<span class="params">num, type</span>) </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://githuanyu.github.io/2018/05/16/jqPaginator/" data-id="cjj3kxrsn000wfgqnbqldarpa" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/15/hexo命令/" class="article-date">
+  <time datetime="2018-05-15T08:10:21.000Z" itemprop="datePublished">2018-05-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/15/hexo命令/">hexo命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line"></span><br><span class="line">npm install hexo --save</span><br><span class="line"></span><br><span class="line">hexo init</span><br><span class="line">//进入空白文件夹搭建脚手架，生成hexo项目框架</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line">//generate新的文件关系</span><br><span class="line"></span><br><span class="line">hexo s</span><br><span class="line">//server本地展示</span><br><span class="line"></span><br><span class="line">hexo s -g</span><br><span class="line">//在本地服务演示前先生成</span><br><span class="line"></span><br><span class="line">hexo d  </span><br><span class="line">// 部署到github.io</span><br><span class="line"></span><br><span class="line">hexo d -g</span><br><span class="line">//在部署前先生成</span><br><span class="line"></span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">//安装扩展，否则 deloyer not found:git</span><br><span class="line"></span><br><span class="line">hexo new post &quot;articleName&quot;</span><br><span class="line">//发布新文章</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://githuanyu.github.io/2018/05/15/hexo命令/" data-id="cjj3kxrrs000cfgqnq0nqtp5v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cmd/">cmd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS插件/">JS插件</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS高级/">JS高级</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VUE/">VUE</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/辅助/">辅助</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jQuery/" style="font-size: 13.33px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/web/" style="font-size: 16.67px;">web</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">13</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/02/封装和继承/">封装和继承</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/02/Function对象/">Function对象</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/02/setter和getter/">setter和getter</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/02/arguments,caller和callee/">arguments,caller和callee</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/02/AJAX/">AJAX</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 陈环宇<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+    <a href="/categories" class="mobile-nav-link">分类</a>
+  
+    <a href="/tags" class="mobile-nav-link">标签</a>
+  
+</nav>
+    
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
