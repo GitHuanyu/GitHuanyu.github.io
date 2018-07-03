@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo本地搜索]]></title>
+    <url>%2F2018%2F07%2F03%2Fhexo%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%2F</url>
+    <content type="text"><![CDATA[简介当文章越来越多的时候，通过分类和标签来找已经不合适了，需要提供一个本地的搜索功能在next主题下，搜索适用123456789101112npm install hexo-generator-searchdb --save//站点配置search: path: search.xml field: post format: html limit: 10000//主题配置local_search: enable: true]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>cmd</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[封装和继承]]></title>
     <url>%2F2018%2F07%2F02%2F%E5%B0%81%E8%A3%85%E5%92%8C%E7%BB%A7%E6%89%BF%2F</url>
     <content type="text"><![CDATA[封装123456789101112131415function Cat(name, color)&#123; this.name = name; this.color = color;&#125;var cat1 = new Cat('大毛', '黄色');var cat2 = new Cat('二毛', '黑色');console.log(cat1.name, cat1.color);console.log(cat1);console.log(cat1.constructor == Cat)console.log() 为了解决从原型对象生成实例的问题，Javascript提供了一个构造函数（Constructor）模式。所谓”构造函数”，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上。这时cat1和cat2会自动含有一个constructor属性，指向它们的构造函数。 继承1234567891011121314151617181920212223242526function Animal() &#123; this.species = "动物";&#125;function Cat(name, color) &#123; // Animal.apply(this, arguments); this.name = name; this.color = color;&#125;console.log(Cat.prototype.constructor);//2.prototype模式Cat.prototype = new Animal();console.log(Cat.prototype.constructor);console.log(new Animal())var cat1 = new Cat("大毛", "黄色");console.log(cat1.constructor)console.log(cat1.species) 对象之间的”继承”的五种方法。使用call或apply方法，将父对象的构造函数绑定在子对象上，即在子对象构造函数中加一行： Animal.apply(this, arguments);百度]]></content>
@@ -286,7 +298,7 @@
   <entry>
     <title><![CDATA[hexo命令]]></title>
     <url>%2F2018%2F05%2F15%2Fhexo%E5%91%BD%E4%BB%A4%2F</url>
-    <content type="text"><![CDATA[123456789101112131415161718192021222324252627npm install hexo-cli -gnpm install hexo --savehexo init//进入空白文件夹搭建脚手架，生成hexo项目框架hexo g//generate新的文件关系hexo s//server本地展示hexo s -g//在本地服务演示前先生成hexo d // 部署到github.iohexo d -g//在部署前先生成npm install hexo-deployer-git --save//安装扩展，否则 deloyer not found:githexo new post &quot;articleName&quot;//发布新文章]]></content>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930npm install hexo-cli -gnpm install hexo --savehexo init//进入空白文件夹搭建脚手架，生成hexo项目框架hexo g//generate新的文件关系hexo s//server本地展示hexo s -g//在本地服务演示前先生成hexo d // 部署到github.iohexo d -g//在部署前先生成npm install hexo-deployer-git --save//安装扩展，否则 deloyer not found:githexo new post &quot;articleName&quot;//发布新文章hexo clean//清除缓存]]></content>
       <categories>
         <category>hexo</category>
       </categories>
