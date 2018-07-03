@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="函数的角色函数本身会有一些自己的属性length:形参的个数name:函数名prototype：类的原型，在原型上定义的方法都是当前这个类的实例的公有方法__proto__:把函数当做一个普通对象，指向Function这个类的原型 1234567891011121314function Fn() &amp;#123;    var num = 500;    this.x = 100;&amp;#125;Fn.p">
+  <meta name="description" content="thisJavaScript 语言之所以有this的设计，跟内存里面的数据结构有关系。1var obj = &amp;#123; foo:  5 &amp;#125;; obj变量保存对象的内存地址，通过地址在内存中找到对象，从而取得对象的属性和方法问题在于属性也可能是一个方法1var obj = &amp;#123; foo: function () &amp;#123;&amp;#125; &amp;#125;; 此时函数又单独保存在内存中">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="this,call和apply">
 <meta property="og:url" content="https://githuanyu.github.io/2018/07/02/this,call和apply/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="函数的角色函数本身会有一些自己的属性length:形参的个数name:函数名prototype：类的原型，在原型上定义的方法都是当前这个类的实例的公有方法__proto__:把函数当做一个普通对象，指向Function这个类的原型 1234567891011121314function Fn() &amp;#123;    var num = 500;    this.x = 100;&amp;#125;Fn.p">
+<meta property="og:site_name" content="Developer">
+<meta property="og:description" content="thisJavaScript 语言之所以有this的设计，跟内存里面的数据结构有关系。1var obj = &amp;#123; foo:  5 &amp;#125;; obj变量保存对象的内存地址，通过地址在内存中找到对象，从而取得对象的属性和方法问题在于属性也可能是一个方法1var obj = &amp;#123; foo: function () &amp;#123;&amp;#125; &amp;#125;; 此时函数又单独保存在内存中">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-02T07:30:35.259Z">
+<meta property="og:updated_time" content="2018-07-03T08:35:34.788Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="this,call和apply">
-<meta name="twitter:description" content="函数的角色函数本身会有一些自己的属性length:形参的个数name:函数名prototype：类的原型，在原型上定义的方法都是当前这个类的实例的公有方法__proto__:把函数当做一个普通对象，指向Function这个类的原型 1234567891011121314function Fn() &amp;#123;    var num = 500;    this.x = 100;&amp;#125;Fn.p">
+<meta name="twitter:description" content="thisJavaScript 语言之所以有this的设计，跟内存里面的数据结构有关系。1var obj = &amp;#123; foo:  5 &amp;#125;; obj变量保存对象的内存地址，通过地址在内存中找到对象，从而取得对象的属性和方法问题在于属性也可能是一个方法1var obj = &amp;#123; foo: function () &amp;#123;&amp;#125; &amp;#125;; 此时函数又单独保存在内存中">
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>this,call和apply | Hexo</title>
+  <title>this,call和apply | Developer</title>
   
 
 
@@ -194,10 +194,14 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Developer</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
+      
+        <p class="site-subtitle">front end</p>
+      
     
   </div>
 
@@ -246,7 +250,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">5</span></a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">6</span></a>
   </li>
         
         
@@ -254,7 +258,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">28</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">30</span></a>
   </li>
 
       
@@ -345,7 +349,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Developer">
     </span>
 
     
@@ -378,12 +382,24 @@
                 
               
 
-              <time title="创建时间：2018-07-02 11:12:48 / 修改时间：15:30:35" itemprop="dateCreated datePublished" datetime="2018-07-02T11:12:48+08:00">2018-07-02</time>
+              <time title="创建时间：2018-07-02 11:12:48" itemprop="dateCreated datePublished" datetime="2018-07-02T11:12:48+08:00">2018-07-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-03 16:35:34" itemprop="dateModified" datetime="2018-07-03T16:35:34+08:00">2018-07-03</time>
               
             
           </span>
@@ -434,12 +450,16 @@
       
 
       
-        <h3 id="函数的角色"><a href="#函数的角色" class="headerlink" title="函数的角色"></a>函数的角色</h3><p>函数本身会有一些自己的属性<br>length:形参的个数<br>name:函数名<br>prototype：类的原型，在原型上定义的方法都是当前这个类的实例的公有方法<br>__proto__:把函数当做一个普通对象，指向Function这个类的原型</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">500</span>;</span><br><span class="line">    <span class="keyword">this</span>.x = <span class="number">100</span>;</span><br><span class="line">&#125;</span><br><span class="line">Fn.prototype.getX = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line">Fn.aaa = <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> Fn;</span><br><span class="line"></span><br><span class="line">f.num <span class="comment">// undefined</span></span><br><span class="line">f.aaa <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> res = Fn(); <span class="comment">// res是undefined  Fn中的this是window</span></span><br></pre></td></tr></table></figure>
-<h2 id="1-普通函数"><a href="#1-普通函数" class="headerlink" title="1.普通函数"></a>1.普通函数</h2><p>对于Fn而言，它本身是一个普通的函数，执行的时候会形成私有的作用域，然后进行形参赋值、预解析、代码执行、执行完成后内存销毁</p>
-<h2 id="2-类"><a href="#2-类" class="headerlink" title="2.类"></a>2.类</h2><p>它有自己的实例，f就是Fn作为类而产生的一个实例，也有一个叫做prototype的属性是自己的原型，它的实例都可以指向自己的原型</p>
-<h2 id="3-普通对象"><a href="#3-普通对象" class="headerlink" title="3.普通对象"></a>3.普通对象</h2><p>Fn和 var obj = {} 中的obj一样，就是一个普通的对象（所有的函数都是Function的实例），它作为对象可以有一些自己的私有属性，也可以通过__proto__找到Function.prototype</p>
-<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>call和apply可以用来重新定义函数的执行环境，也就是this的指向<br>call 和 apply 都是为了改变某个函数运行时的<br>context 即上下文而存在的 换句话说，就是为了改变函数体内部 this 的指向。因为 JavaScript<br>的函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">fun.call(thisArg[arg1][arg2][arg3])</span><br><span class="line"></span><br><span class="line">thisArg：fun函数运行时指定的<span class="keyword">this</span>值，可能的值为：</span><br><span class="line"><span class="number">1.</span>不传，或者传<span class="literal">null</span>，<span class="literal">undefined</span>， <span class="keyword">this</span>指向<span class="built_in">window</span>对象</span><br><span class="line"><span class="number">2.</span>传递另一个函数的函数名fun2，<span class="keyword">this</span>指向函数fun2的引用</span><br><span class="line"><span class="number">3.</span>值为原始值(数字，字符串，布尔值),<span class="keyword">this</span>会指向该原始值的自动包装对象，如 <span class="built_in">String</span>、<span class="built_in">Number</span>、<span class="built_in">Boolean</span></span><br><span class="line"><span class="number">4.</span>传递一个对象，函数中的<span class="keyword">this</span>指向这个对象</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">A.call(B)</span><br><span class="line">B可以使用A的属性方法，继承了A</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b</span>)</span>&#123;  </span><br><span class="line">    alert(a+b);  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sub</span>(<span class="params">a,b</span>)</span>&#123;  </span><br><span class="line">    alert(a-b);  </span><br><span class="line">&#125;  </span><br><span class="line"> </span><br><span class="line">add.call(sub,<span class="number">1</span>,<span class="number">1</span>);  <span class="comment">//  结果是？  ‘2’  还是   ‘0’  呢</span></span><br></pre></td></tr></table></figure></p>
+        <h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>JavaScript 语言之所以有this的设计，跟内存里面的数据结构有关系。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">foo</span>:  <span class="number">5</span> &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>obj变量保存对象的内存地址，通过地址在内存中找到对象，从而取得对象的属性和方法<br>问题在于属性也可能是一个方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">foo</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125; &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>此时函数又单独保存在内存中，函数的地址赋给对象的属性</p>
+<p>由于函数是一个单独的值，所以可以在不同的环境中执行</p>
+<p>所以需要有一种机制，能够在函数体内部获得当前的运行环境（context）。</p>
+<p>所以，this就出现了，它的设计目的就是在函数体内部，指代函数当前的运行环境。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  foo: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="keyword">this</span>.bar) &#125;,</span><br><span class="line">  bar: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = obj.foo;</span><br><span class="line"><span class="keyword">var</span> bar = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">obj.foo() <span class="comment">// 1</span></span><br><span class="line">foo() <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p><strong>this：当前函数的拥有者</strong></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>call和apply可以用来重新定义函数的执行环境，也就是this的指向<br>call 和 apply 都是为了改变某个函数运行时的 context 即上下文而存在的<br>换句话说，就是为了改变函数体内部 this 的指向。<br>因为 JavaScript 的函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">fun.call(thisArg[arg1][arg2][arg3])</span><br><span class="line"></span><br><span class="line">thisArg：fun函数运行时指定的<span class="keyword">this</span>值，可能的值为：</span><br><span class="line"><span class="number">1.</span>不传，或者传<span class="literal">null</span>，<span class="literal">undefined</span>， <span class="keyword">this</span>指向<span class="built_in">window</span>对象</span><br><span class="line"><span class="number">2.</span>传递另一个函数的函数名fun2，<span class="keyword">this</span>指向函数fun2的引用</span><br><span class="line"><span class="number">3.</span>值为原始值(数字，字符串，布尔值),<span class="keyword">this</span>会指向该原始值的自动包装对象，如 <span class="built_in">String</span>、<span class="built_in">Number</span>、<span class="built_in">Boolean</span></span><br><span class="line"><span class="number">4.</span>传递一个对象，函数中的<span class="keyword">this</span>指向这个对象</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">A.call(B)</span><br><span class="line">B可以使用A的属性方法，继承了A</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b</span>)</span>&#123;  </span><br><span class="line">    alert(a+b);  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sub</span>(<span class="params">a,b</span>)</span>&#123;  </span><br><span class="line">    alert(a-b);  </span><br><span class="line">&#125;  </span><br><span class="line"> </span><br><span class="line">add.call(sub,<span class="number">1</span>,<span class="number">1</span>);  <span class="comment">//  结果是？  ‘2’  还是   ‘0’  呢</span></span><br></pre></td></tr></table></figure>
 <p>call()就是用来让括号里的对象 来集成括号外的函数的属性！可以称之为继承！<br>apply()方法 接收两个参数，一个是函数运行的作用域（this），另一个是参数数组。</p>
 
       
@@ -560,7 +580,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -583,7 +603,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -642,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的角色"><span class="nav-number">1.</span> <span class="nav-text">函数的角色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-普通函数"><span class="nav-number"></span> <span class="nav-text">1.普通函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-类"><span class="nav-number"></span> <span class="nav-text">2.类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-普通对象"><span class="nav-number"></span> <span class="nav-text">3.普通对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">1.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a></li></ol></div>
             
 
           </div>
@@ -676,11 +698,7 @@
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
-
-
-  <span class="post-meta-divider">|</span>
 
 
 
@@ -1167,6 +1185,75 @@
   
 
   
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
 
 </body>
 </html>

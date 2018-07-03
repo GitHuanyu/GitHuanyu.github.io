@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="1234567891011121314151617181920212223function foo(a)&amp;#123;    console.log(arguments);        console.log(a);&amp;#125;foo(&apos;hello&apos;, &apos;world&apos;, &apos;huan&apos;, &apos;yu&apos;);//js不会验证实参的个数 是否等于 形参的个数//函数可以接收任意个数的实参//遗漏的实参会以un">
+  <meta name="description" content="简介Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。1234567// 转码前input.map(item =&amp;gt; item + 1);// 转码后input.map(function (item) &amp;#123;  return item + 1;&amp;#125;) 1.配置文件.babelrc使用Babel的第一步，就是配置这个文件。该文件用来设置转码规则和">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="arguments,caller和callee">
-<meta property="og:url" content="https://githuanyu.github.io/2018/07/02/arguments,caller和callee/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1234567891011121314151617181920212223function foo(a)&amp;#123;    console.log(arguments);        console.log(a);&amp;#125;foo(&apos;hello&apos;, &apos;world&apos;, &apos;huan&apos;, &apos;yu&apos;);//js不会验证实参的个数 是否等于 形参的个数//函数可以接收任意个数的实参//遗漏的实参会以un">
+<meta property="og:title" content="babel入门">
+<meta property="og:url" content="https://githuanyu.github.io/2018/07/03/babel入门/index.html">
+<meta property="og:site_name" content="Developer">
+<meta property="og:description" content="简介Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。1234567// 转码前input.map(item =&amp;gt; item + 1);// 转码后input.map(function (item) &amp;#123;  return item + 1;&amp;#125;) 1.配置文件.babelrc使用Babel的第一步，就是配置这个文件。该文件用来设置转码规则和">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-02T08:18:54.079Z">
+<meta property="og:updated_time" content="2018-07-03T08:51:50.657Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="arguments,caller和callee">
-<meta name="twitter:description" content="1234567891011121314151617181920212223function foo(a)&amp;#123;    console.log(arguments);        console.log(a);&amp;#125;foo(&apos;hello&apos;, &apos;world&apos;, &apos;huan&apos;, &apos;yu&apos;);//js不会验证实参的个数 是否等于 形参的个数//函数可以接收任意个数的实参//遗漏的实参会以un">
+<meta name="twitter:title" content="babel入门">
+<meta name="twitter:description" content="简介Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。1234567// 转码前input.map(item =&amp;gt; item + 1);// 转码后input.map(function (item) &amp;#123;  return item + 1;&amp;#125;) 1.配置文件.babelrc使用Babel的第一步，就是配置这个文件。该文件用来设置转码规则和">
 
 
 
 
 
 
-  <link rel="canonical" href="https://githuanyu.github.io/2018/07/02/arguments,caller和callee/"/>
+  <link rel="canonical" href="https://githuanyu.github.io/2018/07/03/babel入门/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>arguments,caller和callee | Hexo</title>
+  <title>babel入门 | Developer</title>
   
 
 
@@ -194,10 +194,14 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Developer</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
+      
+        <p class="site-subtitle">front end</p>
+      
     
   </div>
 
@@ -246,7 +250,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">5</span></a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">6</span></a>
   </li>
         
         
@@ -254,7 +258,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">28</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">30</span></a>
   </li>
 
       
@@ -336,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/07/02/arguments,caller和callee/">
+    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/07/03/babel入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈环宇">
@@ -345,7 +349,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Developer">
     </span>
 
     
@@ -353,7 +357,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">arguments,caller和callee
+          <h1 class="post-title" itemprop="name headline">babel入门
               
             
           </h1>
@@ -378,7 +382,7 @@
                 
               
 
-              <time title="创建时间：2018-07-02 15:31:37 / 修改时间：16:18:54" itemprop="dateCreated datePublished" datetime="2018-07-02T15:31:37+08:00">2018-07-02</time>
+              <time title="创建时间：2018-07-03 16:37:23 / 修改时间：16:51:50" itemprop="dateCreated datePublished" datetime="2018-07-03T16:37:23+08:00">2018-07-03</time>
             
 
             
@@ -400,7 +404,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JS高级/" itemprop="url" rel="index"><span itemprop="name">JS高级</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ES6/" itemprop="url" rel="index"><span itemprop="name">ES6</span></a></span>
 
                 
                 
@@ -434,7 +438,16 @@
       
 
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="string">'hello'</span>, <span class="string">'world'</span>, <span class="string">'huan'</span>, <span class="string">'yu'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//js不会验证实参的个数 是否等于 形参的个数</span></span><br><span class="line"><span class="comment">//函数可以接收任意个数的实参</span></span><br><span class="line"><span class="comment">//遗漏的实参会以undefined传递给形参，多余的实参会被遗漏</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//可以通过arguments的作用来模拟函数重载</span></span><br><span class="line"><span class="comment">//使用arguments.length 来检测函数的参数个数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">arguments</span>.length == <span class="number">1</span>)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">arguments</span>.length == <span class="number">2</span>)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 转码前</span></span><br><span class="line">input.map(<span class="function"><span class="params">item</span> =&gt;</span> item + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 转码后</span></span><br><span class="line">input.map(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> item + <span class="number">1</span>;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-配置文件-babelrc"><a href="#1-配置文件-babelrc" class="headerlink" title="1.配置文件.babelrc"></a>1.配置文件.babelrc</h2><p>使用Babel的第一步，就是配置这个文件。<br>该文件用来设置转码规则和插件，基本格式如下。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"presets"</span>: [</span><br><span class="line">    <span class="string">"es2015"</span>,</span><br><span class="line">    <span class="string">"react"</span>,</span><br><span class="line">    <span class="string">"stage-2"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"plugins"</span>: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>presets字段设定转码规则，官方提供以下的规则集，你可以根据需要安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># ES2015转码规则</span><br><span class="line">$ npm install --save-dev babel-preset-es2015</span><br><span class="line"></span><br><span class="line"># react转码规则</span><br><span class="line">$ npm install --save-dev babel-preset-react</span><br><span class="line"></span><br><span class="line"># ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个</span><br><span class="line">$ npm install --save-dev babel-preset-stage-0</span><br><span class="line">$ npm install --save-dev babel-preset-stage-1</span><br><span class="line">$ npm install --save-dev babel-preset-stage-2</span><br><span class="line">$ npm install --save-dev babel-preset-stage-3</span><br></pre></td></tr></table></figure>
+<h2 id="2-命令行转码babel-cli"><a href="#2-命令行转码babel-cli" class="headerlink" title="2.命令行转码babel-cli"></a>2.命令行转码babel-cli</h2><p>Babel提供babel-cli工具，用于命令行转码。</p>
+<h2 id="3-babel-node"><a href="#3-babel-node" class="headerlink" title="3.babel-node"></a>3.babel-node</h2><p>babel-cli工具自带一个babel-node命令，提供一个支持ES6的REPL环境。它支持Node的REPL环境的所有功能，而且可以直接运行ES6代码。</p>
+<h2 id="4-babel-register"><a href="#4-babel-register" class="headerlink" title="4.babel-register"></a>4.babel-register</h2><p>babel-register模块改写require命令，为它加上一个钩子。此后，每当使用require加载.js、.jsx、.es和.es6后缀名的文件，就会先用Babel进行转码。</p>
+<h2 id="5-babel-core"><a href="#5-babel-core" class="headerlink" title="5.babel-core"></a>5.babel-core</h2><p>如果某些代码需要调用Babel的API进行转码，就要使用babel-core模块。</p>
+<h2 id="6-babel-polyfill"><a href="#6-babel-polyfill" class="headerlink" title="6.babel-polyfill"></a>6.babel-polyfill</h2><p>Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。<br>举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。</p>
+
       
     </div>
 
@@ -467,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/02/AJAX/" rel="next" title="AJAX">
-                <i class="fa fa-chevron-left"></i> AJAX
+              <a href="/2018/07/03/原型链/" rel="next" title="原型链">
+                <i class="fa fa-chevron-left"></i> 原型链
               </a>
             
           </div>
@@ -476,10 +489,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/02/setter和getter/" rel="prev" title="setter和getter">
-                setter和getter <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -528,8 +537,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -544,7 +562,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -567,7 +585,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -617,6 +637,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-配置文件-babelrc"><span class="nav-number">2.</span> <span class="nav-text">1.配置文件.babelrc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-命令行转码babel-cli"><span class="nav-number">3.</span> <span class="nav-text">2.命令行转码babel-cli</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-babel-node"><span class="nav-number">4.</span> <span class="nav-text">3.babel-node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-babel-register"><span class="nav-number">5.</span> <span class="nav-text">4.babel-register</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-babel-core"><span class="nav-number">6.</span> <span class="nav-text">5.babel-core</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-babel-polyfill"><span class="nav-number">7.</span> <span class="nav-text">6.babel-polyfill</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -644,11 +680,7 @@
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
-
-
-  <span class="post-meta-divider">|</span>
 
 
 
@@ -1135,6 +1167,75 @@
   
 
   
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
 
 </body>
 </html>
