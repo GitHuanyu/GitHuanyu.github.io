@@ -254,7 +254,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">32</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">37</span></a>
   </li>
 
       
@@ -320,6 +320,929 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/06/30/Promise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈环宇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Developer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/30/Promise/" itemprop="url">
+                  Promise
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-30 19:41:03" itemprop="dateCreated datePublished" datetime="2018-06-30T19:41:03+08:00">2018-06-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-02 11:01:10" itemprop="dateModified" datetime="2018-07-02T11:01:10+08:00">2018-07-02</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JS高级/" itemprop="url" rel="index"><span itemprop="name">JS高级</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>回调函数真正的问题在于他剥夺了我们使用 return 和 throw 这些关键字的能力。而 Promise 很好地解决了这一切<br>异步请求的数据嵌套处理，造成了回调地域，其代码臃肿，可读性差，耦合度高难以维护，复用性差，容易产生bug，只能在回调里处理异常<br>为了解决异步嵌套的问题，promise规范出现了，他是一种异步编程的解决方案，比传统的异步解决方案，回调函数和事件更合理更强大，已经ES6被加入规范中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var p = new Promise(function (resolve, reject) &#123;</span><br><span class="line">    // ...</span><br><span class="line">    if(/* 异步操作成功 */)&#123;</span><br><span class="line">        resolve(ret);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        reject(error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">p.then(function (value) &#123;</span><br><span class="line">    // 完成态</span><br><span class="line">&#125;, function (error) &#123;</span><br><span class="line">    // 失败态</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>1.Promise的构造函数<br>2.resolve() ， reject()<br>3.then()</p>
+<h2 id="Promise构造函数"><a href="#Promise构造函数" class="headerlink" title="Promise构造函数"></a>Promise构造函数</h2><p>通过Promise构造函数实例化一个对象时，会传递一个函数作为参数，那么这个函数会立即执行。</p>
+<h2 id="resolve-reject"><a href="#resolve-reject" class="headerlink" title="resolve(),reject()"></a>resolve(),reject()</h2><p><img src="https://segmentfault.com/img/bVGpnS?w=457&amp;h=327" alt="异步操作状态"><br>这种状态的改变只会出现从未完成态向完成态或失败态转化，不能逆反。完成态和失败态不能互相转化，而且，状态一旦转化，将不能更改。</p>
+<p>只有异步操作的结果可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是Promise这个名字的由来，它的英语意思是承诺，表示其他手段无法改变。</p>
+<p>在声明一个Promise对象实例时，我们传入的匿名函数参数中：</p>
+<p>resolve就对应着完成态之后的操作<br>reject对应着失败态之后的操作</p>
+<h2 id="then"><a href="#then" class="headerlink" title="then()"></a>then()</h2><p>实例化一个Promise对象之后，我们调用该对象实例的then()方法传递的两个参数中:</p>
+<p>第一个参数（函数）对应着完成态的操作，也就是resolve<br>第二个参数（函数）对应着失败态的操作，也就是reject<br>那就是说，在Promise中是通过then()方法来指定处理异步操作结果的方法。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/06/30/前端安全/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈环宇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Developer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/30/前端安全/" itemprop="url">
+                  前端安全
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-30 19:40:48" itemprop="dateCreated datePublished" datetime="2018-06-30T19:40:48+08:00">2018-06-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-02 09:21:34" itemprop="dateModified" datetime="2018-07-02T09:21:34+08:00">2018-07-02</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/辅助/" itemprop="url" rel="index"><span itemprop="name">辅助</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/06/29/前端性能优化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈环宇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Developer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/29/前端性能优化/" itemprop="url">
+                  前端性能优化
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-29 15:38:31 / 修改时间：17:46:31" itemprop="dateCreated datePublished" datetime="2018-06-29T15:38:31+08:00">2018-06-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/辅助/" itemprop="url" rel="index"><span itemprop="name">辅助</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>从用户角度而言，优化能够让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验。<br>从服务商角度而言，优化能够减少页面请求数、或者减小请求所占带宽，能够节省可观的资源。<br>可以分为 7大类 35条（包括内容、服务器、CSS、JavaScript、Cookie、图片、移动应用）。</p>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>1.尽量减少HTTP请求<br>2.减少DNS查找<br>3.避免跳转<br>4.缓存Ajax<br>5.推迟加载<br>6.提前加载<br>7.减少DOM元素数量<br>8.用域名划分页面内容<br>9.使frame数量最少<br>10.避免404错误<br>合并文件是通过把所有的脚本放到一个文件中来减少 HTTP请求的方法。 CSS Sprites是减少图像请求的有效方法。 缓存 DNS查找可以改善页面性能。 跳转是使用 301和 302代码实现的（但是要记住跳转会降低用户体验）。 为了提高性能，优化 Ajax响应是很重要的。提高 Ajxa性能的措施中最重要的方法就是使响应具有可缓存性。 你可以仔细看一下你的网页，问问自己“哪些内容是页面呈现时所必需首先加载的？哪些内容和结构可以稍后再加载？预加载和后加载看起来似乎恰恰相反，但实际上预加载是为了实现另外一种目标。预加载是在浏览器空闲时请求将来可能会用到的页面内容（如图像、样式表和脚 本）。使用这种方法，当用户要访问下一个页面时，页面中的内容大部分已经加载到缓存中了，因此可以大大改善访问速度。 一个复杂的页面意味着需要下载更多数据，同时也意味着JavaScript遍历DOM的效率越慢。比如当你增加一个事件句柄时在500和5000个 DOM元素中循环效果肯定是不一样的。 把页面内容划分成若干部分可以使你最大限度地实现平行下载。 使iframe的数量最小，ifrmae元素可以在父文档中插入一个新的HTML文档。了解iframe的工作理然后才能更加有效地使用它，这一点很重要。 HTTP请求时间消耗是很大的，因此使用HTTP请求来获得一个没有用处的响应（例如404没有找到页面）是完全没有必要的，它只会降低用户体验而不会有一点好处。</p>
+<h2 id="服务器部分"><a href="#服务器部分" class="headerlink" title="服务器部分"></a>服务器部分</h2><p>1.使用内容分发网络<br>2.为文件头指定 Expires 或 Cache-Control<br>3.Gzip压缩文件内容<br>4.配置ETag<br>5.尽早刷新输出缓冲<br>6.使用 GET 来完成 AJAX 请求<br>7.避免空的图像来源<br>用户与你网站服务器的接近程度会影响响应时间的长短。把你的网站内容分散到多个、处于不同地域位置的服务器上可以加快下载速度。 为文件头指定Expires或Cache-Control，这条守则包括两方面的内容： 对于静态内容：设置文件头过期时间Expires的值为“Never expire”（永不过期）；对于动态内容：使用恰当的Cache-Control文件头来帮助浏览器进行有条件的请求。 网络传输中的HTTP请求和应答时间可以通过前端机制得到显著改善。的确，终端用户的带宽、互联网提供者、与对等交换点的靠近程度等都不是网站开发者所能决定的。但是还有其他因素影响着响应时间。通过减小HTTP响应的大小可以节省HTTP响应时间。 Entity tags（ETags）（实体标签）是web服务器和浏览器用于判断浏览器缓存中的内容和服务器中的原始内容是否匹配的一种机制（“实体”就是所说的“内 容”，包括图片、脚本、样式表等）。增加ETag为实体的验证提供了一个比使用“last-modified date（上次编辑时间）”更加灵活的机制。 当用户请求一个页面时，无论如何都会花费200到500毫秒用于后台组织HTML文件。（尽早刷新输出缓冲）。 Yahoo!Mail团队发现，当使用XMLHttpRequest时，浏览器中的POST方法是一个“两步走”的过程：首先发送文件头，然后才发送数 据。因此使用GET最为恰当，因为它只需发送一个TCP包（除非你有很多cookie）。IE中URL的最大长度为2K，因此如果你要发送一个超过2K的 数据时就不能使用GET了。</p>
+<h2 id="CSS部分"><a href="#CSS部分" class="headerlink" title="CSS部分"></a>CSS部分</h2><p>1.把样式表置于顶部<br>2.避免使用 CSS 表达式（）<br>3.用 代替 @import<br>4.避免使用滤镜<br>在研究Yahoo!的性能表现时，我们发现把样式表放到文档的内会使页面有步骤的加载显示。 避免使用CSS表达式（Expression），CSS表达式是动态设置CSS属性的强大（但危险）方法。Internet Explorer从第5个版本开始支持CSS表达式。 对于拥有较大浏览量的首页来说，有一种技术可以平衡内置代码带来的HTTP请求减少与通过使用外部文件进行缓存带来的好处。 （削减JavaScript和CSS）精简是指从去除代码不必要的字符减少文件大小从而节省下载时间。消减代码时，所有的注释、不需要的空白字符（空格、换行、tab缩进）等都要去掉。 前面的最佳实现中提到CSS应该放置在顶端以利于有序加载呈现。在IE中，页面底部@import和使用作用是一样的，因此最好不要使用它。 IE独有属性AlphaImageLoader用于修正7.0以下版本中显示PNG图片的半透明效果。这个滤镜的问题在于浏览器加载图片时它会终止内容的 呈现并且冻结浏览器。在每一个元素（不仅仅是图片）它都会运算一次，增加了内存开支，因此它的问题是多方面的。</p>
+<h2 id="JavaScript部分"><a href="#JavaScript部分" class="headerlink" title="JavaScript部分"></a>JavaScript部分</h2><p>1.把脚本置于页面底部<br>2.使用外部 JavaScript 和 CSS<br>3.削减 JavaScript 和 CSS<br>4.剔除重复脚本<br>5.减少DOM访问<br>6.开发智能事件处理程序<br>脚本带来的问题就是它阻止了页面的平行下载。HTTP/1.1 规范建议，浏览器每个主机名的并行下载内容不超过两个。一个经常用到的替代方法就是使用延迟脚本。 在同一个页面中重复引用JavaScript文件会影响页面的性能。你可能会认为这种情况并不多见。对于美国前10大网站的调查显示其中有两家存在重复引 用脚本的情况。有两种主要因素导致一个脚本被重复引用的奇怪现象发生：团队规模和脚本数量。 使用JavaScript访问DOM元素比较慢，因此为了获得更多的应该页面，应该做到：缓存已经访问过的有关元素，线下更新完节点之后再将它们添加到文档树中，避免使用JavaScript来修改页面布局，有关此方面的更多信息请查看Julien Lecomte在YUI专题中的文章“高性能Ajax应该程序”。 有时候我们会感觉到页面反应迟钝，这是因为DOM树元素中附加了过多的事件句柄并且些事件句病被频繁地触发。这就是为什么说使用event delegation（事件代理）是一种好方法了。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/06/29/词法分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈环宇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Developer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/29/词法分析/" itemprop="url">
+                  词法分析
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-29 13:53:54 / 修改时间：15:25:06" itemprop="dateCreated datePublished" datetime="2018-06-29T13:53:54+08:00">2018-06-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JS高级/" itemprop="url" rel="index"><span itemprop="name">JS高级</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>JS的代码运行，分为词法分析期和自上而下的运行期<br>词法分析期分为三个部分<br>1.分析参数<br>2.分析变量声明<br>3.分析函数声明</p>
+<h3 id="0-函数运行的瞬间"><a href="#0-函数运行的瞬间" class="headerlink" title="0.函数运行的瞬间"></a>0.函数运行的瞬间</h3><p>生成一个空的活动对象(Active Object)， AO = {}</p>
+<h3 id="1-分析参数"><a href="#1-分析参数" class="headerlink" title="1.分析参数"></a>1.分析参数</h3><p>a.函数接收<strong>形参</strong>，添加到AO的属性之中，值为undefined<br>b.接收<strong>实参</strong>，添加到AO的属性之中，覆盖undefined<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 因为js的函数可以定义的形参和传递的实参个数之间可以不相等</span><br><span class="line">function foo(a, b)&#123;&#125;</span><br><span class="line">foo(123)</span><br><span class="line"></span><br><span class="line">那么此时的</span><br><span class="line">AO = &#123;</span><br><span class="line">    a: 123,</span><br><span class="line">    b: undefined</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-分析变量声明"><a href="#2-分析变量声明" class="headerlink" title="2.分析变量声明"></a>2.分析变量声明</h3><p>比如var age = 123<br>a.如果分析参数时，AO还没有age属性，则AO.age = undefined<br>b.如果AO已经有了age属性，则不做任何修改</p>
+<h3 id="3分析函数声明"><a href="#3分析函数声明" class="headerlink" title="3分析函数声明"></a>3分析函数声明</h3><p>a.如果有function age(){}，则把函数赋给AO.age，覆盖上一步分析的值</p>
+<h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">function func(age) &#123;</span><br><span class="line">    console.log(age);</span><br><span class="line">    var age = 25;</span><br><span class="line">    console.log(age);</span><br><span class="line">    function age() &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(age);</span><br><span class="line">&#125;</span><br><span class="line">func(18);</span><br><span class="line"></span><br><span class="line">// 0</span><br><span class="line">&#123;&#125;</span><br><span class="line"> </span><br><span class="line">// 1 参数，形参，实参 </span><br><span class="line">&#123;</span><br><span class="line">    age: undefined</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    age: 18</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 2 变量 有 无</span><br><span class="line">&#123;</span><br><span class="line">    age: 18</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 3 函数 覆盖</span><br><span class="line">&#123;</span><br><span class="line">    age: function age()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/06/29/http协议/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈环宇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Developer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/29/http协议/" itemprop="url">
+                  http协议
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-29 10:52:18 / 修改时间：13:45:46" itemprop="dateCreated datePublished" datetime="2018-06-29T10:52:18+08:00">2018-06-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/辅助/" itemprop="url" rel="index"><span itemprop="name">辅助</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>客户端和服务端进行数据传输的一种规则</p>
+<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p>http url包含了用于查找某个资源的详细信息,格式如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://host[&quot;:&quot;port][abs_path]</span><br></pre></td></tr></table></figure></p>
+<p>http表示要通过HTTP协议来定位网络资源，<br>host表示合法的Internet主机域名或者IP地址，<br>port指定一个端口号，为空则使用缺省端口80，<br>abs_path指定请求资源的URI。</p>
+<h2 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><p><img src="https://segmentfault.com/img/bVsRvt" alt="HTTP请求"></p>
+<h3 id="请求行"><a href="#请求行" class="headerlink" title="请求行"></a>请求行</h3><p>请求行由请求方法，URL字段和HTTP协议版本三部分构成，总的来说请求行就是定义了本次请求的请求方式，请求的地址，以及所遵循的HTTP协议版本例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /example.html HTTP/1.1 (CRLF)</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>请求获取Request-URI所标识的资源</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>在Request-URI所标识的资源后附加新的数据</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>请求获取由Request-URI所标识的资源的响应消息报头</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>请求服务器存储一个资源，并用Request-URI作为其标识</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>请求服务器删除Request-URI所标识的资源</td>
+</tr>
+<tr>
+<td>TRACE</td>
+<td>请求服务器回送收到的请求信息，主要用于测试或诊断</td>
+</tr>
+<tr>
+<td>CONNECT</td>
+<td>保留将来使用</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>请求查询服务器的性能，或者查询与资源相关的选项和需求</td>
+</tr>
+</tbody>
+</table>
+<h3 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h3><p>请求头由一系列的键值对组成，允许客户端向服务器端发送一些附加信息或者客户端自身的信息</p>
+<table>
+<thead>
+<tr>
+<th>信息</th>
+<th>描述</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accept</td>
+<td>指定客户端接受哪些类型的信息</td>
+<td>Accept：image/gif，表明客户端希望接受GIF图象格式的资源</td>
+</tr>
+<tr>
+<td>Accept-Charset</td>
+<td>指定客户端接受的字符集</td>
+<td>Accept-Charset:iso-8859-1,gb2312.如果在请求消息中没有设置这个域，缺省是任何字符集都可以接受</td>
+</tr>
+<tr>
+<td>Accept-Encoding</td>
+<td>类似于Accept，但是它是用于指定可接受的内容编码</td>
+<td>Accept-Encoding:gzip.deflate.如果请求消息中没有设置这个域服务器假定客户端对各种内容编码都可以接受</td>
+</tr>
+<tr>
+<td>Accept-Language</td>
+<td>类似于Accept，但是它是用于指定一种自然语言</td>
+<td>Accept-Language:zh-cn.如果请求消息中没有设置这个报头域，服务器假定客户端对各种语言都可以接受</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>用于证明客户端有权查看某个资源。当浏览器访问一个页面时，如果收到服务器的响应代码为401（未授权），可以发送一个包含Authorization请求报头域的请求，要求服务器对其进行验证</td>
+<td></td>
+</tr>
+<tr>
+<td>Host</td>
+<td>发送请求时，该报头域是必需的,Host请求报头域主要用于指定被请求资源的Internet主机和端口号，它通常从HTTP URL中提取出来的</td>
+<td></td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>我们上网登陆论坛的时候，往往会看到一些欢迎信息，其中列出了你的操作系统的名称和版本，你所使用的浏览器的名称和版本，这往往让很多人感到很神奇，实际上，服务器应用程序就是从User-Agent这个请求报头域中获取到这些信息。User-Agent请求报头域允许客户端将它的操作系统、浏览器和其它属性告诉服务器。不过，这个报头域不是必需的，如果我们自己编写一个浏览器，不使用User-Agent请求报头域，那么服务器端就无法得知我们的信息了</td>
+</tr>
+</tbody>
+</table>
+<h3 id="请求正文"><a href="#请求正文" class="headerlink" title="请求正文"></a>请求正文</h3><p>只有在发送post请求时才会有请求正文，get方法并没有请求正文</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1166,901 +2089,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/05/18/VUE生命周期/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈环宇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Developer">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/18/VUE生命周期/" itemprop="url">
-                  VUE生命周期
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-18 16:00:12" itemprop="dateCreated datePublished" datetime="2018-05-18T16:00:12+08:00">2018-05-18</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-03 13:57:06" itemprop="dateModified" datetime="2018-07-03T13:57:06+08:00">2018-07-03</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/VUE/" itemprop="url" rel="index"><span itemprop="name">VUE</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>创建=》挂载=》更新=》销毁<br>类似于一种回调，在执行到一定的阶段时触发，扔出一个钩子，让需要在此阶段执行的方法调用</p>
-<h3 id="beforeCreate"><a href="#beforeCreate" class="headerlink" title="beforeCreate"></a>beforeCreate</h3><p>创建vue对象，methods和data属性初始化到vue对象之上</p>
-<h3 id="created"><a href="#created" class="headerlink" title="created"></a>created</h3><p>vue对象创建完成，进行数据初始化，可以发送ajax来对vue对象静态属性进行初始化</p>
-<h3 id="beforeMount"><a href="#beforeMount" class="headerlink" title="beforeMount"></a>beforeMount</h3><p>通过虚拟dom(数据结构)来构造真实dom(html)，可以操作真实dom结构了</p>
-<h3 id="mounted"><a href="#mounted" class="headerlink" title="mounted"></a>mounted</h3><p>将渲染出的真实dom挂载，是一个appendChild的过程</p>
-<h3 id="beforeUpdate"><a href="#beforeUpdate" class="headerlink" title="beforeUpdate"></a>beforeUpdate</h3><h3 id="updated"><a href="#updated" class="headerlink" title="updated"></a>updated</h3><h3 id="beforeDestroy"><a href="#beforeDestroy" class="headerlink" title="beforeDestroy"></a>beforeDestroy</h3><h3 id="destroyed"><a href="#destroyed" class="headerlink" title="destroyed"></a>destroyed</h3><h2 id="DOM变化"><a href="#DOM变化" class="headerlink" title="DOM变化"></a>DOM变化</h2><table>
-<thead>
-<tr>
-<th>钩子</th>
-<th style="text-align:right">特性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>beforeCreate</td>
-<td style="text-align:right">none</td>
-</tr>
-<tr>
-<td>created</td>
-<td style="text-align:right">data</td>
-</tr>
-<tr>
-<td>beforeMount</td>
-<td style="text-align:right">el</td>
-</tr>
-<tr>
-<td>mounted</td>
-<td style="text-align:right">data+el</td>
-</tr>
-</tbody>
-</table>
-<h2 id="图示"><a href="#图示" class="headerlink" title="图示"></a>图示</h2><p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="vue生命周期图示"></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/05/17/module/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈环宇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Developer">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/17/module/" itemprop="url">
-                  module
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-17 17:01:24" itemprop="dateCreated datePublished" datetime="2018-05-17T17:01:24+08:00">2018-05-17</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-04 13:59:28" itemprop="dateModified" datetime="2018-07-04T13:59:28+08:00">2018-07-04</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ES6/" itemprop="url" rel="index"><span itemprop="name">ES6</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>ES6在语言规格的层面上，实现了模块功能，而且实现得相当简单，完全可以取代现有的CommonJS和AMD规范，成为浏览器和服务器通用的模块解决方案。</p>
-<p>ES6模块主要有两个功能：export和import</p>
-<p>export用于对外输出本模块（一个文件可以理解为一个模块）变量的接口</p>
-<p>import用于在一个模块中加载另一个含有export接口的模块。</p>
-<h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><h3 id="1-使用大括号指定所要输出的一组变量"><a href="#1-使用大括号指定所要输出的一组变量" class="headerlink" title="1.使用大括号指定所要输出的一组变量"></a>1.使用大括号指定所要输出的一组变量</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// profile.js</span></span><br><span class="line"><span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">var</span> year = <span class="number">1958</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;firstName, lastName, year&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="2-输出函数或类"><a href="#2-输出函数或类" class="headerlink" title="2.输出函数或类"></a>2.输出函数或类</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// profile.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><h3 id="1-单独加载"><a href="#1-单独加载" class="headerlink" title="1.单独加载"></a>1.单独加载</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;firstName, lastName, year&#125; <span class="keyword">from</span> <span class="string">'./profile.js'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;foo&#125; <span class="keyword">from</span> <span class="string">'my_module'</span>;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
-<h3 id="2-整体加载"><a href="#2-整体加载" class="headerlink" title="2.整体加载"></a>2.整体加载</h3><p>即用星号（*）指定一个对象，所有输出值都加载在这个对象上面。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// circle.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">area</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.PI * radius * radius;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">circumference</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">2</span> * <span class="built_in">Math</span>.PI * radius;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//////////////</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> circle <span class="keyword">from</span> <span class="string">'./circle'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆面积：'</span> + circle.area(<span class="number">4</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆周长：'</span> + circle.circumference(<span class="number">14</span>));</span><br></pre></td></tr></table></figure>
-<h2 id="export-default"><a href="#export-default" class="headerlink" title="export default"></a>export default</h2><p>其他模块加载该模块时，import命令可以为该匿名函数指定任意名字<br>这时import命令后面，不使用大括号<br>一个模块只能有一个默认输出</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// export-default.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// import-default.js</span></span><br><span class="line"><span class="keyword">import</span> customName <span class="keyword">from</span> <span class="string">'./export-default'</span>;</span><br><span class="line">customName(); <span class="comment">// 'foo'</span></span><br></pre></td></tr></table></figure>
-<p>export default也可以用来输出类<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MyClass.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> </span>&#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> MyClass <span class="keyword">from</span> <span class="string">'MyClass'</span>;</span><br><span class="line"><span class="keyword">let</span> o = <span class="keyword">new</span> MyClass();</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/05/16/prototype的设定由来/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈环宇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Developer">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/16/prototype的设定由来/" itemprop="url">
-                  prototype的设定由来
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-16 17:30:08" itemprop="dateCreated datePublished" datetime="2018-05-16T17:30:08+08:00">2018-05-16</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-05-17 10:26:34" itemprop="dateModified" datetime="2018-05-17T10:26:34+08:00">2018-05-17</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JS高级/" itemprop="url" rel="index"><span itemprop="name">JS高级</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在js语言中，new命令之后跟的不是类，而是构造函数</p>
-<p>对构造函数使用 <strong>new</strong>，会生成一个对象的实例</p>
-<p>构造函数中的 <strong>this</strong> 关键字，它代表新创建的实例对象</p>
-<p>但是用构造函数生成实例对象，有一个缺点，就是无法共享属性和方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">this</span>.name = name;</span><br><span class="line">   <span class="keyword">this</span>.species = <span class="string">'犬科'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dogA = <span class="keyword">new</span> Dog(<span class="string">'AA'</span>);</span><br><span class="line"><span class="keyword">var</span> dogB = <span class="keyword">new</span> Dog(<span class="string">'BB'</span>);</span><br><span class="line"></span><br><span class="line">dogA.species = <span class="string">'猫科'</span>;</span><br><span class="line">alert(dogB.species);  <span class="comment">//显示 犬科，而不会受到dogA的影响</span></span><br></pre></td></tr></table></figure>
-<p>此时dogA和dogB会自动含有一个 <strong>constructor</strong> 属性，指向它们的构造函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dogA.constructot == Dog</span><br></pre></td></tr></table></figure></p>
-<p>考虑到这一点，构造函数有了一个 <strong>prototype</strong> 属性</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Dog.prototype = &#123; <span class="attr">species</span> : <span class="string">'犬科'</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dogA = <span class="keyword">new</span> Dog(<span class="string">'大毛'</span>);</span><br><span class="line"><span class="keyword">var</span> dogB = <span class="keyword">new</span> Dog(<span class="string">'二毛'</span>);</span><br><span class="line"></span><br><span class="line">alert(dogA.species); <span class="comment">// 犬科</span></span><br><span class="line">alert(dogB.species); <span class="comment">// 犬科</span></span><br></pre></td></tr></table></figure>
-<p>这个属性包含一个对象（以下简称”prototype对象”），所有实例对象需要共享的属性和方法，都放在这个对象里面；那些不需要共享的属性和方法，就放在构造函数里面。</p>
-<p>实例对象一旦创建，将自动引用prototype对象的属性和方法。也就是说，实例对象的属性和方法，分成两种，一种是本地的，另一种是引用的。</p>
-<p>现在，species属性放在prototype对象里，是两个实例对象共享的。只要修改了prototype对象，就会同时影响到两个实例对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Dog.prototype.species = <span class="string">'猫科'</span>;</span><br><span class="line">Dog.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="string">'我在吃'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(dogA.species); <span class="comment">// 猫科</span></span><br><span class="line">alert(dogB.species); <span class="comment">// 猫科</span></span><br></pre></td></tr></table></figure>
-<p>此时实例中的species属性和eat()方法，其实都是一个内存地址，指向prototype对象，因此提高了运行效率</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/05/16/animateCss/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈环宇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Developer">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/16/animateCss/" itemprop="url">
-                  animateCss
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-16 13:47:25" itemprop="dateCreated datePublished" datetime="2018-05-16T13:47:25+08:00">2018-05-16</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-02 16:33:42" itemprop="dateModified" datetime="2018-07-02T16:33:42+08:00">2018-07-02</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JS插件/" itemprop="url" rel="index"><span itemprop="name">JS插件</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="A-cross-browser-library-of-CSS-animations"><a href="#A-cross-browser-library-of-CSS-animations" class="headerlink" title="A cross-browser library of CSS animations"></a>A cross-browser library of CSS animations</h2><p><a href="https://github.com/daneden/animate.css" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/daneden/animate.css" target="_blank" rel="noopener">https://github.com/daneden/animate.css</a></p>
-<p><a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">演示地址</a><br><a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">https://daneden.github.io/animate.css/</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//为元素添加动画效果</span></span><br><span class="line">$(<span class="string">'#yourElement'</span>).addClass(<span class="string">'animated bounceOutLeft'</span>);</span><br><span class="line">or</span><br><span class="line">$(<span class="string">'#yourElement'</span>).animateCss(<span class="string">'bounce'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加动画执行之后的回调</span></span><br><span class="line">$(<span class="string">'#yourElement'</span>).animateCss(<span class="string">'bounce'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Do somthing after animation</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//调整动画执行的参数</span></span><br><span class="line">#yourElement &#123;</span><br><span class="line">    <span class="comment">//持续时间</span></span><br><span class="line">  -vendor-animation-duration: <span class="number">3</span>s;</span><br><span class="line">    <span class="comment">//延迟多久后执行</span></span><br><span class="line">  -vendor-animation-delay: <span class="number">2</span>s;</span><br><span class="line">    <span class="comment">//执行次数</span></span><br><span class="line">  -vendor-animation-iteration-count: infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/05/16/Notyf/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈环宇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Developer">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/16/Notyf/" itemprop="url">
-                  Notyf
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-16 11:28:05 / 修改时间：11:37:19" itemprop="dateCreated datePublished" datetime="2018-05-16T11:28:05+08:00">2018-05-16</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JS插件/" itemprop="url" rel="index"><span itemprop="name">JS插件</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Notyf-is-a-dead-simple-responsive-vanilla-javascript-notification-plugin-No-jQuery-required"><a href="#Notyf-is-a-dead-simple-responsive-vanilla-javascript-notification-plugin-No-jQuery-required" class="headerlink" title="Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required."></a>Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required.</h2><p><a href="https://github.com/caroso1222/notyf" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/caroso1222/notyf" target="_blank" rel="noopener">https://github.com/caroso1222/notyf</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实例化</span></span><br><span class="line"><span class="keyword">var</span> notyf = <span class="keyword">new</span> Notyf();</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化传入配置参数</span></span><br><span class="line"><span class="keyword">var</span> notyf = <span class="keyword">new</span> Notyf(&#123;</span><br><span class="line">  delay:<span class="number">1000</span>,</span><br><span class="line">  alertIcon: <span class="string">'fa fa-exclamation-circle'</span>,</span><br><span class="line">  confirmIcon: <span class="string">'fa fa-check-circle'</span>  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//警告弹框，红色</span></span><br><span class="line">notyf.alert(<span class="string">'aaa'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//通知弹框，绿色</span></span><br><span class="line">notyf.confirm(<span class="string">'bbb'</span>);</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2108,7 +2136,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

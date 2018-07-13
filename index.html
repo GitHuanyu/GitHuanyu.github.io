@@ -254,7 +254,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">32</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">37</span></a>
   </li>
 
       
@@ -320,6 +320,748 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/07/12/HBuilder调试夜神安卓模拟器方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈环宇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Developer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/12/HBuilder调试夜神安卓模拟器方法/" itemprop="url">
+                  HBuilder调试夜神安卓模拟器方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-12 13:57:21 / 修改时间：13:58:19" itemprop="dateCreated datePublished" datetime="2018-07-12T13:57:21+08:00">2018-07-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>HBuilder调试夜神安卓模拟器方法<br>现在开发手机app的IDE很多，今天我就以我个人开发使用的HBuider开发工具讲一下手机app开发调试。HBuider支持真机调试，这个比较简单，只要安装好手机的驱动，把手机和电脑通过数据线连接就可以调试发布了，如果手机连接不上，可以在电脑和手机上都安装360手机助手基本上就可以了。今天重点说一下使用夜神安卓模拟器和HBuider的连接调试方法。<br>第一步：下载安装夜神模拟器，这个在百度搜索就可以找官网，下载 安装就可以了。<br>第二步：查找已经安装的夜神模拟的端口，这里说一下夜神模拟器默认端口是62001，但是有些版本可能不是这个端口，怎么查找到底是哪个端口呢？按照如下顺序进行就可以查找到你按装的夜神模拟器端口了。<br>1.打开夜神模拟器，确保正常启动后，出现安卓桌面。<br>2.打开夜神模拟器的安装文件夹，找到D:\YS\Nox\bin文件夹打开（D:\YS是夜神模拟器安装的路径根目录），找到【debugReport.bat】文件，双击启动该批处理文件。会显示如下图：<br>nox adb port:52001<br>already connected to 127.0.0.1:52001<br>这里面显示了夜神模拟器的adb port 端口为：52001，并且已经可以正常连接了，出现这个内容证明夜神模拟器已经正常工作了。<br>或者找到【debug.bat】文件，双击启动该批处理文件,也可以查看端口。<br>3.找到夜神模拟器的adb 端口后，打开HBuider开发工具，在【工具】–&gt;【选项】打开界面如下图，选择【HBuider】，在最下方的” 第三方Android模拟器端口”中输入52001后【确定】就可以了，通过这些设置就可以在调试中看到夜神模拟器的选项了。<br>4.如果没有出现夜神模拟器的连接项，那就需要你在电脑和夜神模拟器上安装360手机助手了，安装完360手机助手后，启动360卫士和360手机助手后，在360手机助手中连接手机，找到夜神手机后连接成功就行了。如果找不到也没有关系，也可以正常连接，这时再打开HBuider开发工具，就可以了。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/07/12/electron/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈环宇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Developer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/12/electron/" itemprop="url">
+                  electron
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-12 09:25:52 / 修改时间：09:27:46" itemprop="dateCreated datePublished" datetime="2018-07-12T09:25:52+08:00">2018-07-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>使用前端技术构建跨系统的桌面应用</p>
+<h3 id="中文站教学站点"><a href="#中文站教学站点" class="headerlink" title="中文站教学站点"></a><a href="https://electron.org.cn/demo.html" target="_blank" rel="noopener">中文站教学站点</a></h3>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/07/11/a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈环宇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Developer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/11/a/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-11 14:45:46 / 修改时间：14:49:32" itemprop="dateCreated datePublished" datetime="2018-07-11T14:45:46+08:00">2018-07-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            var Single = (function () {
+    var instance;
+    function init() {
+        // define private methods and properties
+        //do something
+        return {
+            //define public methods and properties
+        };
+    }
+
+    return {
+        // 获取实例
+        getInstance: function () {
+            if (!instance) {
+                instance = init();
+            }
+            return instance;
+        }
+    }
+})();
+
+var obj1 = Single.getInstance();
+var obj2 = Single.getInstance();
+
+// console.log(obj1 === obj2);
+console.log(obj1)
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/07/11/设计模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈环宇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Developer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/11/设计模式/" itemprop="url">
+                  设计模式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-11 09:48:30 / 修改时间：14:46:34" itemprop="dateCreated datePublished" datetime="2018-07-11T09:48:30+08:00">2018-07-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 在执行当前 Single 只获得唯一一个对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> Single = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> instance;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// define private methods and properties</span></span><br><span class="line">        <span class="comment">//do something</span></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="comment">//define public methods and properties</span></span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="comment">// 获取实例</span></span><br><span class="line">        getInstance:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(!instance)&#123;</span><br><span class="line">                instance = init();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> instance;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = Single.getInstance();</span><br><span class="line"><span class="keyword">var</span> obj2 = Single.getInstance();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj1 === obj2);</span><br></pre></td></tr></table></figure>
+<h2 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 构造一个动物的函数 </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params">name, color</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">    <span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实例一个对象</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Animal(<span class="string">'猫'</span>, <span class="string">'白色'</span>);</span><br><span class="line"><span class="built_in">console</span>.log( cat.getName() );</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/07/06/VUE过滤器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈环宇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Developer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/06/VUE过滤器/" itemprop="url">
+                  VUE过滤器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-06 09:58:16 / 修改时间：10:12:47" itemprop="dateCreated datePublished" datetime="2018-07-06T09:58:16+08:00">2018-07-06</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/VUE/" itemprop="url" rel="index"><span itemprop="name">VUE</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">filters: &#123;</span><br><span class="line">    deal_way: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(value==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'均价成交'</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(value==<span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'市价成交'</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(value==<span class="number">3</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'现价成交'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    dateCN: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value.replace(<span class="string">'d'</span>, <span class="string">"天"</span>).replace(<span class="string">'m'</span>, <span class="string">"个月"</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">parseFloat</span>: <span class="function"><span class="keyword">function</span>(<span class="params">value, length</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(value)&#123;</span><br><span class="line">            <span class="keyword">return</span> value.toFixed(length)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    close_type: <span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(value==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'均价成交'</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(value==<span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'市价成交'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1116,852 +1858,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/07/03/hexo本地搜索/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈环宇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Developer">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/03/hexo本地搜索/" itemprop="url">
-                  hexo本地搜索
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-07-03 09:33:17 / 修改时间：09:35:54" itemprop="dateCreated datePublished" datetime="2018-07-03T09:33:17+08:00">2018-07-03</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>当文章越来越多的时候，通过分类和标签来找已经不合适了，需要提供一个本地的搜索功能<br>在next主题下，搜索适用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br><span class="line"></span><br><span class="line">//站点配置</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br><span class="line"></span><br><span class="line">//主题配置</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/07/02/封装和继承/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈环宇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Developer">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/02/封装和继承/" itemprop="url">
-                  封装和继承
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-07-02 16:25:01" itemprop="dateCreated datePublished" datetime="2018-07-02T16:25:01+08:00">2018-07-02</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-03 10:55:02" itemprop="dateModified" datetime="2018-07-03T10:55:02+08:00">2018-07-03</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JS高级/" itemprop="url" rel="index"><span itemprop="name">JS高级</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>将数据和方法封装到一个对象中<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">'大毛'</span>, <span class="string">'黄色'</span>);</span><br><span class="line"><span class="keyword">var</span> cat2 = <span class="keyword">new</span> Cat(<span class="string">'二毛'</span>, <span class="string">'黑色'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(cat1.name, cat1.color);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(cat1);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(cat1.constructor == Cat)</span><br></pre></td></tr></table></figure></p>
-<p>为了解决从原型对象生成实例的问题，Javascript提供了一个构造函数（Constructor）模式。<br>所谓”构造函数”，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上。<br>这时cat1和cat2会自动含有一个constructor属性，指向它们的构造函数。</p>
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>使得一个对象可以使用另一个对象的变量和方法</p>
-<h3 id="1-使用call或apply方法"><a href="#1-使用call或apply方法" class="headerlink" title="1.使用call或apply方法"></a>1.使用call或apply方法</h3><p>使用call或apply方法，将父对象的构造函数绑定在子对象上，即在子对象构造函数中加一行：<br>Animal.apply(this, arguments);</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.species = <span class="string">"动物"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color</span>) </span>&#123;</span><br><span class="line">    Animal.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Cat.prototype.constructor);</span><br></pre></td></tr></table></figure>
-<h3 id="2-prototype模式"><a href="#2-prototype模式" class="headerlink" title="2.prototype模式"></a>2.prototype模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.species = <span class="string">'动物'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name,color</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如何使Cat()继承Animal()???<br>如果Cat()的prototype对象，指向一个Animal()的实例，那么所有Cat()的实例，就能继承Animal()</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure>
-<h4 id="line1"><a href="#line1" class="headerlink" title="line1"></a>line1</h4><p>将Cat的prototype对象指向了一个Animal()的实例，它相当于完全删除了prototype对象原先的值，然后赋予一个新值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是Cat原先的prototype对象</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">constructor</span>: Cat,</span><br><span class="line">  // 任何一个prototype对象都有一个<span class="keyword">constructor</span>属性，指向它的构造函数</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 指向Animal()实例后的新prototype对象</span><br><span class="line">&#123;</span><br><span class="line">  species: <span class="string">'动物'</span>,</span><br><span class="line">  prototype: &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: Animal</span><br><span class="line">  &#125;</span><br><span class="line">  // 每一个实例也有一个<span class="keyword">constructor</span>属性，默认调用prototype对象的<span class="keyword">constructor</span>属性</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="line2"><a href="#line2" class="headerlink" title="line2"></a>line2</h4><p>此时Cat()的实例的<strong> constructor </strong>会指向 Animal()，会导致继承链的紊乱，需要手动纠正</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果替换了prototype对象</span></span><br><span class="line">o.prototype = &#123;&#125;;</span><br><span class="line"><span class="comment">// 下一步必然是为新的prototype对象加上constructor属性，并将这个属性指回原来的构造函数。</span></span><br><span class="line">o.prototype.constructor = o;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/07/02/Function对象/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈环宇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Developer">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/02/Function对象/" itemprop="url">
-                  Function对象
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-07-02 16:23:28 / 修改时间：16:24:48" itemprop="dateCreated datePublished" datetime="2018-07-02T16:23:28+08:00">2018-07-02</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JS高级/" itemprop="url" rel="index"><span itemprop="name">JS高级</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Function对象（类）</span></span><br><span class="line">    <span class="keyword">var</span> foo = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"alert(a + b);"</span>);</span><br><span class="line">    foo(<span class="number">1</span>, <span class="number">5</span>);</span><br><span class="line">    <span class="comment">//由于字符串的关系，这种形式写起来很困难，但是说明了函数只不过是一种引用类型</span></span><br><span class="line">    <span class="comment">//它的行为与用Function类明确创建的函数行为是相同的</span></span><br><span class="line">        </span><br><span class="line">    引用类型通常叫做类，遇到引用值，所处理的就是对象</span><br><span class="line">        </span><br><span class="line">    基本类型 <span class="built_in">Number</span> <span class="built_in">Boolean</span> <span class="built_in">String</span> <span class="literal">undefined</span> <span class="literal">null</span></span><br><span class="line">    基本类型的数据存放在栈内存中</span><br><span class="line">    基本类型的复制就是在栈内存中开辟了一个新的存储区域来存储新的变量，这个变量有他自己的值，只不过和前面的值一样，所以如果其中一个值改变了不会影响到另一个</span><br><span class="line">        </span><br><span class="line">    引用类型 <span class="built_in">Object</span> <span class="built_in">Function</span></span><br><span class="line">    引用类型的数据存放在堆内存中	</span><br><span class="line">    定义了一个对象其实是在栈内存中存储了一个指针，这个指针指向堆内存中该对象的存储地址，复制给另一个对象的过程其实是把该对象的地址复制给了另一个对象变量，两个指针都指向同一个对象，如果其中一个修改了，另一个也会改变	</span><br><span class="line"></span><br><span class="line">    基本类型的数据是没有属性和方法的，引用类型才有，但是为什么<span class="built_in">String</span>类型有方法呢？</span><br><span class="line">    <span class="keyword">var</span> string = <span class="string">'aaa'</span>;</span><br><span class="line">    <span class="keyword">var</span> string2 = string.substring(<span class="number">0</span>);</span><br><span class="line">    基本类型的确没有方法和属性，因为一旦创建了属性或者方法就会被立刻销毁，但是为了方便对基本类型数据进行操作，在底层做了一些工作，其实这段代码相当于</span><br><span class="line">    <span class="keyword">var</span> string = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'aaa'</span>);</span><br><span class="line">    <span class="keyword">var</span> string2 = string.substring(<span class="number">0</span>);</span><br><span class="line">    string = <span class="literal">null</span>;</span><br><span class="line">        </span><br><span class="line">    <span class="number">1.</span>创建了一个<span class="built_in">String</span>类型的实例，使用<span class="keyword">new</span>操作符创建的引用类型的实例，在执行流离开当前作用域之前都一直保存在内存中。而自动创建的基本包装类型的对象，则只存在于一行代码的瞬间，然后立即被销毁</span><br><span class="line">    <span class="number">2.</span>在实例上调用指定方法</span><br><span class="line">    <span class="number">3.</span>销毁该实例</span><br><span class="line">        </span><br><span class="line">    经过这三步，字符串值就变得和对象一样了，在<span class="built_in">Boolean</span>，<span class="built_in">Number</span>中也是一样</span><br><span class="line">    <span class="built_in">String</span>, <span class="built_in">Boolean</span>, <span class="built_in">Number</span> 这三种类型也叫做 基本包装类型</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/07/02/setter和getter/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈环宇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Developer">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/02/setter和getter/" itemprop="url">
-                  setter和getter
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-07-02 16:20:00" itemprop="dateCreated datePublished" datetime="2018-07-02T16:20:00+08:00">2018-07-02</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-03 14:38:34" itemprop="dateModified" datetime="2018-07-03T14:38:34+08:00">2018-07-03</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JS高级/" itemprop="url" rel="index"><span itemprop="name">JS高级</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>在读取对象属性值或者设置对象属性值的时候，由一个函数去操作这个变量<br>vue的计算属性依托于这个语法</p>
-<h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><p>当尝试设置属性时，set语法将对象属性绑定到要调用的函数。</p>
-<p>在 javascript 中，如果试着改变一个属性的值，那么对应的 setter 将被执行。setter 经常和 getter 连用以创建一个伪属性。不可能在具有真实值的属性上同时拥有一个 setter 器。</p>
-<p>使用 set 语法时请注意：</p>
-<p>它的标识符可以是数字或字符串；<br>它必须有一个明确的参数<br>在对象字面量中，不能为一个已有真实值的变量使用 set ，也不能为一个属性设置多个 set<br>setter 可以用delete操作来移除。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> language = &#123;</span><br><span class="line">  set current(name) &#123;</span><br><span class="line">    <span class="keyword">this</span>.log.push(name);</span><br><span class="line">  &#125;,</span><br><span class="line">  log: []</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">language.current = <span class="string">'EN'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(language.log); <span class="comment">// ['EN']</span></span><br><span class="line"></span><br><span class="line">language.current = <span class="string">'FA'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(language.log); <span class="comment">// ['EN', 'FA']</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="get"><a href="#get" class="headerlink" title="get"></a>get</h3><p>get语法将对象属性绑定到查询该属性时将被调用的函数。</p>
-<p>有时需要允许访问返回动态计算值的属性，或者你可能需要反映内部变量的状态，而不需要使用显式方法调用。在JavaScript中，可以使用 getter 来实现。虽然可以使用 getter 和 setter 来创建一个伪属性类型，但是不可能同时将一个 getter 绑定到一个属性并且该属性实际上具有一个值。</p>
-<p>使用get语法时应注意以下问题：<br>可以使用数值或字符串作为标识<br>必须不带参数<br>它不能与另一个 get 或具有相同属性的数据条目同时出现在一个对象字面量中<br>可通过 delete 操作符删除 getter。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  log: [<span class="string">'example'</span>,<span class="string">'test'</span>],</span><br><span class="line">  get latest() &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.log.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.log[<span class="keyword">this</span>.log.length - <span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj.latest); <span class="comment">// "test".</span></span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://githuanyu.github.io/2018/07/02/arguments/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈环宇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Developer">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/02/arguments/" itemprop="url">
-                  arguments
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-07-02 15:31:37" itemprop="dateCreated datePublished" datetime="2018-07-02T15:31:37+08:00">2018-07-02</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-03 11:39:31" itemprop="dateModified" datetime="2018-07-03T11:39:31+08:00">2018-07-03</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JS高级/" itemprop="url" rel="index"><span itemprop="name">JS高级</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>arguments 是一个对应于传递给函数的参数的类数组对象。<br>arguments对象是所有（非箭头）函数中都可用的局部变量。<br>你可以使用arguments对象在函数中引用函数的参数。此对象包含传递给函数的每个参数的条目，第一个条目的索引从0开始。</p>
-<p>arguments对象不是一个 Array 。它类似于Array，但除了length属性和索引元素之外没有任何Array属性</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="string">'hello'</span>, <span class="string">'world'</span>, <span class="string">'huan'</span>, <span class="string">'yu'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//js不会验证实参的个数 是否等于 形参的个数</span></span><br><span class="line"><span class="comment">//函数可以接收任意个数的实参</span></span><br><span class="line"><span class="comment">//遗漏的实参会以undefined传递给形参，多余的实参会被遗漏</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//可以通过arguments的作用来模拟函数重载</span></span><br><span class="line"><span class="comment">//使用arguments.length 来检测函数的参数个数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">arguments</span>.length == <span class="number">1</span>)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">arguments</span>.length == <span class="number">2</span>)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>arguments.callee<br>    指向当前执行的函数。<br>arguments.caller （err）<br>    指向调用当前函数的函数。<br>arguments.length<br>    指向传递给当前函数的参数数量。<br>arguments[@@iterator]<br>    返回一个新的Array迭代器对象，该对象包含参数中每个索引的值。</p>
-<p>注意:现在在严格模式下，arguments对象已与过往不同。arguments[@@iterator]不再与函数的实际形参之间共享，同时caller属性也被移除。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2009,7 +1905,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

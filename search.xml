@@ -1,665 +1,379 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title>ES6</title>
-      <link href="/2018/07/04/ES6/"/>
-      <url>/2018/07/04/ES6/</url>
-      <content type="html"><![CDATA[<p>如果你想要使用一个比较简洁的JavaScript，你可以忽略很多旧的语法，下面是一些建议：</p><p>var: 使用let和const<br>function: 使用箭头函数和方法定义(method definition)。优势：更容易处理this。(具体信息)<br>Promises: 只使用async函数。你不能完全避开使用Promises。<br>迭代访问对象：使用map<br>循环：避免使用for-in，尽量避免使用for, 建议使用for-of。<br>参数：使用rest parameters(…args)<br>Function.prototype.apply()：使用spread operator(f(..myArray))<br>构造函数：使用class<br>IIFEs(立即调用函数): 使用块作用域</p>]]></content>
-      
+<search>
+  <entry>
+    <title><![CDATA[HBuilder调试夜神安卓模拟器方法]]></title>
+    <url>%2F2018%2F07%2F12%2FHBuilder%E8%B0%83%E8%AF%95%E5%A4%9C%E7%A5%9E%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[HBuilder调试夜神安卓模拟器方法现在开发手机app的IDE很多，今天我就以我个人开发使用的HBuider开发工具讲一下手机app开发调试。HBuider支持真机调试，这个比较简单，只要安装好手机的驱动，把手机和电脑通过数据线连接就可以调试发布了，如果手机连接不上，可以在电脑和手机上都安装360手机助手基本上就可以了。今天重点说一下使用夜神安卓模拟器和HBuider的连接调试方法。第一步：下载安装夜神模拟器，这个在百度搜索就可以找官网，下载 安装就可以了。第二步：查找已经安装的夜神模拟的端口，这里说一下夜神模拟器默认端口是62001，但是有些版本可能不是这个端口，怎么查找到底是哪个端口呢？按照如下顺序进行就可以查找到你按装的夜神模拟器端口了。1.打开夜神模拟器，确保正常启动后，出现安卓桌面。2.打开夜神模拟器的安装文件夹，找到D:\YS\Nox\bin文件夹打开（D:\YS是夜神模拟器安装的路径根目录），找到【debugReport.bat】文件，双击启动该批处理文件。会显示如下图：nox adb port:52001already connected to 127.0.0.1:52001这里面显示了夜神模拟器的adb port 端口为：52001，并且已经可以正常连接了，出现这个内容证明夜神模拟器已经正常工作了。或者找到【debug.bat】文件，双击启动该批处理文件,也可以查看端口。3.找到夜神模拟器的adb 端口后，打开HBuider开发工具，在【工具】–&gt;【选项】打开界面如下图，选择【HBuider】，在最下方的” 第三方Android模拟器端口”中输入52001后【确定】就可以了，通过这些设置就可以在调试中看到夜神模拟器的选项了。4.如果没有出现夜神模拟器的连接项，那就需要你在电脑和夜神模拟器上安装360手机助手了，安装完360手机助手后，启动360卫士和360手机助手后，在360手机助手中连接手机，找到夜神手机后连接成功就行了。如果找不到也没有关系，也可以正常连接，这时再打开HBuider开发工具，就可以了。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[electron]]></title>
+    <url>%2F2018%2F07%2F12%2Felectron%2F</url>
+    <content type="text"><![CDATA[简介使用前端技术构建跨系统的桌面应用 中文站教学站点]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F07%2F11%2Fa%2F</url>
+    <content type="text"><![CDATA[var Single = (function () { var instance; function init() { // define private methods and properties //do something return { //define public methods and properties }; } return { // 获取实例 getInstance: function () { if (!instance) { instance = init(); } return instance; } } })(); var obj1 = Single.getInstance(); var obj2 = Single.getInstance(); // console.log(obj1 === obj2); console.log(obj1)]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[设计模式]]></title>
+    <url>%2F2018%2F07%2F11%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[单例模式12345678910111213141516171819202122232425262728/** * 在执行当前 Single 只获得唯一一个对象 */var Single = (function()&#123; var instance; function init() &#123; // define private methods and properties //do something return &#123; //define public methods and properties &#125;; &#125; return &#123; // 获取实例 getInstance:function()&#123; if(!instance)&#123; instance = init(); &#125; return instance; &#125; &#125;&#125;)();var obj1 = Single.getInstance();var obj2 = Single.getInstance();console.log(obj1 === obj2); 构造函数模式12345678910111213/** * 构造一个动物的函数 */function Animal(name, color)&#123; this.name = name; this.color = color; this.getName = function()&#123; return this.name; &#125;&#125;// 实例一个对象var cat = new Animal('猫', '白色');console.log( cat.getName() );]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[VUE过滤器]]></title>
+    <url>%2F2018%2F07%2F06%2FVUE%E8%BF%87%E6%BB%A4%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[1234567891011121314151617181920212223242526272829filters: &#123; deal_way: function (value) &#123; if(value==1)&#123; return '均价成交' &#125; if(value==2)&#123; return '市价成交' &#125; if(value==3)&#123; return '现价成交' &#125; &#125;, dateCN: function (value) &#123; return value.replace('d', "天").replace('m', "个月") &#125;, parseFloat: function(value, length)&#123; if(value)&#123; return value.toFixed(length) &#125; &#125;, close_type: function(value)&#123; if(value==1)&#123; return '均价成交' &#125; if(value==2)&#123; return '市价成交' &#125; &#125;&#125;]]></content>
       <categories>
-          
-          <category> ES6 </category>
-          
+        <category>VUE</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>混合app</title>
-      <link href="/2018/07/04/%E6%B7%B7%E5%90%88app/"/>
-      <url>/2018/07/04/%E6%B7%B7%E5%90%88app/</url>
-      <content type="html"><![CDATA[]]></content>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>babel入门</title>
-      <link href="/2018/07/03/babel%E5%85%A5%E9%97%A8/"/>
-      <url>/2018/07/03/babel%E5%85%A5%E9%97%A8/</url>
-      <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 转码前</span></span><br><span class="line">input.map(<span class="function"><span class="params">item</span> =&gt;</span> item + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 转码后</span></span><br><span class="line">input.map(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> item + <span class="number">1</span>;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h2 id="1-配置文件-babelrc"><a href="#1-配置文件-babelrc" class="headerlink" title="1.配置文件.babelrc"></a>1.配置文件.babelrc</h2><p>使用Babel的第一步，就是配置这个文件。<br>该文件用来设置转码规则和插件，基本格式如下。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"presets"</span>: [</span><br><span class="line">    <span class="string">"es2015"</span>,</span><br><span class="line">    <span class="string">"react"</span>,</span><br><span class="line">    <span class="string">"stage-2"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"plugins"</span>: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>presets字段设定转码规则，官方提供以下的规则集，你可以根据需要安装。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># ES2015转码规则</span><br><span class="line">$ npm install --save-dev babel-preset-es2015</span><br><span class="line"></span><br><span class="line"># react转码规则</span><br><span class="line">$ npm install --save-dev babel-preset-react</span><br><span class="line"></span><br><span class="line"># ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个</span><br><span class="line">$ npm install --save-dev babel-preset-stage-0</span><br><span class="line">$ npm install --save-dev babel-preset-stage-1</span><br><span class="line">$ npm install --save-dev babel-preset-stage-2</span><br><span class="line">$ npm install --save-dev babel-preset-stage-3</span><br></pre></td></tr></table></figure><h2 id="2-命令行转码babel-cli"><a href="#2-命令行转码babel-cli" class="headerlink" title="2.命令行转码babel-cli"></a>2.命令行转码babel-cli</h2><p>Babel提供babel-cli工具，用于命令行转码。</p><h2 id="3-babel-node"><a href="#3-babel-node" class="headerlink" title="3.babel-node"></a>3.babel-node</h2><p>babel-cli工具自带一个babel-node命令，提供一个支持ES6的REPL环境。它支持Node的REPL环境的所有功能，而且可以直接运行ES6代码。</p><h2 id="4-babel-register"><a href="#4-babel-register" class="headerlink" title="4.babel-register"></a>4.babel-register</h2><p>babel-register模块改写require命令，为它加上一个钩子。此后，每当使用require加载.js、.jsx、.es和.es6后缀名的文件，就会先用Babel进行转码。</p><h2 id="5-babel-core"><a href="#5-babel-core" class="headerlink" title="5.babel-core"></a>5.babel-core</h2><p>如果某些代码需要调用Babel的API进行转码，就要使用babel-core模块。</p><h2 id="6-babel-polyfill"><a href="#6-babel-polyfill" class="headerlink" title="6.babel-polyfill"></a>6.babel-polyfill</h2><p>Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。<br>举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。</p>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ES6]]></title>
+    <url>%2F2018%2F07%2F04%2FES6%2F</url>
+    <content type="text"><![CDATA[如果你想要使用一个比较简洁的JavaScript，你可以忽略很多旧的语法，下面是一些建议： var: 使用let和constfunction: 使用箭头函数和方法定义(method definition)。优势：更容易处理this。(具体信息)Promises: 只使用async函数。你不能完全避开使用Promises。迭代访问对象：使用map循环：避免使用for-in，尽量避免使用for, 建议使用for-of。参数：使用rest parameters(…args)Function.prototype.apply()：使用spread operator(f(..myArray))构造函数：使用classIIFEs(立即调用函数): 使用块作用域]]></content>
       <categories>
-          
-          <category> ES6 </category>
-          
+        <category>ES6</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>原型链</title>
-      <link href="/2018/07/03/%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
-      <url>/2018/07/03/%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
-      <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象（object ）都有一个私有属性（称之为 <strong>proto</strong>）指向它的原型对象（prototype）。该原型对象也有一个自己的原型对象 ，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。</p><p><img src="https://wx4.sinaimg.cn/large/7ed42f5cly1fqguw4y1zej20ge0e8wes.jpg" alt="prototype"></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 让我们假设我们有一个对象 o, 其有自己的属性 a 和 b：</span></span><br><span class="line"><span class="comment">// &#123;a: 1, b: 2&#125;</span></span><br><span class="line"><span class="comment">// o 的 [[Prototype]] 有属性 b 和 c：</span></span><br><span class="line"><span class="comment">// &#123;b: 3, c: 4&#125;</span></span><br><span class="line"><span class="comment">// 最后, o.[[Prototype]].[[Prototype]] 是 null.</span></span><br><span class="line"><span class="comment">// 这就是原型链的末尾，即 null，</span></span><br><span class="line"><span class="comment">// 根据定义，null 没有[[Prototype]].</span></span><br><span class="line"><span class="comment">// 综上，整个原型链如下: </span></span><br><span class="line"><span class="comment">// &#123;a:1, b:2&#125; ---&gt; &#123;b:3, c:4&#125; ---&gt; null</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(o.a); <span class="comment">// 1</span></span><br><span class="line"><span class="comment">// a是o的自身属性吗？是的，该属性的值为1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(o.b); <span class="comment">// 2</span></span><br><span class="line"><span class="comment">// b是o的自身属性吗？是的，该属性的值为2</span></span><br><span class="line"><span class="comment">// 原型上也有一个'b'属性,但是它不会被访问到.这种情况称为"属性遮蔽 (property shadowing)"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(o.c); <span class="comment">// 4</span></span><br><span class="line"><span class="comment">// c是o的自身属性吗？不是，那看看原型上有没有</span></span><br><span class="line"><span class="comment">// c是o.[[Prototype]]的属性吗？是的，该属性的值为4</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(o.d); <span class="comment">// undefined</span></span><br><span class="line"><span class="comment">// d是o的自身属性吗？不是,那看看原型上有没有</span></span><br><span class="line"><span class="comment">// d是o.[[Prototype]]的属性吗？不是，那看看它的原型上有没有</span></span><br><span class="line"><span class="comment">// o.[[Prototype]].[[Prototype]] 为 null，停止搜索</span></span><br><span class="line"><span class="comment">// 没有d属性，返回undefined</span></span><br></pre></td></tr></table></figure><h2 id="继承属性"><a href="#继承属性" class="headerlink" title="继承属性"></a>继承属性</h2><p>JavaScript 对象是动态的属性“包”（指其自己的属性）。JavaScript 对象有一个指向一个原型对象的链。当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。</p>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[混合app]]></title>
+    <url>%2F2018%2F07%2F04%2F%E6%B7%B7%E5%90%88app%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[babel入门]]></title>
+    <url>%2F2018%2F07%2F03%2Fbabel%E5%85%A5%E9%97%A8%2F</url>
+    <content type="text"><![CDATA[简介Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。1234567// 转码前input.map(item =&gt; item + 1);// 转码后input.map(function (item) &#123; return item + 1;&#125;) 1.配置文件.babelrc使用Babel的第一步，就是配置这个文件。该文件用来设置转码规则和插件，基本格式如下。12345678&#123; "presets": [ "es2015", "react", "stage-2" ], "plugins": []&#125; presets字段设定转码规则，官方提供以下的规则集，你可以根据需要安装。 1234567891011# ES2015转码规则$ npm install --save-dev babel-preset-es2015# react转码规则$ npm install --save-dev babel-preset-react# ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个$ npm install --save-dev babel-preset-stage-0$ npm install --save-dev babel-preset-stage-1$ npm install --save-dev babel-preset-stage-2$ npm install --save-dev babel-preset-stage-3 2.命令行转码babel-cliBabel提供babel-cli工具，用于命令行转码。 3.babel-nodebabel-cli工具自带一个babel-node命令，提供一个支持ES6的REPL环境。它支持Node的REPL环境的所有功能，而且可以直接运行ES6代码。 4.babel-registerbabel-register模块改写require命令，为它加上一个钩子。此后，每当使用require加载.js、.jsx、.es和.es6后缀名的文件，就会先用Babel进行转码。 5.babel-core如果某些代码需要调用Babel的API进行转码，就要使用babel-core模块。 6.babel-polyfillBabel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。]]></content>
       <categories>
-          
-          <category> JS高级 </category>
-          
+        <category>ES6</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>箭头函数</title>
-      <link href="/2018/07/03/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
-      <url>/2018/07/03/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/</url>
-      <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>1.不绑定this，arguments<br>箭头函数的this其实就是在定义的时候就确定好的，以后不管怎么调用这个箭头函数，箭头函数的this始终为定义时的this </p><p>2.更简化的代码语法</p><p>这些函数表达式更适用于那些本来需要匿名函数的地方，并且它们不能用作构造函数。<br>this的原因，不适合在对象的方法中使用</p><h2 id="基本写法"><a href="#基本写法" class="headerlink" title="基本写法"></a>基本写法</h2><p>ES6 允许使用“箭头”（=&gt;）定义函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> v;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p><p>如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">5</span>;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="number">5</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1, num2</span>) =&gt;</span> num1 + num2;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[原型链]]></title>
+    <url>%2F2018%2F07%2F03%2F%E5%8E%9F%E5%9E%8B%E9%93%BE%2F</url>
+    <content type="text"><![CDATA[简介当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象（object ）都有一个私有属性（称之为 proto）指向它的原型对象（prototype）。该原型对象也有一个自己的原型对象 ，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。 1234567891011121314151617181920212223242526// 让我们假设我们有一个对象 o, 其有自己的属性 a 和 b：// &#123;a: 1, b: 2&#125;// o 的 [[Prototype]] 有属性 b 和 c：// &#123;b: 3, c: 4&#125;// 最后, o.[[Prototype]].[[Prototype]] 是 null.// 这就是原型链的末尾，即 null，// 根据定义，null 没有[[Prototype]].// 综上，整个原型链如下: // &#123;a:1, b:2&#125; ---&gt; &#123;b:3, c:4&#125; ---&gt; nullconsole.log(o.a); // 1// a是o的自身属性吗？是的，该属性的值为1console.log(o.b); // 2// b是o的自身属性吗？是的，该属性的值为2// 原型上也有一个'b'属性,但是它不会被访问到.这种情况称为"属性遮蔽 (property shadowing)"console.log(o.c); // 4// c是o的自身属性吗？不是，那看看原型上有没有// c是o.[[Prototype]]的属性吗？是的，该属性的值为4console.log(o.d); // undefined// d是o的自身属性吗？不是,那看看原型上有没有// d是o.[[Prototype]]的属性吗？不是，那看看它的原型上有没有// o.[[Prototype]].[[Prototype]] 为 null，停止搜索// 没有d属性，返回undefined 继承属性JavaScript 对象是动态的属性“包”（指其自己的属性）。JavaScript 对象有一个指向一个原型对象的链。当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。]]></content>
       <categories>
-          
-          <category> ES6 </category>
-          
+        <category>JS高级</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>hexo本地搜索</title>
-      <link href="/2018/07/03/hexo%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2/"/>
-      <url>/2018/07/03/hexo%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2/</url>
-      <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>当文章越来越多的时候，通过分类和标签来找已经不合适了，需要提供一个本地的搜索功能<br>在next主题下，搜索适用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br><span class="line"></span><br><span class="line">//站点配置</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br><span class="line"></span><br><span class="line">//主题配置</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure></p>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[箭头函数]]></title>
+    <url>%2F2018%2F07%2F03%2F%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[简介1.不绑定this，arguments箭头函数的this其实就是在定义的时候就确定好的，以后不管怎么调用这个箭头函数，箭头函数的this始终为定义时的this 2.更简化的代码语法 这些函数表达式更适用于那些本来需要匿名函数的地方，并且它们不能用作构造函数。this的原因，不适合在对象的方法中使用 基本写法ES6 允许使用“箭头”（=&gt;）定义函数。123456var f = v =&gt; v;// 等同于var f = function (v) &#123; return v;&#125;; 如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。123456789var f = () =&gt; 5;// 等同于var f = function () &#123; return 5 &#125;;var sum = (num1, num2) =&gt; num1 + num2;// 等同于var sum = function(num1, num2) &#123; return num1 + num2;&#125;;]]></content>
       <categories>
-          
-          <category> hexo </category>
-          
+        <category>ES6</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> hexo </tag>
-            
-            <tag> cmd </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>封装和继承</title>
-      <link href="/2018/07/02/%E5%B0%81%E8%A3%85%E5%92%8C%E7%BB%A7%E6%89%BF/"/>
-      <url>/2018/07/02/%E5%B0%81%E8%A3%85%E5%92%8C%E7%BB%A7%E6%89%BF/</url>
-      <content type="html"><![CDATA[<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>将数据和方法封装到一个对象中<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">'大毛'</span>, <span class="string">'黄色'</span>);</span><br><span class="line"><span class="keyword">var</span> cat2 = <span class="keyword">new</span> Cat(<span class="string">'二毛'</span>, <span class="string">'黑色'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(cat1.name, cat1.color);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(cat1);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(cat1.constructor == Cat)</span><br></pre></td></tr></table></figure></p><p>为了解决从原型对象生成实例的问题，Javascript提供了一个构造函数（Constructor）模式。<br>所谓”构造函数”，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上。<br>这时cat1和cat2会自动含有一个constructor属性，指向它们的构造函数。</p><h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>使得一个对象可以使用另一个对象的变量和方法</p><h3 id="1-使用call或apply方法"><a href="#1-使用call或apply方法" class="headerlink" title="1.使用call或apply方法"></a>1.使用call或apply方法</h3><p>使用call或apply方法，将父对象的构造函数绑定在子对象上，即在子对象构造函数中加一行：<br>Animal.apply(this, arguments);</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.species = <span class="string">"动物"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color</span>) </span>&#123;</span><br><span class="line">    Animal.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Cat.prototype.constructor);</span><br></pre></td></tr></table></figure><h3 id="2-prototype模式"><a href="#2-prototype模式" class="headerlink" title="2.prototype模式"></a>2.prototype模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.species = <span class="string">'动物'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name,color</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>如何使Cat()继承Animal()???<br>如果Cat()的prototype对象，指向一个Animal()的实例，那么所有Cat()的实例，就能继承Animal()</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure><h4 id="line1"><a href="#line1" class="headerlink" title="line1"></a>line1</h4><p>将Cat的prototype对象指向了一个Animal()的实例，它相当于完全删除了prototype对象原先的值，然后赋予一个新值</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是Cat原先的prototype对象</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">constructor</span>: Cat,</span><br><span class="line">  // 任何一个prototype对象都有一个<span class="keyword">constructor</span>属性，指向它的构造函数</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 指向Animal()实例后的新prototype对象</span><br><span class="line">&#123;</span><br><span class="line">  species: <span class="string">'动物'</span>,</span><br><span class="line">  prototype: &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: Animal</span><br><span class="line">  &#125;</span><br><span class="line">  // 每一个实例也有一个<span class="keyword">constructor</span>属性，默认调用prototype对象的<span class="keyword">constructor</span>属性</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="line2"><a href="#line2" class="headerlink" title="line2"></a>line2</h4><p>此时Cat()的实例的<strong> constructor </strong>会指向 Animal()，会导致继承链的紊乱，需要手动纠正</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果替换了prototype对象</span></span><br><span class="line">o.prototype = &#123;&#125;;</span><br><span class="line"><span class="comment">// 下一步必然是为新的prototype对象加上constructor属性，并将这个属性指回原来的构造函数。</span></span><br><span class="line">o.prototype.constructor = o;</span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo本地搜索]]></title>
+    <url>%2F2018%2F07%2F03%2Fhexo%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%2F</url>
+    <content type="text"><![CDATA[简介当文章越来越多的时候，通过分类和标签来找已经不合适了，需要提供一个本地的搜索功能在next主题下，搜索适用123456789101112npm install hexo-generator-searchdb --save//站点配置search: path: search.xml field: post format: html limit: 10000//主题配置local_search: enable: true]]></content>
       <categories>
-          
-          <category> JS高级 </category>
-          
+        <category>hexo</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Function对象</title>
-      <link href="/2018/07/02/Function%E5%AF%B9%E8%B1%A1/"/>
-      <url>/2018/07/02/Function%E5%AF%B9%E8%B1%A1/</url>
-      <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Function对象（类）</span></span><br><span class="line">    <span class="keyword">var</span> foo = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"alert(a + b);"</span>);</span><br><span class="line">    foo(<span class="number">1</span>, <span class="number">5</span>);</span><br><span class="line">    <span class="comment">//由于字符串的关系，这种形式写起来很困难，但是说明了函数只不过是一种引用类型</span></span><br><span class="line">    <span class="comment">//它的行为与用Function类明确创建的函数行为是相同的</span></span><br><span class="line">        </span><br><span class="line">    引用类型通常叫做类，遇到引用值，所处理的就是对象</span><br><span class="line">        </span><br><span class="line">    基本类型 <span class="built_in">Number</span> <span class="built_in">Boolean</span> <span class="built_in">String</span> <span class="literal">undefined</span> <span class="literal">null</span></span><br><span class="line">    基本类型的数据存放在栈内存中</span><br><span class="line">    基本类型的复制就是在栈内存中开辟了一个新的存储区域来存储新的变量，这个变量有他自己的值，只不过和前面的值一样，所以如果其中一个值改变了不会影响到另一个</span><br><span class="line">        </span><br><span class="line">    引用类型 <span class="built_in">Object</span> <span class="built_in">Function</span></span><br><span class="line">    引用类型的数据存放在堆内存中</span><br><span class="line">    定义了一个对象其实是在栈内存中存储了一个指针，这个指针指向堆内存中该对象的存储地址，复制给另一个对象的过程其实是把该对象的地址复制给了另一个对象变量，两个指针都指向同一个对象，如果其中一个修改了，另一个也会改变</span><br><span class="line"></span><br><span class="line">    基本类型的数据是没有属性和方法的，引用类型才有，但是为什么<span class="built_in">String</span>类型有方法呢？</span><br><span class="line">    <span class="keyword">var</span> string = <span class="string">'aaa'</span>;</span><br><span class="line">    <span class="keyword">var</span> string2 = string.substring(<span class="number">0</span>);</span><br><span class="line">    基本类型的确没有方法和属性，因为一旦创建了属性或者方法就会被立刻销毁，但是为了方便对基本类型数据进行操作，在底层做了一些工作，其实这段代码相当于</span><br><span class="line">    <span class="keyword">var</span> string = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'aaa'</span>);</span><br><span class="line">    <span class="keyword">var</span> string2 = string.substring(<span class="number">0</span>);</span><br><span class="line">    string = <span class="literal">null</span>;</span><br><span class="line">        </span><br><span class="line">    <span class="number">1.</span>创建了一个<span class="built_in">String</span>类型的实例，使用<span class="keyword">new</span>操作符创建的引用类型的实例，在执行流离开当前作用域之前都一直保存在内存中。而自动创建的基本包装类型的对象，则只存在于一行代码的瞬间，然后立即被销毁</span><br><span class="line">    <span class="number">2.</span>在实例上调用指定方法</span><br><span class="line">    <span class="number">3.</span>销毁该实例</span><br><span class="line">        </span><br><span class="line">    经过这三步，字符串值就变得和对象一样了，在<span class="built_in">Boolean</span>，<span class="built_in">Number</span>中也是一样</span><br><span class="line">    <span class="built_in">String</span>, <span class="built_in">Boolean</span>, <span class="built_in">Number</span> 这三种类型也叫做 基本包装类型</span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>hexo</tag>
+        <tag>cmd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[封装和继承]]></title>
+    <url>%2F2018%2F07%2F02%2F%E5%B0%81%E8%A3%85%E5%92%8C%E7%BB%A7%E6%89%BF%2F</url>
+    <content type="text"><![CDATA[封装将数据和方法封装到一个对象中12345678910111213function Cat(name, color)&#123; this.name = name; this.color = color;&#125;var cat1 = new Cat('大毛', '黄色');var cat2 = new Cat('二毛', '黑色');console.log(cat1.name, cat1.color);console.log(cat1);console.log(cat1.constructor == Cat) 为了解决从原型对象生成实例的问题，Javascript提供了一个构造函数（Constructor）模式。所谓”构造函数”，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上。这时cat1和cat2会自动含有一个constructor属性，指向它们的构造函数。 继承使得一个对象可以使用另一个对象的变量和方法 1.使用call或apply方法使用call或apply方法，将父对象的构造函数绑定在子对象上，即在子对象构造函数中加一行：Animal.apply(this, arguments); 12345678910function Animal() &#123; this.species = "动物";&#125;function Cat(name, color) &#123; Animal.apply(this, arguments); this.name = name; this.color = color;&#125;console.log(Cat.prototype.constructor); 2.prototype模式12345678function Animal()&#123; this.species = '动物';&#125;function Cat(name,color)&#123; this.name = name; this.color = color;&#125; 如何使Cat()继承Animal()???如果Cat()的prototype对象，指向一个Animal()的实例，那么所有Cat()的实例，就能继承Animal() 1234Cat.prototype = new Animal();Cat.prototype.constructor = Cat;var cat1 = new Cat("大毛","黄色");alert(cat1.species); // 动物 line1将Cat的prototype对象指向了一个Animal()的实例，它相当于完全删除了prototype对象原先的值，然后赋予一个新值 1234567891011121314// 这是Cat原先的prototype对象&#123; constructor: Cat, // 任何一个prototype对象都有一个constructor属性，指向它的构造函数&#125; // 指向Animal()实例后的新prototype对象&#123; species: '动物', prototype: &#123; constructor: Animal &#125; // 每一个实例也有一个constructor属性，默认调用prototype对象的constructor属性&#125; line2此时Cat()的实例的 constructor 会指向 Animal()，会导致继承链的紊乱，需要手动纠正 1234// 如果替换了prototype对象o.prototype = &#123;&#125;;// 下一步必然是为新的prototype对象加上constructor属性，并将这个属性指回原来的构造函数。o.prototype.constructor = o;]]></content>
       <categories>
-          
-          <category> JS高级 </category>
-          
+        <category>JS高级</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>setter和getter</title>
-      <link href="/2018/07/02/setter%E5%92%8Cgetter/"/>
-      <url>/2018/07/02/setter%E5%92%8Cgetter/</url>
-      <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>在读取对象属性值或者设置对象属性值的时候，由一个函数去操作这个变量<br>vue的计算属性依托于这个语法</p><h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><p>当尝试设置属性时，set语法将对象属性绑定到要调用的函数。</p><p>在 javascript 中，如果试着改变一个属性的值，那么对应的 setter 将被执行。setter 经常和 getter 连用以创建一个伪属性。不可能在具有真实值的属性上同时拥有一个 setter 器。</p><p>使用 set 语法时请注意：</p><p>它的标识符可以是数字或字符串；<br>它必须有一个明确的参数<br>在对象字面量中，不能为一个已有真实值的变量使用 set ，也不能为一个属性设置多个 set<br>setter 可以用delete操作来移除。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> language = &#123;</span><br><span class="line">  set current(name) &#123;</span><br><span class="line">    <span class="keyword">this</span>.log.push(name);</span><br><span class="line">  &#125;,</span><br><span class="line">  log: []</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">language.current = <span class="string">'EN'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(language.log); <span class="comment">// ['EN']</span></span><br><span class="line"></span><br><span class="line">language.current = <span class="string">'FA'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(language.log); <span class="comment">// ['EN', 'FA']</span></span><br></pre></td></tr></table></figure></p><h3 id="get"><a href="#get" class="headerlink" title="get"></a>get</h3><p>get语法将对象属性绑定到查询该属性时将被调用的函数。</p><p>有时需要允许访问返回动态计算值的属性，或者你可能需要反映内部变量的状态，而不需要使用显式方法调用。在JavaScript中，可以使用 getter 来实现。虽然可以使用 getter 和 setter 来创建一个伪属性类型，但是不可能同时将一个 getter 绑定到一个属性并且该属性实际上具有一个值。</p><p>使用get语法时应注意以下问题：<br>可以使用数值或字符串作为标识<br>必须不带参数<br>它不能与另一个 get 或具有相同属性的数据条目同时出现在一个对象字面量中<br>可通过 delete 操作符删除 getter。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  log: [<span class="string">'example'</span>,<span class="string">'test'</span>],</span><br><span class="line">  get latest() &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.log.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.log[<span class="keyword">this</span>.log.length - <span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj.latest); <span class="comment">// "test".</span></span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Function对象]]></title>
+    <url>%2F2018%2F07%2F02%2FFunction%E5%AF%B9%E8%B1%A1%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930//Function对象（类） var foo = new Function("a", "b", "alert(a + b);"); foo(1, 5); //由于字符串的关系，这种形式写起来很困难，但是说明了函数只不过是一种引用类型 //它的行为与用Function类明确创建的函数行为是相同的 引用类型通常叫做类，遇到引用值，所处理的就是对象 基本类型 Number Boolean String undefined null 基本类型的数据存放在栈内存中 基本类型的复制就是在栈内存中开辟了一个新的存储区域来存储新的变量，这个变量有他自己的值，只不过和前面的值一样，所以如果其中一个值改变了不会影响到另一个 引用类型 Object Function 引用类型的数据存放在堆内存中 定义了一个对象其实是在栈内存中存储了一个指针，这个指针指向堆内存中该对象的存储地址，复制给另一个对象的过程其实是把该对象的地址复制给了另一个对象变量，两个指针都指向同一个对象，如果其中一个修改了，另一个也会改变 基本类型的数据是没有属性和方法的，引用类型才有，但是为什么String类型有方法呢？ var string = 'aaa'; var string2 = string.substring(0); 基本类型的确没有方法和属性，因为一旦创建了属性或者方法就会被立刻销毁，但是为了方便对基本类型数据进行操作，在底层做了一些工作，其实这段代码相当于 var string = new String('aaa'); var string2 = string.substring(0); string = null; 1.创建了一个String类型的实例，使用new操作符创建的引用类型的实例，在执行流离开当前作用域之前都一直保存在内存中。而自动创建的基本包装类型的对象，则只存在于一行代码的瞬间，然后立即被销毁 2.在实例上调用指定方法 3.销毁该实例 经过这三步，字符串值就变得和对象一样了，在Boolean，Number中也是一样 String, Boolean, Number 这三种类型也叫做 基本包装类型]]></content>
       <categories>
-          
-          <category> JS高级 </category>
-          
+        <category>JS高级</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>arguments</title>
-      <link href="/2018/07/02/arguments/"/>
-      <url>/2018/07/02/arguments/</url>
-      <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>arguments 是一个对应于传递给函数的参数的类数组对象。<br>arguments对象是所有（非箭头）函数中都可用的局部变量。<br>你可以使用arguments对象在函数中引用函数的参数。此对象包含传递给函数的每个参数的条目，第一个条目的索引从0开始。</p><p>arguments对象不是一个 Array 。它类似于Array，但除了length属性和索引元素之外没有任何Array属性</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="string">'hello'</span>, <span class="string">'world'</span>, <span class="string">'huan'</span>, <span class="string">'yu'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//js不会验证实参的个数 是否等于 形参的个数</span></span><br><span class="line"><span class="comment">//函数可以接收任意个数的实参</span></span><br><span class="line"><span class="comment">//遗漏的实参会以undefined传递给形参，多余的实参会被遗漏</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//可以通过arguments的作用来模拟函数重载</span></span><br><span class="line"><span class="comment">//使用arguments.length 来检测函数的参数个数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">arguments</span>.length == <span class="number">1</span>)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">arguments</span>.length == <span class="number">2</span>)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>arguments.callee<br>    指向当前执行的函数。<br>arguments.caller （err）<br>    指向调用当前函数的函数。<br>arguments.length<br>    指向传递给当前函数的参数数量。<br>arguments[@@iterator]<br>    返回一个新的Array迭代器对象，该对象包含参数中每个索引的值。</p><p>注意:现在在严格模式下，arguments对象已与过往不同。arguments[@@iterator]不再与函数的实际形参之间共享，同时caller属性也被移除。</p>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[setter和getter]]></title>
+    <url>%2F2018%2F07%2F02%2Fsetter%E5%92%8Cgetter%2F</url>
+    <content type="text"><![CDATA[简介在读取对象属性值或者设置对象属性值的时候，由一个函数去操作这个变量vue的计算属性依托于这个语法 set当尝试设置属性时，set语法将对象属性绑定到要调用的函数。 在 javascript 中，如果试着改变一个属性的值，那么对应的 setter 将被执行。setter 经常和 getter 连用以创建一个伪属性。不可能在具有真实值的属性上同时拥有一个 setter 器。 使用 set 语法时请注意： 它的标识符可以是数字或字符串；它必须有一个明确的参数在对象字面量中，不能为一个已有真实值的变量使用 set ，也不能为一个属性设置多个 setsetter 可以用delete操作来移除。123456789101112var language = &#123; set current(name) &#123; this.log.push(name); &#125;, log: []&#125;language.current = 'EN';console.log(language.log); // ['EN']language.current = 'FA';console.log(language.log); // ['EN', 'FA'] getget语法将对象属性绑定到查询该属性时将被调用的函数。 有时需要允许访问返回动态计算值的属性，或者你可能需要反映内部变量的状态，而不需要使用显式方法调用。在JavaScript中，可以使用 getter 来实现。虽然可以使用 getter 和 setter 来创建一个伪属性类型，但是不可能同时将一个 getter 绑定到一个属性并且该属性实际上具有一个值。 使用get语法时应注意以下问题：可以使用数值或字符串作为标识必须不带参数它不能与另一个 get 或具有相同属性的数据条目同时出现在一个对象字面量中可通过 delete 操作符删除 getter。 12345678var obj = &#123; log: ['example','test'], get latest() &#123; if (this.log.length == 0) return undefined; return this.log[this.log.length - 1]; &#125;&#125;console.log(obj.latest); // "test".]]></content>
       <categories>
-          
-          <category> JS高级 </category>
-          
+        <category>JS高级</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>AJAX</title>
-      <link href="/2018/07/02/AJAX/"/>
-      <url>/2018/07/02/AJAX/</url>
-      <content type="html"><![CDATA[<h3 id="处理头部信息"><a href="#处理头部信息" class="headerlink" title="处理头部信息"></a>处理头部信息</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    type: <span class="string">"GET"</span>,</span><br><span class="line">    url: _url,</span><br><span class="line">    headers:&#123;</span><br><span class="line">        <span class="string">"Authorization"</span>:that.$store.state.token, <span class="comment">// 发送头部</span></span><br><span class="line">    &#125;,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data, textStatus, request</span>)</span>&#123;</span><br><span class="line">        that.$store.commit(<span class="string">'set_token'</span>, request.getResponseHeader(<span class="string">'authorization'</span>));  <span class="comment">// 接收头部</span></span><br><span class="line">        img_vcode.attr(<span class="string">"src"</span>,<span class="string">"data:image/*;base64,"</span>+ data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[arguments]]></title>
+    <url>%2F2018%2F07%2F02%2Farguments%2F</url>
+    <content type="text"><![CDATA[简介arguments 是一个对应于传递给函数的参数的类数组对象。arguments对象是所有（非箭头）函数中都可用的局部变量。你可以使用arguments对象在函数中引用函数的参数。此对象包含传递给函数的每个参数的条目，第一个条目的索引从0开始。 arguments对象不是一个 Array 。它类似于Array，但除了length属性和索引元素之外没有任何Array属性 123456789101112131415161718192021function foo(a)&#123; console.log(arguments); console.log(a);&#125;foo('hello', 'world', 'huan', 'yu');//js不会验证实参的个数 是否等于 形参的个数//函数可以接收任意个数的实参//遗漏的实参会以undefined传递给形参，多余的实参会被遗漏//可以通过arguments的作用来模拟函数重载//使用arguments.length 来检测函数的参数个数function bar()&#123; if(arguments.length == 1)&#123; &#125; if(arguments.length == 2)&#123; &#125;&#125; 属性arguments.callee 指向当前执行的函数。arguments.caller （err） 指向调用当前函数的函数。arguments.length 指向传递给当前函数的参数数量。arguments[@@iterator] 返回一个新的Array迭代器对象，该对象包含参数中每个索引的值。 注意:现在在严格模式下，arguments对象已与过往不同。arguments[@@iterator]不再与函数的实际形参之间共享，同时caller属性也被移除。]]></content>
       <categories>
-          
-          <category> JS高级 </category>
-          
+        <category>JS高级</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>CORS</title>
-      <link href="/2018/07/02/CORS/"/>
-      <url>/2018/07/02/CORS/</url>
-      <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。<br>它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。<br>CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持该功能，IE浏览器不能低于IE10。<br>整个CORS通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS通信与同源的AJAX通信没有差别，代码完全一样。浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。<br>因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。</p><h3 id="简单请求"><a href="#简单请求" class="headerlink" title="简单请求"></a>简单请求</h3><p>浏览器将CORS请求分成两类：简单请求（simple request）和非简单请求（not-so-simple request）。<br>只要同时满足以下两大条件，就属于简单请求。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">（1) 请求方法是以下三种方法之一：</span><br><span class="line">HEAD</span><br><span class="line">GET</span><br><span class="line">POST</span><br><span class="line">（2）HTTP的头信息不超出以下几种字段：</span><br><span class="line">Accept</span><br><span class="line">Accept-Language</span><br><span class="line">Content-Language</span><br><span class="line">Last-Event-ID</span><br><span class="line">Content-Type：只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain</span><br></pre></td></tr></table></figure></p>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[AJAX]]></title>
+    <url>%2F2018%2F07%2F02%2FAJAX%2F</url>
+    <content type="text"><![CDATA[处理头部信息1234567891011$.ajax(&#123; type: "GET", url: _url, headers:&#123; "Authorization":that.$store.state.token, // 发送头部 &#125;, success: function(data, textStatus, request)&#123; that.$store.commit('set_token', request.getResponseHeader('authorization')); // 接收头部 img_vcode.attr("src","data:image/*;base64,"+ data); &#125;&#125;);]]></content>
       <categories>
-          
-          <category> 辅助 </category>
-          
+        <category>JS高级</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> web </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>前后端分离</title>
-      <link href="/2018/07/02/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/"/>
-      <url>/2018/07/02/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/</url>
-      <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>前后端分离，不只是简单的代码的分离。</p><p>首先是要架构上分离解耦，逐渐摆脱前后端在架构上的依赖，前后端各司其职，分开部署在不同的服务器上，通过RESTful接口传递数据。减轻后端服务器的压力，后端服务器不再负责页面渲染，只负责输入数据，吞吐量提升了好几倍。</p><p>其次是逻辑分离，不分离的时候，对于业务代码的界限很不明确，业务逻辑基本都放在后端，分离之后，前端也承担了一部分不该后端来写的业务逻辑，数据处理更加清晰。</p><p>最后是系统分离，同一个后端系统，可以将同样的接口数据提供给PC端、Mobile端和Native端等不同的前端终端，不需要为每一种终端提供一套接口。同样，对于前端应用来说，可以更方便的调用多个后端服务器的接口，处理和展示多个系统间的数据。</p><h3 id="必要性"><a href="#必要性" class="headerlink" title="必要性"></a>必要性</h3><p>前后端分离，让软件开发的流程更加清晰，解决了开发阶段的痛点。</p><p>从前，前端不止要学习后端的模板渲染语法，还要配置后端的开发环境，并不断同步后端的代码，这对于前端来说是非常痛苦的。</p><p>而现在，前端有自己的服务器，不需要再依靠后端服务器来支持项目运行，如果在开发阶段，还可以使用mock数据（要先和后端确定接口数据结构），摆脱对后端接口的依赖，这样极大的提高了开发效率，系统分工也更加明确。</p>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CORS]]></title>
+    <url>%2F2018%2F07%2F02%2FCORS%2F</url>
+    <content type="text"><![CDATA[简介CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持该功能，IE浏览器不能低于IE10。整个CORS通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS通信与同源的AJAX通信没有差别，代码完全一样。浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。 简单请求浏览器将CORS请求分成两类：简单请求（simple request）和非简单请求（not-so-simple request）。只要同时满足以下两大条件，就属于简单请求。12345678910（1) 请求方法是以下三种方法之一：HEADGETPOST（2）HTTP的头信息不超出以下几种字段：AcceptAccept-LanguageContent-LanguageLast-Event-IDContent-Type：只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain]]></content>
       <categories>
-          
-          <category> 辅助 </category>
-          
+        <category>辅助</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> web </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>this,call和apply</title>
-      <link href="/2018/07/02/this,call%E5%92%8Capply/"/>
-      <url>/2018/07/02/this,call%E5%92%8Capply/</url>
-      <content type="html"><![CDATA[<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>JavaScript 语言之所以有this的设计，跟内存里面的数据结构有关系。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">foo</span>:  <span class="number">5</span> &#125;;</span><br></pre></td></tr></table></figure></p><p>obj变量保存对象的内存地址，通过地址在内存中找到对象，从而取得对象的属性和方法<br>问题在于属性也可能是一个方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">foo</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125; &#125;;</span><br></pre></td></tr></table></figure></p><p>此时函数又单独保存在内存中，函数的地址赋给对象的属性</p><p>由于函数是一个单独的值，所以可以在不同的环境中执行</p><p>所以需要有一种机制，能够在函数体内部获得当前的运行环境（context）。</p><p>所以，this就出现了，它的设计目的就是在函数体内部，指代函数当前的运行环境。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  foo: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="keyword">this</span>.bar) &#125;,</span><br><span class="line">  bar: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = obj.foo;</span><br><span class="line"><span class="keyword">var</span> bar = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">obj.foo() <span class="comment">// 1</span></span><br><span class="line">foo() <span class="comment">// 2</span></span><br></pre></td></tr></table></figure><p><strong>this：当前函数的拥有者</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 函数拥有者：window</span></span><br><span class="line">&#125;,<span class="number">1000</span>)</span><br><span class="line">$.get(url).done(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//函数拥有者：$</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>call和apply可以用来重新定义函数的执行环境，也就是this的指向<br>call 和 apply 都是为了改变某个函数运行时的 context 即上下文而存在的<br>换句话说，就是为了改变函数体内部 this 的指向。<br>因为 JavaScript 的函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">fun.call(thisArg[arg1][arg2][arg3])</span><br><span class="line"></span><br><span class="line">thisArg：fun函数运行时指定的<span class="keyword">this</span>值，可能的值为：</span><br><span class="line"><span class="number">1.</span>不传，或者传<span class="literal">null</span>，<span class="literal">undefined</span>， <span class="keyword">this</span>指向<span class="built_in">window</span>对象</span><br><span class="line"><span class="number">2.</span>传递另一个函数的函数名fun2，<span class="keyword">this</span>指向函数fun2的引用</span><br><span class="line"><span class="number">3.</span>值为原始值(数字，字符串，布尔值),<span class="keyword">this</span>会指向该原始值的自动包装对象，如 <span class="built_in">String</span>、<span class="built_in">Number</span>、<span class="built_in">Boolean</span></span><br><span class="line"><span class="number">4.</span>传递一个对象，函数中的<span class="keyword">this</span>指向这个对象</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">A.call(B)</span><br><span class="line">B可以使用A的属性方法，继承了A</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b</span>)</span>&#123;  </span><br><span class="line">    alert(a+b);  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sub</span>(<span class="params">a,b</span>)</span>&#123;  </span><br><span class="line">    alert(a-b);  </span><br><span class="line">&#125;  </span><br><span class="line"> </span><br><span class="line">add.call(sub,<span class="number">1</span>,<span class="number">1</span>);  <span class="comment">//  结果是？  ‘2’  还是   ‘0’  呢</span></span><br></pre></td></tr></table></figure><p>call()就是用来让括号里的对象 来集成括号外的函数的属性！可以称之为继承！<br>apply()方法 接收两个参数，一个是函数运行的作用域（this），另一个是参数数组。</p>]]></content>
-      
+      <tags>
+        <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前后端分离]]></title>
+    <url>%2F2018%2F07%2F02%2F%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%2F</url>
+    <content type="text"><![CDATA[简介前后端分离，不只是简单的代码的分离。 首先是要架构上分离解耦，逐渐摆脱前后端在架构上的依赖，前后端各司其职，分开部署在不同的服务器上，通过RESTful接口传递数据。减轻后端服务器的压力，后端服务器不再负责页面渲染，只负责输入数据，吞吐量提升了好几倍。 其次是逻辑分离，不分离的时候，对于业务代码的界限很不明确，业务逻辑基本都放在后端，分离之后，前端也承担了一部分不该后端来写的业务逻辑，数据处理更加清晰。 最后是系统分离，同一个后端系统，可以将同样的接口数据提供给PC端、Mobile端和Native端等不同的前端终端，不需要为每一种终端提供一套接口。同样，对于前端应用来说，可以更方便的调用多个后端服务器的接口，处理和展示多个系统间的数据。 必要性前后端分离，让软件开发的流程更加清晰，解决了开发阶段的痛点。 从前，前端不止要学习后端的模板渲染语法，还要配置后端的开发环境，并不断同步后端的代码，这对于前端来说是非常痛苦的。 而现在，前端有自己的服务器，不需要再依靠后端服务器来支持项目运行，如果在开发阶段，还可以使用mock数据（要先和后端确定接口数据结构），摆脱对后端接口的依赖，这样极大的提高了开发效率，系统分工也更加明确。]]></content>
       <categories>
-          
-          <category> JS高级 </category>
-          
+        <category>辅助</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>数据结构</title>
-      <link href="/2018/07/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-      <url>/2018/07/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-      <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><img src="https://upload-images.jianshu.io/upload_images/3112582-8052f4f95f805646.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/641" alt="数据结构"><br>计算机存储，组织数据的方式<br>js是一种弱类型（动态类型）的语言，声明变量是不需要知道类型，在程序运行过程中会自动确定</p><p>经典的数据结构大概就那么几种，list、stack、queue、linkedList、dictionary、hash、set、tree、graph<br>说到堆栈，我们讲的就是内存的使用和分配了，没有寄存器的事，也没有硬盘的事。<br>堆是动态分配内存，内存大小不一，也不会自动释放。栈是自动分配相对固定大小的内存空间，并由系统自动释放。<br>栈，线性结构，后进先出，便于管理。堆，一个混沌，杂乱无章，方便存储和开辟内存空间。</p><h2 id="堆（heap）"><a href="#堆（heap）" class="headerlink" title="堆（heap）"></a>堆（heap）</h2><p>引用类型是通过拷贝或new出来的，其存储在堆中，但地址指针存在于栈中</p><h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><p>就是要将aArray的每个基本类型的数据都遍历一遍，依次的赋值给bArray的对应字段。避免产生因为地址引用带来的问题。</p>]]></content>
-      
+      <tags>
+        <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[this,call和apply]]></title>
+    <url>%2F2018%2F07%2F02%2Fthis%2Ccall%E5%92%8Capply%2F</url>
+    <content type="text"><![CDATA[thisJavaScript 语言之所以有this的设计，跟内存里面的数据结构有关系。1var obj = &#123; foo: 5 &#125;; obj变量保存对象的内存地址，通过地址在内存中找到对象，从而取得对象的属性和方法问题在于属性也可能是一个方法1var obj = &#123; foo: function () &#123;&#125; &#125;; 此时函数又单独保存在内存中，函数的地址赋给对象的属性 由于函数是一个单独的值，所以可以在不同的环境中执行 所以需要有一种机制，能够在函数体内部获得当前的运行环境（context）。 所以，this就出现了，它的设计目的就是在函数体内部，指代函数当前的运行环境。 12345678910var obj = &#123; foo: function () &#123; console.log(this.bar) &#125;, bar: 1&#125;;var foo = obj.foo;var bar = 2;obj.foo() // 1foo() // 2 this：当前函数的拥有者123456window.setInterval(function()&#123; // 函数拥有者：window&#125;,1000)$.get(url).done(function(res)&#123; //函数拥有者：$&#125;) 简介call和apply可以用来重新定义函数的执行环境，也就是this的指向call 和 apply 都是为了改变某个函数运行时的 context 即上下文而存在的换句话说，就是为了改变函数体内部 this 的指向。因为 JavaScript 的函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。 1234567891011121314151617181920fun.call(thisArg[arg1][arg2][arg3])thisArg：fun函数运行时指定的this值，可能的值为：1.不传，或者传null，undefined， this指向window对象2.传递另一个函数的函数名fun2，this指向函数fun2的引用3.值为原始值(数字，字符串，布尔值),this会指向该原始值的自动包装对象，如 String、Number、Boolean4.传递一个对象，函数中的this指向这个对象A.call(B)B可以使用A的属性方法，继承了Afunction add(a,b)&#123; alert(a+b); &#125; function sub(a,b)&#123; alert(a-b); &#125; add.call(sub,1,1); // 结果是？ ‘2’ 还是 ‘0’ 呢 call()就是用来让括号里的对象 来集成括号外的函数的属性！可以称之为继承！apply()方法 接收两个参数，一个是函数运行的作用域（this），另一个是参数数组。]]></content>
       <categories>
-          
-          <category> JS高级 </category>
-          
+        <category>JS高级</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Promise</title>
-      <link href="/2018/06/30/Promise/"/>
-      <url>/2018/06/30/Promise/</url>
-      <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>回调函数真正的问题在于他剥夺了我们使用 return 和 throw 这些关键字的能力。而 Promise 很好地解决了这一切<br>异步请求的数据嵌套处理，造成了回调地域，其代码臃肿，可读性差，耦合度高难以维护，复用性差，容易产生bug，只能在回调里处理异常<br>为了解决异步嵌套的问题，promise规范出现了，他是一种异步编程的解决方案，比传统的异步解决方案，回调函数和事件更合理更强大，已经ES6被加入规范中</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var p = new Promise(function (resolve, reject) &#123;</span><br><span class="line">    // ...</span><br><span class="line">    if(/* 异步操作成功 */)&#123;</span><br><span class="line">        resolve(ret);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        reject(error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">p.then(function (value) &#123;</span><br><span class="line">    // 完成态</span><br><span class="line">&#125;, function (error) &#123;</span><br><span class="line">    // 失败态</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>1.Promise的构造函数<br>2.resolve() ， reject()<br>3.then()</p><h2 id="Promise构造函数"><a href="#Promise构造函数" class="headerlink" title="Promise构造函数"></a>Promise构造函数</h2><p>通过Promise构造函数实例化一个对象时，会传递一个函数作为参数，那么这个函数会立即执行。</p><h2 id="resolve-reject"><a href="#resolve-reject" class="headerlink" title="resolve(),reject()"></a>resolve(),reject()</h2><p><img src="https://segmentfault.com/img/bVGpnS?w=457&amp;h=327" alt="异步操作状态"><br>这种状态的改变只会出现从未完成态向完成态或失败态转化，不能逆反。完成态和失败态不能互相转化，而且，状态一旦转化，将不能更改。</p><p>只有异步操作的结果可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是Promise这个名字的由来，它的英语意思是承诺，表示其他手段无法改变。</p><p>在声明一个Promise对象实例时，我们传入的匿名函数参数中：</p><p>resolve就对应着完成态之后的操作<br>reject对应着失败态之后的操作</p><h2 id="then"><a href="#then" class="headerlink" title="then()"></a>then()</h2><p>实例化一个Promise对象之后，我们调用该对象实例的then()方法传递的两个参数中:</p><p>第一个参数（函数）对应着完成态的操作，也就是resolve<br>第二个参数（函数）对应着失败态的操作，也就是reject<br>那就是说，在Promise中是通过then()方法来指定处理异步操作结果的方法。</p>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[数据结构]]></title>
+    <url>%2F2018%2F07%2F02%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%2F</url>
+    <content type="text"><![CDATA[简介计算机存储，组织数据的方式js是一种弱类型（动态类型）的语言，声明变量是不需要知道类型，在程序运行过程中会自动确定 经典的数据结构大概就那么几种，list、stack、queue、linkedList、dictionary、hash、set、tree、graph说到堆栈，我们讲的就是内存的使用和分配了，没有寄存器的事，也没有硬盘的事。堆是动态分配内存，内存大小不一，也不会自动释放。栈是自动分配相对固定大小的内存空间，并由系统自动释放。栈，线性结构，后进先出，便于管理。堆，一个混沌，杂乱无章，方便存储和开辟内存空间。 堆（heap）引用类型是通过拷贝或new出来的，其存储在堆中，但地址指针存在于栈中 深拷贝就是要将aArray的每个基本类型的数据都遍历一遍，依次的赋值给bArray的对应字段。避免产生因为地址引用带来的问题。]]></content>
       <categories>
-          
-          <category> JS高级 </category>
-          
+        <category>JS高级</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>前端安全</title>
-      <link href="/2018/06/30/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/"/>
-      <url>/2018/06/30/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/</url>
-      <content type="html"><![CDATA[]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Promise]]></title>
+    <url>%2F2018%2F06%2F30%2FPromise%2F</url>
+    <content type="text"><![CDATA[简介回调函数真正的问题在于他剥夺了我们使用 return 和 throw 这些关键字的能力。而 Promise 很好地解决了这一切异步请求的数据嵌套处理，造成了回调地域，其代码臃肿，可读性差，耦合度高难以维护，复用性差，容易产生bug，只能在回调里处理异常为了解决异步嵌套的问题，promise规范出现了，他是一种异步编程的解决方案，比传统的异步解决方案，回调函数和事件更合理更强大，已经ES6被加入规范中 1234567891011121314var p = new Promise(function (resolve, reject) &#123; // ... if(/* 异步操作成功 */)&#123; resolve(ret); &#125; else &#123; reject(error); &#125;&#125;);p.then(function (value) &#123; // 完成态&#125;, function (error) &#123; // 失败态&#125;); 1.Promise的构造函数2.resolve() ， reject()3.then() Promise构造函数通过Promise构造函数实例化一个对象时，会传递一个函数作为参数，那么这个函数会立即执行。 resolve(),reject()这种状态的改变只会出现从未完成态向完成态或失败态转化，不能逆反。完成态和失败态不能互相转化，而且，状态一旦转化，将不能更改。 只有异步操作的结果可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是Promise这个名字的由来，它的英语意思是承诺，表示其他手段无法改变。 在声明一个Promise对象实例时，我们传入的匿名函数参数中： resolve就对应着完成态之后的操作reject对应着失败态之后的操作 then()实例化一个Promise对象之后，我们调用该对象实例的then()方法传递的两个参数中: 第一个参数（函数）对应着完成态的操作，也就是resolve第二个参数（函数）对应着失败态的操作，也就是reject那就是说，在Promise中是通过then()方法来指定处理异步操作结果的方法。]]></content>
       <categories>
-          
-          <category> 辅助 </category>
-          
+        <category>JS高级</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> web </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>前端性能优化</title>
-      <link href="/2018/06/29/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-      <url>/2018/06/29/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</url>
-      <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>从用户角度而言，优化能够让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验。<br>从服务商角度而言，优化能够减少页面请求数、或者减小请求所占带宽，能够节省可观的资源。<br>可以分为 7大类 35条（包括内容、服务器、CSS、JavaScript、Cookie、图片、移动应用）。</p><h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>1.尽量减少HTTP请求<br>2.减少DNS查找<br>3.避免跳转<br>4.缓存Ajax<br>5.推迟加载<br>6.提前加载<br>7.减少DOM元素数量<br>8.用域名划分页面内容<br>9.使frame数量最少<br>10.避免404错误<br>合并文件是通过把所有的脚本放到一个文件中来减少 HTTP请求的方法。 CSS Sprites是减少图像请求的有效方法。 缓存 DNS查找可以改善页面性能。 跳转是使用 301和 302代码实现的（但是要记住跳转会降低用户体验）。 为了提高性能，优化 Ajax响应是很重要的。提高 Ajxa性能的措施中最重要的方法就是使响应具有可缓存性。 你可以仔细看一下你的网页，问问自己“哪些内容是页面呈现时所必需首先加载的？哪些内容和结构可以稍后再加载？预加载和后加载看起来似乎恰恰相反，但实际上预加载是为了实现另外一种目标。预加载是在浏览器空闲时请求将来可能会用到的页面内容（如图像、样式表和脚 本）。使用这种方法，当用户要访问下一个页面时，页面中的内容大部分已经加载到缓存中了，因此可以大大改善访问速度。 一个复杂的页面意味着需要下载更多数据，同时也意味着JavaScript遍历DOM的效率越慢。比如当你增加一个事件句柄时在500和5000个 DOM元素中循环效果肯定是不一样的。 把页面内容划分成若干部分可以使你最大限度地实现平行下载。 使iframe的数量最小，ifrmae元素可以在父文档中插入一个新的HTML文档。了解iframe的工作理然后才能更加有效地使用它，这一点很重要。 HTTP请求时间消耗是很大的，因此使用HTTP请求来获得一个没有用处的响应（例如404没有找到页面）是完全没有必要的，它只会降低用户体验而不会有一点好处。</p><h2 id="服务器部分"><a href="#服务器部分" class="headerlink" title="服务器部分"></a>服务器部分</h2><p>1.使用内容分发网络<br>2.为文件头指定 Expires 或 Cache-Control<br>3.Gzip压缩文件内容<br>4.配置ETag<br>5.尽早刷新输出缓冲<br>6.使用 GET 来完成 AJAX 请求<br>7.避免空的图像来源<br>用户与你网站服务器的接近程度会影响响应时间的长短。把你的网站内容分散到多个、处于不同地域位置的服务器上可以加快下载速度。 为文件头指定Expires或Cache-Control，这条守则包括两方面的内容： 对于静态内容：设置文件头过期时间Expires的值为“Never expire”（永不过期）；对于动态内容：使用恰当的Cache-Control文件头来帮助浏览器进行有条件的请求。 网络传输中的HTTP请求和应答时间可以通过前端机制得到显著改善。的确，终端用户的带宽、互联网提供者、与对等交换点的靠近程度等都不是网站开发者所能决定的。但是还有其他因素影响着响应时间。通过减小HTTP响应的大小可以节省HTTP响应时间。 Entity tags（ETags）（实体标签）是web服务器和浏览器用于判断浏览器缓存中的内容和服务器中的原始内容是否匹配的一种机制（“实体”就是所说的“内 容”，包括图片、脚本、样式表等）。增加ETag为实体的验证提供了一个比使用“last-modified date（上次编辑时间）”更加灵活的机制。 当用户请求一个页面时，无论如何都会花费200到500毫秒用于后台组织HTML文件。（尽早刷新输出缓冲）。 Yahoo!Mail团队发现，当使用XMLHttpRequest时，浏览器中的POST方法是一个“两步走”的过程：首先发送文件头，然后才发送数 据。因此使用GET最为恰当，因为它只需发送一个TCP包（除非你有很多cookie）。IE中URL的最大长度为2K，因此如果你要发送一个超过2K的 数据时就不能使用GET了。</p><h2 id="CSS部分"><a href="#CSS部分" class="headerlink" title="CSS部分"></a>CSS部分</h2><p>1.把样式表置于顶部<br>2.避免使用 CSS 表达式（）<br>3.用 代替 @import<br>4.避免使用滤镜<br>在研究Yahoo!的性能表现时，我们发现把样式表放到文档的内会使页面有步骤的加载显示。 避免使用CSS表达式（Expression），CSS表达式是动态设置CSS属性的强大（但危险）方法。Internet Explorer从第5个版本开始支持CSS表达式。 对于拥有较大浏览量的首页来说，有一种技术可以平衡内置代码带来的HTTP请求减少与通过使用外部文件进行缓存带来的好处。 （削减JavaScript和CSS）精简是指从去除代码不必要的字符减少文件大小从而节省下载时间。消减代码时，所有的注释、不需要的空白字符（空格、换行、tab缩进）等都要去掉。 前面的最佳实现中提到CSS应该放置在顶端以利于有序加载呈现。在IE中，页面底部@import和使用作用是一样的，因此最好不要使用它。 IE独有属性AlphaImageLoader用于修正7.0以下版本中显示PNG图片的半透明效果。这个滤镜的问题在于浏览器加载图片时它会终止内容的 呈现并且冻结浏览器。在每一个元素（不仅仅是图片）它都会运算一次，增加了内存开支，因此它的问题是多方面的。</p><h2 id="JavaScript部分"><a href="#JavaScript部分" class="headerlink" title="JavaScript部分"></a>JavaScript部分</h2><p>1.把脚本置于页面底部<br>2.使用外部 JavaScript 和 CSS<br>3.削减 JavaScript 和 CSS<br>4.剔除重复脚本<br>5.减少DOM访问<br>6.开发智能事件处理程序<br>脚本带来的问题就是它阻止了页面的平行下载。HTTP/1.1 规范建议，浏览器每个主机名的并行下载内容不超过两个。一个经常用到的替代方法就是使用延迟脚本。 在同一个页面中重复引用JavaScript文件会影响页面的性能。你可能会认为这种情况并不多见。对于美国前10大网站的调查显示其中有两家存在重复引 用脚本的情况。有两种主要因素导致一个脚本被重复引用的奇怪现象发生：团队规模和脚本数量。 使用JavaScript访问DOM元素比较慢，因此为了获得更多的应该页面，应该做到：缓存已经访问过的有关元素，线下更新完节点之后再将它们添加到文档树中，避免使用JavaScript来修改页面布局，有关此方面的更多信息请查看Julien Lecomte在YUI专题中的文章“高性能Ajax应该程序”。 有时候我们会感觉到页面反应迟钝，这是因为DOM树元素中附加了过多的事件句柄并且些事件句病被频繁地触发。这就是为什么说使用event delegation（事件代理）是一种好方法了。</p>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端安全]]></title>
+    <url>%2F2018%2F06%2F30%2F%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8%2F</url>
+    <content type="text"></content>
       <categories>
-          
-          <category> 辅助 </category>
-          
+        <category>辅助</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> web </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>词法分析</title>
-      <link href="/2018/06/29/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/"/>
-      <url>/2018/06/29/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/</url>
-      <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>JS的代码运行，分为词法分析期和自上而下的运行期<br>词法分析期分为三个部分<br>1.分析参数<br>2.分析变量声明<br>3.分析函数声明</p><h3 id="0-函数运行的瞬间"><a href="#0-函数运行的瞬间" class="headerlink" title="0.函数运行的瞬间"></a>0.函数运行的瞬间</h3><p>生成一个空的活动对象(Active Object)， AO = {}</p><h3 id="1-分析参数"><a href="#1-分析参数" class="headerlink" title="1.分析参数"></a>1.分析参数</h3><p>a.函数接收<strong>形参</strong>，添加到AO的属性之中，值为undefined<br>b.接收<strong>实参</strong>，添加到AO的属性之中，覆盖undefined<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 因为js的函数可以定义的形参和传递的实参个数之间可以不相等</span><br><span class="line">function foo(a, b)&#123;&#125;</span><br><span class="line">foo(123)</span><br><span class="line"></span><br><span class="line">那么此时的</span><br><span class="line">AO = &#123;</span><br><span class="line">    a: 123,</span><br><span class="line">    b: undefined</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="2-分析变量声明"><a href="#2-分析变量声明" class="headerlink" title="2.分析变量声明"></a>2.分析变量声明</h3><p>比如var age = 123<br>a.如果分析参数时，AO还没有age属性，则AO.age = undefined<br>b.如果AO已经有了age属性，则不做任何修改</p><h3 id="3分析函数声明"><a href="#3分析函数声明" class="headerlink" title="3分析函数声明"></a>3分析函数声明</h3><p>a.如果有function age(){}，则把函数赋给AO.age，覆盖上一步分析的值</p><h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">function func(age) &#123;</span><br><span class="line">    console.log(age);</span><br><span class="line">    var age = 25;</span><br><span class="line">    console.log(age);</span><br><span class="line">    function age() &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(age);</span><br><span class="line">&#125;</span><br><span class="line">func(18);</span><br><span class="line"></span><br><span class="line">// 0</span><br><span class="line">&#123;&#125;</span><br><span class="line"> </span><br><span class="line">// 1 参数，形参，实参 </span><br><span class="line">&#123;</span><br><span class="line">    age: undefined</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    age: 18</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 2 变量 有 无</span><br><span class="line">&#123;</span><br><span class="line">    age: 18</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 3 函数 覆盖</span><br><span class="line">&#123;</span><br><span class="line">    age: function age()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端性能优化]]></title>
+    <url>%2F2018%2F06%2F29%2F%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[简介从用户角度而言，优化能够让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验。从服务商角度而言，优化能够减少页面请求数、或者减小请求所占带宽，能够节省可观的资源。可以分为 7大类 35条（包括内容、服务器、CSS、JavaScript、Cookie、图片、移动应用）。 内容1.尽量减少HTTP请求2.减少DNS查找3.避免跳转4.缓存Ajax5.推迟加载6.提前加载7.减少DOM元素数量8.用域名划分页面内容9.使frame数量最少10.避免404错误合并文件是通过把所有的脚本放到一个文件中来减少 HTTP请求的方法。 CSS Sprites是减少图像请求的有效方法。 缓存 DNS查找可以改善页面性能。 跳转是使用 301和 302代码实现的（但是要记住跳转会降低用户体验）。 为了提高性能，优化 Ajax响应是很重要的。提高 Ajxa性能的措施中最重要的方法就是使响应具有可缓存性。 你可以仔细看一下你的网页，问问自己“哪些内容是页面呈现时所必需首先加载的？哪些内容和结构可以稍后再加载？预加载和后加载看起来似乎恰恰相反，但实际上预加载是为了实现另外一种目标。预加载是在浏览器空闲时请求将来可能会用到的页面内容（如图像、样式表和脚 本）。使用这种方法，当用户要访问下一个页面时，页面中的内容大部分已经加载到缓存中了，因此可以大大改善访问速度。 一个复杂的页面意味着需要下载更多数据，同时也意味着JavaScript遍历DOM的效率越慢。比如当你增加一个事件句柄时在500和5000个 DOM元素中循环效果肯定是不一样的。 把页面内容划分成若干部分可以使你最大限度地实现平行下载。 使iframe的数量最小，ifrmae元素可以在父文档中插入一个新的HTML文档。了解iframe的工作理然后才能更加有效地使用它，这一点很重要。 HTTP请求时间消耗是很大的，因此使用HTTP请求来获得一个没有用处的响应（例如404没有找到页面）是完全没有必要的，它只会降低用户体验而不会有一点好处。 服务器部分1.使用内容分发网络2.为文件头指定 Expires 或 Cache-Control3.Gzip压缩文件内容4.配置ETag5.尽早刷新输出缓冲6.使用 GET 来完成 AJAX 请求7.避免空的图像来源用户与你网站服务器的接近程度会影响响应时间的长短。把你的网站内容分散到多个、处于不同地域位置的服务器上可以加快下载速度。 为文件头指定Expires或Cache-Control，这条守则包括两方面的内容： 对于静态内容：设置文件头过期时间Expires的值为“Never expire”（永不过期）；对于动态内容：使用恰当的Cache-Control文件头来帮助浏览器进行有条件的请求。 网络传输中的HTTP请求和应答时间可以通过前端机制得到显著改善。的确，终端用户的带宽、互联网提供者、与对等交换点的靠近程度等都不是网站开发者所能决定的。但是还有其他因素影响着响应时间。通过减小HTTP响应的大小可以节省HTTP响应时间。 Entity tags（ETags）（实体标签）是web服务器和浏览器用于判断浏览器缓存中的内容和服务器中的原始内容是否匹配的一种机制（“实体”就是所说的“内 容”，包括图片、脚本、样式表等）。增加ETag为实体的验证提供了一个比使用“last-modified date（上次编辑时间）”更加灵活的机制。 当用户请求一个页面时，无论如何都会花费200到500毫秒用于后台组织HTML文件。（尽早刷新输出缓冲）。 Yahoo!Mail团队发现，当使用XMLHttpRequest时，浏览器中的POST方法是一个“两步走”的过程：首先发送文件头，然后才发送数 据。因此使用GET最为恰当，因为它只需发送一个TCP包（除非你有很多cookie）。IE中URL的最大长度为2K，因此如果你要发送一个超过2K的 数据时就不能使用GET了。 CSS部分1.把样式表置于顶部2.避免使用 CSS 表达式（）3.用 代替 @import4.避免使用滤镜在研究Yahoo!的性能表现时，我们发现把样式表放到文档的内会使页面有步骤的加载显示。 避免使用CSS表达式（Expression），CSS表达式是动态设置CSS属性的强大（但危险）方法。Internet Explorer从第5个版本开始支持CSS表达式。 对于拥有较大浏览量的首页来说，有一种技术可以平衡内置代码带来的HTTP请求减少与通过使用外部文件进行缓存带来的好处。 （削减JavaScript和CSS）精简是指从去除代码不必要的字符减少文件大小从而节省下载时间。消减代码时，所有的注释、不需要的空白字符（空格、换行、tab缩进）等都要去掉。 前面的最佳实现中提到CSS应该放置在顶端以利于有序加载呈现。在IE中，页面底部@import和使用作用是一样的，因此最好不要使用它。 IE独有属性AlphaImageLoader用于修正7.0以下版本中显示PNG图片的半透明效果。这个滤镜的问题在于浏览器加载图片时它会终止内容的 呈现并且冻结浏览器。在每一个元素（不仅仅是图片）它都会运算一次，增加了内存开支，因此它的问题是多方面的。 JavaScript部分1.把脚本置于页面底部2.使用外部 JavaScript 和 CSS3.削减 JavaScript 和 CSS4.剔除重复脚本5.减少DOM访问6.开发智能事件处理程序脚本带来的问题就是它阻止了页面的平行下载。HTTP/1.1 规范建议，浏览器每个主机名的并行下载内容不超过两个。一个经常用到的替代方法就是使用延迟脚本。 在同一个页面中重复引用JavaScript文件会影响页面的性能。你可能会认为这种情况并不多见。对于美国前10大网站的调查显示其中有两家存在重复引 用脚本的情况。有两种主要因素导致一个脚本被重复引用的奇怪现象发生：团队规模和脚本数量。 使用JavaScript访问DOM元素比较慢，因此为了获得更多的应该页面，应该做到：缓存已经访问过的有关元素，线下更新完节点之后再将它们添加到文档树中，避免使用JavaScript来修改页面布局，有关此方面的更多信息请查看Julien Lecomte在YUI专题中的文章“高性能Ajax应该程序”。 有时候我们会感觉到页面反应迟钝，这是因为DOM树元素中附加了过多的事件句柄并且些事件句病被频繁地触发。这就是为什么说使用event delegation（事件代理）是一种好方法了。]]></content>
       <categories>
-          
-          <category> JS高级 </category>
-          
+        <category>辅助</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>http协议</title>
-      <link href="/2018/06/29/http%E5%8D%8F%E8%AE%AE/"/>
-      <url>/2018/06/29/http%E5%8D%8F%E8%AE%AE/</url>
-      <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>客户端和服务端进行数据传输的一种规则</p><h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p>http url包含了用于查找某个资源的详细信息,格式如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://host[&quot;:&quot;port][abs_path]</span><br></pre></td></tr></table></figure></p><p>http表示要通过HTTP协议来定位网络资源，<br>host表示合法的Internet主机域名或者IP地址，<br>port指定一个端口号，为空则使用缺省端口80，<br>abs_path指定请求资源的URI。</p><h2 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><p><img src="https://segmentfault.com/img/bVsRvt" alt="HTTP请求"></p><h3 id="请求行"><a href="#请求行" class="headerlink" title="请求行"></a>请求行</h3><p>请求行由请求方法，URL字段和HTTP协议版本三部分构成，总的来说请求行就是定义了本次请求的请求方式，请求的地址，以及所遵循的HTTP协议版本例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /example.html HTTP/1.1 (CRLF)</span><br></pre></td></tr></table></figure></p><table><thead><tr><th>方法</th><th>描述</th></tr></thead><tbody><tr><td>GET</td><td>请求获取Request-URI所标识的资源</td></tr><tr><td>POST</td><td>在Request-URI所标识的资源后附加新的数据</td></tr><tr><td>HEAD</td><td>请求获取由Request-URI所标识的资源的响应消息报头</td></tr><tr><td>PUT</td><td>请求服务器存储一个资源，并用Request-URI作为其标识</td></tr><tr><td>DELETE</td><td>请求服务器删除Request-URI所标识的资源</td></tr><tr><td>TRACE</td><td>请求服务器回送收到的请求信息，主要用于测试或诊断</td></tr><tr><td>CONNECT</td><td>保留将来使用</td></tr><tr><td>OPTIONS</td><td>请求查询服务器的性能，或者查询与资源相关的选项和需求</td></tr></tbody></table><h3 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h3><p>请求头由一系列的键值对组成，允许客户端向服务器端发送一些附加信息或者客户端自身的信息</p><table><thead><tr><th>信息</th><th>描述</th><th>举例</th></tr></thead><tbody><tr><td>Accept</td><td>指定客户端接受哪些类型的信息</td><td>Accept：image/gif，表明客户端希望接受GIF图象格式的资源</td></tr><tr><td>Accept-Charset</td><td>指定客户端接受的字符集</td><td>Accept-Charset:iso-8859-1,gb2312.如果在请求消息中没有设置这个域，缺省是任何字符集都可以接受</td></tr><tr><td>Accept-Encoding</td><td>类似于Accept，但是它是用于指定可接受的内容编码</td><td>Accept-Encoding:gzip.deflate.如果请求消息中没有设置这个域服务器假定客户端对各种内容编码都可以接受</td></tr><tr><td>Accept-Language</td><td>类似于Accept，但是它是用于指定一种自然语言</td><td>Accept-Language:zh-cn.如果请求消息中没有设置这个报头域，服务器假定客户端对各种语言都可以接受</td></tr><tr><td>Authorization</td><td>用于证明客户端有权查看某个资源。当浏览器访问一个页面时，如果收到服务器的响应代码为401（未授权），可以发送一个包含Authorization请求报头域的请求，要求服务器对其进行验证</td><td></td></tr><tr><td>Host</td><td>发送请求时，该报头域是必需的,Host请求报头域主要用于指定被请求资源的Internet主机和端口号，它通常从HTTP URL中提取出来的</td><td></td></tr><tr><td>User-Agent</td><td>我们上网登陆论坛的时候，往往会看到一些欢迎信息，其中列出了你的操作系统的名称和版本，你所使用的浏览器的名称和版本，这往往让很多人感到很神奇，实际上，服务器应用程序就是从User-Agent这个请求报头域中获取到这些信息。User-Agent请求报头域允许客户端将它的操作系统、浏览器和其它属性告诉服务器。不过，这个报头域不是必需的，如果我们自己编写一个浏览器，不使用User-Agent请求报头域，那么服务器端就无法得知我们的信息了</td></tr></tbody></table><h3 id="请求正文"><a href="#请求正文" class="headerlink" title="请求正文"></a>请求正文</h3><p>只有在发送post请求时才会有请求正文，get方法并没有请求正文</p>]]></content>
-      
+      <tags>
+        <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[词法分析]]></title>
+    <url>%2F2018%2F06%2F29%2F%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%2F</url>
+    <content type="text"><![CDATA[简介JS的代码运行，分为词法分析期和自上而下的运行期词法分析期分为三个部分1.分析参数2.分析变量声明3.分析函数声明 0.函数运行的瞬间生成一个空的活动对象(Active Object)， AO = {} 1.分析参数a.函数接收形参，添加到AO的属性之中，值为undefinedb.接收实参，添加到AO的属性之中，覆盖undefined123456789// 因为js的函数可以定义的形参和传递的实参个数之间可以不相等function foo(a, b)&#123;&#125;foo(123)那么此时的AO = &#123; a: 123, b: undefined&#125; 2.分析变量声明比如var age = 123a.如果分析参数时，AO还没有age属性，则AO.age = undefinedb.如果AO已经有了age属性，则不做任何修改 3分析函数声明a.如果有function age(){}，则把函数赋给AO.age，覆盖上一步分析的值 举个栗子12345678910111213141516171819202122232425262728293031function func(age) &#123; console.log(age); var age = 25; console.log(age); function age() &#123; &#125; console.log(age);&#125;func(18);// 0&#123;&#125; // 1 参数，形参，实参 &#123; age: undefined&#125;&#123; age: 18&#125;// 2 变量 有 无&#123; age: 18&#125;// 3 函数 覆盖&#123; age: function age()&#123;&#125;&#125;]]></content>
       <categories>
-          
-          <category> 辅助 </category>
-          
+        <category>JS高级</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> web </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>webpack入门</title>
-      <link href="/2018/05/24/webpack%E5%85%A5%E9%97%A8/"/>
-      <url>/2018/05/24/webpack%E5%85%A5%E9%97%A8/</url>
-      <content type="html"><![CDATA[<p>本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。<br>当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，<br>其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。</p><h3 id="git项目地址"><a href="#git项目地址" class="headerlink" title="git项目地址"></a><a href="https://gitee.com/GitHuanyu/CRM2.0/blob/master/webpack.config.js" target="_blank" rel="noopener">git项目地址</a></h3><h3 id="用到的功能"><a href="#用到的功能" class="headerlink" title="用到的功能"></a>用到的功能</h3><p>1.编译less<br>2.打包字体文件<br>3.代理跨域请求<br>4.<strong>模块化引入文件</strong><br>5.本地服务器</p><h3 id="预期的功能"><a href="#预期的功能" class="headerlink" title="预期的功能"></a>预期的功能</h3><p>1.编译es6语法<br>2.压缩css,js,img<br>3.热重载</p>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[http协议]]></title>
+    <url>%2F2018%2F06%2F29%2Fhttp%E5%8D%8F%E8%AE%AE%2F</url>
+    <content type="text"><![CDATA[简介客户端和服务端进行数据传输的一种规则 URLhttp url包含了用于查找某个资源的详细信息,格式如下1http://host[&quot;:&quot;port][abs_path] http表示要通过HTTP协议来定位网络资源，host表示合法的Internet主机域名或者IP地址，port指定一个端口号，为空则使用缺省端口80，abs_path指定请求资源的URI。 HTTP请求 请求行请求行由请求方法，URL字段和HTTP协议版本三部分构成，总的来说请求行就是定义了本次请求的请求方式，请求的地址，以及所遵循的HTTP协议版本例如：1GET /example.html HTTP/1.1 (CRLF) 方法 描述 GET 请求获取Request-URI所标识的资源 POST 在Request-URI所标识的资源后附加新的数据 HEAD 请求获取由Request-URI所标识的资源的响应消息报头 PUT 请求服务器存储一个资源，并用Request-URI作为其标识 DELETE 请求服务器删除Request-URI所标识的资源 TRACE 请求服务器回送收到的请求信息，主要用于测试或诊断 CONNECT 保留将来使用 OPTIONS 请求查询服务器的性能，或者查询与资源相关的选项和需求 请求头请求头由一系列的键值对组成，允许客户端向服务器端发送一些附加信息或者客户端自身的信息 信息 描述 举例 Accept 指定客户端接受哪些类型的信息 Accept：image/gif，表明客户端希望接受GIF图象格式的资源 Accept-Charset 指定客户端接受的字符集 Accept-Charset:iso-8859-1,gb2312.如果在请求消息中没有设置这个域，缺省是任何字符集都可以接受 Accept-Encoding 类似于Accept，但是它是用于指定可接受的内容编码 Accept-Encoding:gzip.deflate.如果请求消息中没有设置这个域服务器假定客户端对各种内容编码都可以接受 Accept-Language 类似于Accept，但是它是用于指定一种自然语言 Accept-Language:zh-cn.如果请求消息中没有设置这个报头域，服务器假定客户端对各种语言都可以接受 Authorization 用于证明客户端有权查看某个资源。当浏览器访问一个页面时，如果收到服务器的响应代码为401（未授权），可以发送一个包含Authorization请求报头域的请求，要求服务器对其进行验证 Host 发送请求时，该报头域是必需的,Host请求报头域主要用于指定被请求资源的Internet主机和端口号，它通常从HTTP URL中提取出来的 User-Agent 我们上网登陆论坛的时候，往往会看到一些欢迎信息，其中列出了你的操作系统的名称和版本，你所使用的浏览器的名称和版本，这往往让很多人感到很神奇，实际上，服务器应用程序就是从User-Agent这个请求报头域中获取到这些信息。User-Agent请求报头域允许客户端将它的操作系统、浏览器和其它属性告诉服务器。不过，这个报头域不是必需的，如果我们自己编写一个浏览器，不使用User-Agent请求报头域，那么服务器端就无法得知我们的信息了 请求正文只有在发送post请求时才会有请求正文，get方法并没有请求正文]]></content>
       <categories>
-          
-          <category> 辅助 </category>
-          
+        <category>辅助</category>
       </categories>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>数据类型</title>
-      <link href="/2018/05/23/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
-      <url>/2018/05/23/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
-      <content type="html"><![CDATA[<table><thead><tr><th>基本数据类型</th><th style="text-align:right">引用数据类型</th></tr></thead><tbody><tr><td>简单的数据段</td><td style="text-align:right">多个值构成的对象</td></tr><tr><td>按值访问</td><td style="text-align:right">按内存地址访问，操作对象实际上是操作对象的引用</td></tr></tbody></table><p>值指的是，而引用数据类型值指的是那些可能由。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Function对象（类）</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"alert(a + b);"</span>);</span><br><span class="line">foo(<span class="number">1</span>, <span class="number">5</span>);</span><br><span class="line"><span class="comment">//由于字符串的关系，这种形式写起来很困难，但是说明了函数只不过是一种引用类型</span></span><br><span class="line"><span class="comment">//它的行为与用Function类明确创建的函数行为是相同的</span></span><br></pre></td></tr></table></figure><p>引用类型通常叫做类，遇到引用值，所处理的就是对象</p><h3 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h3><p>基本类型 Number Boolean String undefined null<br>基本类型的数据存放在栈内存中<br>基本类型的复制就是在栈内存中开辟了一个新的存储区域来存储新的变量，这个变量有他自己的值，只不过和前面的值一样，所以如果其中一个值改变了不会影响到另一个</p><h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><p>引用类型 Object Array Function<br>引用类型的数据存放在堆内存中<br>定义了一个对象其实是在栈内存中存储了一个指针，这个指针指向堆内存中该对象的存储地址，复制给另一个对象的过程其实是把该对象的地址复制给了另一个对象变量，两个指针都指向同一个对象，如果其中一个修改了，另一个也会改变    </p><p>基本类型的数据是没有属性和方法的，引用类型才有，但是为什么String类型有方法呢？<br>var string = ‘aaa’;<br>var string2 = string.substring(0);<br>基本类型的确没有方法和属性，因为一旦创建了属性或者方法就会被立刻销毁，但是为了方便对基本类型数据进行操作，在底层做了一些工作，其实这段代码相当于<br>var string = new String(‘aaa’);<br>var string2 = string.substring(0);<br>string = null;</p><p>1.创建了一个String类型的实例，使用new操作符创建的引用类型的实例，在执行流离开当前作用域之前都一直保存在内存中。而自动创建的基本包装类型的对象，则只存在于一行代码的瞬间，然后立即被销毁<br>2.在实例上调用指定方法<br>3.销毁该实例</p><p>经过这三步，字符串值就变得和对象一样了，在Boolean，Number中也是一样<br>String, Boolean, Number 这三种类型也叫做 基本包装类型    </p>]]></content>
-      
+      <tags>
+        <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[webpack入门]]></title>
+    <url>%2F2018%2F05%2F24%2Fwebpack%E5%85%A5%E9%97%A8%2F</url>
+    <content type="text"><![CDATA[本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。 git项目地址用到的功能1.编译less2.打包字体文件3.代理跨域请求4.模块化引入文件5.本地服务器 预期的功能1.编译es6语法2.压缩css,js,img3.热重载]]></content>
       <categories>
-          
-          <category> JS高级 </category>
-          
+        <category>辅助</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>JS时间戳</title>
-      <link href="/2018/05/23/JS%E6%97%B6%E9%97%B4%E6%88%B3/"/>
-      <url>/2018/05/23/JS%E6%97%B6%E9%97%B4%E6%88%B3/</url>
-      <content type="html"><![CDATA[<h3 id="获取当前时间戳"><a href="#获取当前时间戳" class="headerlink" title="获取当前时间戳"></a>获取当前时间戳</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timestamp1 = <span class="built_in">Date</span>.parse(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line"><span class="keyword">var</span> timestamp2 = (<span class="keyword">new</span> <span class="built_in">Date</span>()).valueOf();</span><br><span class="line"><span class="keyword">var</span> timestamp3 = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br></pre></td></tr></table></figure><h3 id="获取指定时间戳"><a href="#获取指定时间戳" class="headerlink" title="获取指定时间戳"></a>获取指定时间戳</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oldTime = (<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2015/06/23 08:00:20"</span>)).getTime()/<span class="number">1000</span>;</span><br></pre></td></tr></table></figure>]]></content>
-      
+  </entry>
+  <entry>
+    <title><![CDATA[数据类型]]></title>
+    <url>%2F2018%2F05%2F23%2F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
+    <content type="text"><![CDATA[基本数据类型 引用数据类型 简单的数据段 多个值构成的对象 按值访问 按内存地址访问，操作对象实际上是操作对象的引用 值指的是，而引用数据类型值指的是那些可能由。 12345//Function对象（类）var foo = new Function("a", "b", "alert(a + b);");foo(1, 5);//由于字符串的关系，这种形式写起来很困难，但是说明了函数只不过是一种引用类型//它的行为与用Function类明确创建的函数行为是相同的 引用类型通常叫做类，遇到引用值，所处理的就是对象 基本类型基本类型 Number Boolean String undefined null基本类型的数据存放在栈内存中基本类型的复制就是在栈内存中开辟了一个新的存储区域来存储新的变量，这个变量有他自己的值，只不过和前面的值一样，所以如果其中一个值改变了不会影响到另一个 引用类型引用类型 Object Array Function引用类型的数据存放在堆内存中定义了一个对象其实是在栈内存中存储了一个指针，这个指针指向堆内存中该对象的存储地址，复制给另一个对象的过程其实是把该对象的地址复制给了另一个对象变量，两个指针都指向同一个对象，如果其中一个修改了，另一个也会改变 基本类型的数据是没有属性和方法的，引用类型才有，但是为什么String类型有方法呢？var string = ‘aaa’;var string2 = string.substring(0);基本类型的确没有方法和属性，因为一旦创建了属性或者方法就会被立刻销毁，但是为了方便对基本类型数据进行操作，在底层做了一些工作，其实这段代码相当于var string = new String(‘aaa’);var string2 = string.substring(0);string = null; 1.创建了一个String类型的实例，使用new操作符创建的引用类型的实例，在执行流离开当前作用域之前都一直保存在内存中。而自动创建的基本包装类型的对象，则只存在于一行代码的瞬间，然后立即被销毁2.在实例上调用指定方法3.销毁该实例 经过这三步，字符串值就变得和对象一样了，在Boolean，Number中也是一样String, Boolean, Number 这三种类型也叫做 基本包装类型]]></content>
       <categories>
-          
-          <category> JS高级 </category>
-          
+        <category>JS高级</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>jquery-form</title>
-      <link href="/2018/05/23/jquery-form/"/>
-      <url>/2018/05/23/jquery-form/</url>
-      <content type="html"><![CDATA[<h2 id="异步提交表单-引入jquery-form-min-js"><a href="#异步提交表单-引入jquery-form-min-js" class="headerlink" title="异步提交表单 (引入jquery.form.min.js)"></a>异步提交表单 (引入jquery.form.min.js)</h2><p><a href="https://github.com/jquery-form/form" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/jquery-form/form" target="_blank" rel="noopener">https://github.com/jquery-form/form</a></p><h3 id="ajaxForm-options"><a href="#ajaxForm-options" class="headerlink" title="ajaxForm( options )"></a>ajaxForm( options )</h3><p>通过submit的button直接提交<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// prepare all forms for ajax submission</span></span><br><span class="line">$(<span class="string">'form'</span>).ajaxForm(&#123;</span><br><span class="line">  target: <span class="string">'#myResultsDiv'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><h3 id="ajaxSubmit-options"><a href="#ajaxSubmit-options" class="headerlink" title="ajaxSubmit( options )"></a>ajaxSubmit( options )</h3><p>通过提交的事件触发<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bind submit handler to form</span></span><br><span class="line">$(<span class="string">'form'</span>).on(<span class="string">'submit'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e.preventDefault(); <span class="comment">// prevent native submit</span></span><br><span class="line">  $(<span class="keyword">this</span>).ajaxSubmit(&#123;</span><br><span class="line">    target: <span class="string">'myResultsDiv'</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JS时间戳]]></title>
+    <url>%2F2018%2F05%2F23%2FJS%E6%97%B6%E9%97%B4%E6%88%B3%2F</url>
+    <content type="text"><![CDATA[获取当前时间戳123var timestamp1 = Date.parse(new Date());var timestamp2 = (new Date()).valueOf();var timestamp3 = new Date().getTime(); 获取指定时间戳1var oldTime = (new Date("2015/06/23 08:00:20")).getTime()/1000;]]></content>
       <categories>
-          
-          <category> JS插件 </category>
-          
+        <category>JS高级</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> jQuery </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>VUE计算属性</title>
-      <link href="/2018/05/22/VUE%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/"/>
-      <url>/2018/05/22/VUE%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/</url>
-      <content type="html"><![CDATA[<h3 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">'Runoob!'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// 计算属性的 getter</span></span><br><span class="line">    reversedMessage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// `this` 指向 vm 实例</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>声明了一个计算属性 reversedMessage 。<br>提供的函数将用作属性 vm.reversedMessage 的 getter 。<br>vm.reversedMessage 依赖于 vm.message，在 vm.message 发生改变时，vm.reversedMessage 也会更新。</p><p>我们可以使用 methods 来替代 computed，效果上两个都是一样的，但是 computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。<br>而使用 methods ，在重新渲染的时候，函数总会重新调用执行。</p>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[jquery-form]]></title>
+    <url>%2F2018%2F05%2F23%2Fjquery-form%2F</url>
+    <content type="text"><![CDATA[异步提交表单 (引入jquery.form.min.js)项目地址https://github.com/jquery-form/form ajaxForm( options )通过submit的button直接提交1234// prepare all forms for ajax submission$('form').ajaxForm(&#123; target: '#myResultsDiv'&#125;); ajaxSubmit( options )通过提交的事件触发1234567// bind submit handler to form$('form').on('submit', function(e) &#123; e.preventDefault(); // prevent native submit $(this).ajaxSubmit(&#123; target: 'myResultsDiv' &#125;)&#125;);]]></content>
       <categories>
-          
-          <category> VUE </category>
-          
+        <category>JS插件</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>VUE生命周期</title>
-      <link href="/2018/05/18/VUE%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
-      <url>/2018/05/18/VUE%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
-      <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>创建=》挂载=》更新=》销毁<br>类似于一种回调，在执行到一定的阶段时触发，扔出一个钩子，让需要在此阶段执行的方法调用</p><h3 id="beforeCreate"><a href="#beforeCreate" class="headerlink" title="beforeCreate"></a>beforeCreate</h3><p>创建vue对象，methods和data属性初始化到vue对象之上</p><h3 id="created"><a href="#created" class="headerlink" title="created"></a>created</h3><p>vue对象创建完成，进行数据初始化，可以发送ajax来对vue对象静态属性进行初始化</p><h3 id="beforeMount"><a href="#beforeMount" class="headerlink" title="beforeMount"></a>beforeMount</h3><p>通过虚拟dom(数据结构)来构造真实dom(html)，可以操作真实dom结构了</p><h3 id="mounted"><a href="#mounted" class="headerlink" title="mounted"></a>mounted</h3><p>将渲染出的真实dom挂载，是一个appendChild的过程</p><h3 id="beforeUpdate"><a href="#beforeUpdate" class="headerlink" title="beforeUpdate"></a>beforeUpdate</h3><h3 id="updated"><a href="#updated" class="headerlink" title="updated"></a>updated</h3><h3 id="beforeDestroy"><a href="#beforeDestroy" class="headerlink" title="beforeDestroy"></a>beforeDestroy</h3><h3 id="destroyed"><a href="#destroyed" class="headerlink" title="destroyed"></a>destroyed</h3><h2 id="DOM变化"><a href="#DOM变化" class="headerlink" title="DOM变化"></a>DOM变化</h2><table><thead><tr><th>钩子</th><th style="text-align:right">特性</th></tr></thead><tbody><tr><td>beforeCreate</td><td style="text-align:right">none</td></tr><tr><td>created</td><td style="text-align:right">data</td></tr><tr><td>beforeMount</td><td style="text-align:right">el</td></tr><tr><td>mounted</td><td style="text-align:right">data+el</td></tr></tbody></table><h2 id="图示"><a href="#图示" class="headerlink" title="图示"></a>图示</h2><p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="vue生命周期图示"></p>]]></content>
-      
+      <tags>
+        <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[VUE计算属性]]></title>
+    <url>%2F2018%2F05%2F22%2FVUE%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%2F</url>
+    <content type="text"><![CDATA[computed12345678910111213var vm = new Vue(&#123; el: '#app', data: &#123; message: 'Runoob!' &#125;, computed: &#123; // 计算属性的 getter reversedMessage: function () &#123; // `this` 指向 vm 实例 return this.message.split('').reverse().join('') &#125; &#125;&#125;) 声明了一个计算属性 reversedMessage 。提供的函数将用作属性 vm.reversedMessage 的 getter 。vm.reversedMessage 依赖于 vm.message，在 vm.message 发生改变时，vm.reversedMessage 也会更新。 我们可以使用 methods 来替代 computed，效果上两个都是一样的，但是 computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，函数总会重新调用执行。]]></content>
       <categories>
-          
-          <category> VUE </category>
-          
+        <category>VUE</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>module</title>
-      <link href="/2018/05/17/module/"/>
-      <url>/2018/05/17/module/</url>
-      <content type="html"><![CDATA[<p>ES6在语言规格的层面上，实现了模块功能，而且实现得相当简单，完全可以取代现有的CommonJS和AMD规范，成为浏览器和服务器通用的模块解决方案。</p><p>ES6模块主要有两个功能：export和import</p><p>export用于对外输出本模块（一个文件可以理解为一个模块）变量的接口</p><p>import用于在一个模块中加载另一个含有export接口的模块。</p><h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><h3 id="1-使用大括号指定所要输出的一组变量"><a href="#1-使用大括号指定所要输出的一组变量" class="headerlink" title="1.使用大括号指定所要输出的一组变量"></a>1.使用大括号指定所要输出的一组变量</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// profile.js</span></span><br><span class="line"><span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">var</span> year = <span class="number">1958</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;firstName, lastName, year&#125;;</span><br></pre></td></tr></table></figure><h3 id="2-输出函数或类"><a href="#2-输出函数或类" class="headerlink" title="2.输出函数或类"></a>2.输出函数或类</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// profile.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><h3 id="1-单独加载"><a href="#1-单独加载" class="headerlink" title="1.单独加载"></a>1.单独加载</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;firstName, lastName, year&#125; <span class="keyword">from</span> <span class="string">'./profile.js'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;foo&#125; <span class="keyword">from</span> <span class="string">'my_module'</span>;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure><h3 id="2-整体加载"><a href="#2-整体加载" class="headerlink" title="2.整体加载"></a>2.整体加载</h3><p>即用星号（*）指定一个对象，所有输出值都加载在这个对象上面。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// circle.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">area</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.PI * radius * radius;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">circumference</span>(<span class="params">radius</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">2</span> * <span class="built_in">Math</span>.PI * radius;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//////////////</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> circle <span class="keyword">from</span> <span class="string">'./circle'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆面积：'</span> + circle.area(<span class="number">4</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆周长：'</span> + circle.circumference(<span class="number">14</span>));</span><br></pre></td></tr></table></figure><h2 id="export-default"><a href="#export-default" class="headerlink" title="export default"></a>export default</h2><p>其他模块加载该模块时，import命令可以为该匿名函数指定任意名字<br>这时import命令后面，不使用大括号<br>一个模块只能有一个默认输出</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// export-default.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'foo'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// import-default.js</span></span><br><span class="line"><span class="keyword">import</span> customName <span class="keyword">from</span> <span class="string">'./export-default'</span>;</span><br><span class="line">customName(); <span class="comment">// 'foo'</span></span><br></pre></td></tr></table></figure><p>export default也可以用来输出类<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MyClass.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> </span>&#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> MyClass <span class="keyword">from</span> <span class="string">'MyClass'</span>;</span><br><span class="line"><span class="keyword">let</span> o = <span class="keyword">new</span> MyClass();</span><br></pre></td></tr></table></figure></p>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[VUE生命周期]]></title>
+    <url>%2F2018%2F05%2F18%2FVUE%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%2F</url>
+    <content type="text"><![CDATA[简介创建=》挂载=》更新=》销毁类似于一种回调，在执行到一定的阶段时触发，扔出一个钩子，让需要在此阶段执行的方法调用 beforeCreate创建vue对象，methods和data属性初始化到vue对象之上 createdvue对象创建完成，进行数据初始化，可以发送ajax来对vue对象静态属性进行初始化 beforeMount通过虚拟dom(数据结构)来构造真实dom(html)，可以操作真实dom结构了 mounted将渲染出的真实dom挂载，是一个appendChild的过程 beforeUpdateupdatedbeforeDestroydestroyedDOM变化 钩子 特性 beforeCreate none created data beforeMount el mounted data+el 图示]]></content>
       <categories>
-          
-          <category> ES6 </category>
-          
+        <category>VUE</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>prototype的设定由来</title>
-      <link href="/2018/05/16/prototype%E7%9A%84%E8%AE%BE%E5%AE%9A%E7%94%B1%E6%9D%A5/"/>
-      <url>/2018/05/16/prototype%E7%9A%84%E8%AE%BE%E5%AE%9A%E7%94%B1%E6%9D%A5/</url>
-      <content type="html"><![CDATA[<p>在js语言中，new命令之后跟的不是类，而是构造函数</p><p>对构造函数使用 <strong>new</strong>，会生成一个对象的实例</p><p>构造函数中的 <strong>this</strong> 关键字，它代表新创建的实例对象</p><p>但是用构造函数生成实例对象，有一个缺点，就是无法共享属性和方法</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">this</span>.name = name;</span><br><span class="line">   <span class="keyword">this</span>.species = <span class="string">'犬科'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dogA = <span class="keyword">new</span> Dog(<span class="string">'AA'</span>);</span><br><span class="line"><span class="keyword">var</span> dogB = <span class="keyword">new</span> Dog(<span class="string">'BB'</span>);</span><br><span class="line"></span><br><span class="line">dogA.species = <span class="string">'猫科'</span>;</span><br><span class="line">alert(dogB.species);  <span class="comment">//显示 犬科，而不会受到dogA的影响</span></span><br></pre></td></tr></table></figure><p>此时dogA和dogB会自动含有一个 <strong>constructor</strong> 属性，指向它们的构造函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dogA.constructot == Dog</span><br></pre></td></tr></table></figure></p><p>考虑到这一点，构造函数有了一个 <strong>prototype</strong> 属性</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Dog.prototype = &#123; <span class="attr">species</span> : <span class="string">'犬科'</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dogA = <span class="keyword">new</span> Dog(<span class="string">'大毛'</span>);</span><br><span class="line"><span class="keyword">var</span> dogB = <span class="keyword">new</span> Dog(<span class="string">'二毛'</span>);</span><br><span class="line"></span><br><span class="line">alert(dogA.species); <span class="comment">// 犬科</span></span><br><span class="line">alert(dogB.species); <span class="comment">// 犬科</span></span><br></pre></td></tr></table></figure><p>这个属性包含一个对象（以下简称”prototype对象”），所有实例对象需要共享的属性和方法，都放在这个对象里面；那些不需要共享的属性和方法，就放在构造函数里面。</p><p>实例对象一旦创建，将自动引用prototype对象的属性和方法。也就是说，实例对象的属性和方法，分成两种，一种是本地的，另一种是引用的。</p><p>现在，species属性放在prototype对象里，是两个实例对象共享的。只要修改了prototype对象，就会同时影响到两个实例对象。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Dog.prototype.species = <span class="string">'猫科'</span>;</span><br><span class="line">Dog.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="string">'我在吃'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(dogA.species); <span class="comment">// 猫科</span></span><br><span class="line">alert(dogB.species); <span class="comment">// 猫科</span></span><br></pre></td></tr></table></figure><p>此时实例中的species属性和eat()方法，其实都是一个内存地址，指向prototype对象，因此提高了运行效率</p>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[module]]></title>
+    <url>%2F2018%2F05%2F17%2Fmodule%2F</url>
+    <content type="text"><![CDATA[ES6在语言规格的层面上，实现了模块功能，而且实现得相当简单，完全可以取代现有的CommonJS和AMD规范，成为浏览器和服务器通用的模块解决方案。 ES6模块主要有两个功能：export和import export用于对外输出本模块（一个文件可以理解为一个模块）变量的接口 import用于在一个模块中加载另一个含有export接口的模块。 export1.使用大括号指定所要输出的一组变量12345// profile.jsvar firstName = 'Michael';var lastName = 'Jackson';var year = 1958;export &#123;firstName, lastName, year&#125;; 2.输出函数或类1234// profile.jsexport function multiply(x, y) &#123; return x * y;&#125;; import1.单独加载1234import &#123;firstName, lastName, year&#125; from './profile.js';import &#123;foo&#125; from 'my_module';foo(); 2.整体加载即用星号（*）指定一个对象，所有输出值都加载在这个对象上面。 12345678910111213// circle.jsexport function area(radius) &#123; return Math.PI * radius * radius;&#125;export function circumference(radius) &#123; return 2 * Math.PI * radius;&#125;//////////////import * as circle from './circle';console.log('圆面积：' + circle.area(4));console.log('圆周长：' + circle.circumference(14)); export default其他模块加载该模块时，import命令可以为该匿名函数指定任意名字这时import命令后面，不使用大括号一个模块只能有一个默认输出 1234567// export-default.jsexport default function () &#123; console.log('foo');&#125;// import-default.jsimport customName from './export-default';customName(); // 'foo' export default也可以用来输出类123456// MyClass.jsexport default class &#123; ... &#125;// main.jsimport MyClass from 'MyClass';let o = new MyClass();]]></content>
       <categories>
-          
-          <category> JS高级 </category>
-          
+        <category>ES6</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>animateCss</title>
-      <link href="/2018/05/16/animateCss/"/>
-      <url>/2018/05/16/animateCss/</url>
-      <content type="html"><![CDATA[<h2 id="A-cross-browser-library-of-CSS-animations"><a href="#A-cross-browser-library-of-CSS-animations" class="headerlink" title="A cross-browser library of CSS animations"></a>A cross-browser library of CSS animations</h2><p><a href="https://github.com/daneden/animate.css" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/daneden/animate.css" target="_blank" rel="noopener">https://github.com/daneden/animate.css</a></p><p><a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">演示地址</a><br><a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">https://daneden.github.io/animate.css/</a></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//为元素添加动画效果</span></span><br><span class="line">$(<span class="string">'#yourElement'</span>).addClass(<span class="string">'animated bounceOutLeft'</span>);</span><br><span class="line">or</span><br><span class="line">$(<span class="string">'#yourElement'</span>).animateCss(<span class="string">'bounce'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加动画执行之后的回调</span></span><br><span class="line">$(<span class="string">'#yourElement'</span>).animateCss(<span class="string">'bounce'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Do somthing after animation</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//调整动画执行的参数</span></span><br><span class="line">#yourElement &#123;</span><br><span class="line">    <span class="comment">//持续时间</span></span><br><span class="line">  -vendor-animation-duration: <span class="number">3</span>s;</span><br><span class="line">    <span class="comment">//延迟多久后执行</span></span><br><span class="line">  -vendor-animation-delay: <span class="number">2</span>s;</span><br><span class="line">    <span class="comment">//执行次数</span></span><br><span class="line">  -vendor-animation-iteration-count: infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[prototype的设定由来]]></title>
+    <url>%2F2018%2F05%2F16%2Fprototype%E7%9A%84%E8%AE%BE%E5%AE%9A%E7%94%B1%E6%9D%A5%2F</url>
+    <content type="text"><![CDATA[在js语言中，new命令之后跟的不是类，而是构造函数 对构造函数使用 new，会生成一个对象的实例 构造函数中的 this 关键字，它代表新创建的实例对象 但是用构造函数生成实例对象，有一个缺点，就是无法共享属性和方法 12345678910function Dog(name)&#123; this.name = name; this.species = '犬科';&#125;var dogA = new Dog('AA');var dogB = new Dog('BB');dogA.species = '猫科';alert(dogB.species); //显示 犬科，而不会受到dogA的影响 此时dogA和dogB会自动含有一个 constructor 属性，指向它们的构造函数1dogA.constructot == Dog 考虑到这一点，构造函数有了一个 prototype 属性 12345678910function Dog(name)&#123; this.name = name;&#125;Dog.prototype = &#123; species : '犬科' &#125;;var dogA = new Dog('大毛');var dogB = new Dog('二毛');alert(dogA.species); // 犬科alert(dogB.species); // 犬科 这个属性包含一个对象（以下简称”prototype对象”），所有实例对象需要共享的属性和方法，都放在这个对象里面；那些不需要共享的属性和方法，就放在构造函数里面。 实例对象一旦创建，将自动引用prototype对象的属性和方法。也就是说，实例对象的属性和方法，分成两种，一种是本地的，另一种是引用的。 现在，species属性放在prototype对象里，是两个实例对象共享的。只要修改了prototype对象，就会同时影响到两个实例对象。 1234567Dog.prototype.species = '猫科';Dog.prototype.eat = function()&#123; alert('我在吃');&#125;alert(dogA.species); // 猫科alert(dogB.species); // 猫科 此时实例中的species属性和eat()方法，其实都是一个内存地址，指向prototype对象，因此提高了运行效率]]></content>
       <categories>
-          
-          <category> JS插件 </category>
-          
+        <category>JS高级</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> jQuery </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Notyf</title>
-      <link href="/2018/05/16/Notyf/"/>
-      <url>/2018/05/16/Notyf/</url>
-      <content type="html"><![CDATA[<h2 id="Notyf-is-a-dead-simple-responsive-vanilla-javascript-notification-plugin-No-jQuery-required"><a href="#Notyf-is-a-dead-simple-responsive-vanilla-javascript-notification-plugin-No-jQuery-required" class="headerlink" title="Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required."></a>Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required.</h2><p><a href="https://github.com/caroso1222/notyf" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/caroso1222/notyf" target="_blank" rel="noopener">https://github.com/caroso1222/notyf</a></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实例化</span></span><br><span class="line"><span class="keyword">var</span> notyf = <span class="keyword">new</span> Notyf();</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化传入配置参数</span></span><br><span class="line"><span class="keyword">var</span> notyf = <span class="keyword">new</span> Notyf(&#123;</span><br><span class="line">  delay:<span class="number">1000</span>,</span><br><span class="line">  alertIcon: <span class="string">'fa fa-exclamation-circle'</span>,</span><br><span class="line">  confirmIcon: <span class="string">'fa fa-check-circle'</span>  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//警告弹框，红色</span></span><br><span class="line">notyf.alert(<span class="string">'aaa'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//通知弹框，绿色</span></span><br><span class="line">notyf.confirm(<span class="string">'bbb'</span>);</span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[animateCss]]></title>
+    <url>%2F2018%2F05%2F16%2FanimateCss%2F</url>
+    <content type="text"><![CDATA[A cross-browser library of CSS animations项目地址https://github.com/daneden/animate.css 演示地址https://daneden.github.io/animate.css/ 12345678910111213141516171819//为元素添加动画效果$('#yourElement').addClass('animated bounceOutLeft');or$('#yourElement').animateCss('bounce');//添加动画执行之后的回调$('#yourElement').animateCss('bounce', function() &#123; // Do somthing after animation&#125;);//调整动画执行的参数#yourElement &#123; //持续时间 -vendor-animation-duration: 3s; //延迟多久后执行 -vendor-animation-delay: 2s; //执行次数 -vendor-animation-iteration-count: infinite;&#125;]]></content>
       <categories>
-          
-          <category> JS插件 </category>
-          
+        <category>JS插件</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>jqPaginator</title>
-      <link href="/2018/05/16/jqPaginator/"/>
-      <url>/2018/05/16/jqPaginator/</url>
-      <content type="html"><![CDATA[<h2 id="基于jquery的分页组件"><a href="#基于jquery的分页组件" class="headerlink" title="基于jquery的分页组件"></a>基于jquery的分页组件</h2><p><a href="https://github.com/keenwon/jqPaginator" target="_blank" rel="noopener">项目地址</a><br><a href="https://github.com/keenwon/jqPaginator" target="_blank" rel="noopener">https://github.com/keenwon/jqPaginator</a></p><p><a href="http://jqpaginator.keenwon.com/" target="_blank" rel="noopener">演示地址</a><br><a href="http://jqpaginator.keenwon.com/" target="_blank" rel="noopener">http://jqpaginator.keenwon.com/</a></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"pagination"</span> id=<span class="string">"pagination"</span>&gt;&lt;/ul&gt;</span><br><span class="line">$(<span class="string">'#pagination'</span>).jqPaginator(&#123;</span><br><span class="line">totalPages: <span class="number">100</span>,</span><br><span class="line">visiblePages: <span class="number">10</span>,</span><br><span class="line">currentPage: <span class="number">1</span>,</span><br><span class="line">onPageChange: <span class="function"><span class="keyword">function</span>(<span class="params">num, type</span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Notyf]]></title>
+    <url>%2F2018%2F05%2F16%2FNotyf%2F</url>
+    <content type="text"><![CDATA[Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required.项目地址https://github.com/caroso1222/notyf 123456789101112131415//实例化var notyf = new Notyf();//实例化传入配置参数var notyf = new Notyf(&#123; delay:1000, alertIcon: 'fa fa-exclamation-circle', confirmIcon: 'fa fa-check-circle' &#125;)//警告弹框，红色notyf.alert('aaa');//通知弹框，绿色notyf.confirm('bbb');]]></content>
       <categories>
-          
-          <category> JS插件 </category>
-          
+        <category>JS插件</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> jQuery </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>hexo命令</title>
-      <link href="/2018/05/15/hexo%E5%91%BD%E4%BB%A4/"/>
-      <url>/2018/05/15/hexo%E5%91%BD%E4%BB%A4/</url>
-      <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line"></span><br><span class="line">npm install hexo --save</span><br><span class="line"></span><br><span class="line">hexo init</span><br><span class="line">//进入空白文件夹搭建脚手架，生成hexo项目框架</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line">//generate新的文件关系</span><br><span class="line"></span><br><span class="line">hexo s</span><br><span class="line">//server本地展示</span><br><span class="line"></span><br><span class="line">hexo s -g</span><br><span class="line">//在本地服务演示前先生成</span><br><span class="line"></span><br><span class="line">hexo d  </span><br><span class="line">// 部署到github.io</span><br><span class="line"></span><br><span class="line">hexo d -g</span><br><span class="line">//在部署前先生成</span><br><span class="line"></span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">//安装扩展，否则 deloyer not found:git</span><br><span class="line"></span><br><span class="line">hexo new post &quot;articleName&quot;</span><br><span class="line">//发布新文章</span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line">//清除缓存</span><br></pre></td></tr></table></figure>]]></content>
-      
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[jqPaginator]]></title>
+    <url>%2F2018%2F05%2F16%2FjqPaginator%2F</url>
+    <content type="text"><![CDATA[基于jquery的分页组件项目地址https://github.com/keenwon/jqPaginator 演示地址http://jqpaginator.keenwon.com/ 12345678&lt;ul class="pagination" id="pagination"&gt;&lt;/ul&gt;$('#pagination').jqPaginator(&#123; totalPages: 100, visiblePages: 10, currentPage: 1, onPageChange: function(num, type) &#123; &#125;&#125;);]]></content>
       <categories>
-          
-          <category> hexo </category>
-          
+        <category>JS插件</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> hexo </tag>
-            
-            <tag> cmd </tag>
-            
-        </tags>
-      
-    </entry>
-    
-  
-  
+      <tags>
+        <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo命令]]></title>
+    <url>%2F2018%2F05%2F15%2Fhexo%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930npm install hexo-cli -gnpm install hexo --savehexo init//进入空白文件夹搭建脚手架，生成hexo项目框架hexo g//generate新的文件关系hexo s//server本地展示hexo s -g//在本地服务演示前先生成hexo d // 部署到github.iohexo d -g//在部署前先生成npm install hexo-deployer-git --save//安装扩展，否则 deloyer not found:githexo new post &quot;articleName&quot;//发布新文章hexo clean//清除缓存]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>cmd</tag>
+      </tags>
+  </entry>
 </search>
