@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ES6细碎知识点]]></title>
+    <url>%2F2018%2F07%2F31%2FES6%E7%BB%86%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[数组方法]]></title>
+    <url>%2F2018%2F07%2F30%2F%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[forEach对数组的每一个元素执行一次，但是改变了原数组12345var arr = ["a", "b", "c"]; arr.forEach(function(element,index) &#123; console.log(element,index); &#125;); map创建一个新数组，其结果是该数组元素都执行一次函数，原数组保持不变1234567var arr = ["a", "b", "c"];var newArr = arr.map(function(element,index) &#123; return element += "m";&#125;);console.log(arr,newArr) filter使指定函数测试数组的每一个元素，并放回一个通过元素的新数组。1234567var arr = [12, 5, 8, 130, 44];var newArr = arr.filter(function (value) &#123; return value &gt; 10&#125;)console.log(arr, newArr) some测试该数组有元素通过了指定函数的测试，如果有返回true，否则，返回false。12345var arr = [12, 5, 8, 130, 44];var res = arr.some(function (value) &#123; // true return value &gt; 10&#125;);console.log(res) //true every测试该数组是否全部通过指定函数测试，全部通过返回true，否则，返回false。12345var arr = [12, 5, 8, 130, 44];var res = arr.every(function (value) &#123; // true return value &gt; 10&#125;);console.log(res) //false]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[ES6的Map]]></title>
+    <url>%2F2018%2F07%2F30%2FES6%E7%9A%84Map%2F</url>
+    <content type="text"><![CDATA[MapJavaScript 的对象（Object），本质上是键值对的集合（Hash 结构），但是传统上只能用字符串当作键。这给它的使用带来了很大的限制。 它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。 123456789const m = new Map();const o = &#123;p: 'Hello World'&#125;;m.set(o, 'content')m.get(o) // "content"m.has(o) // truem.delete(o) // truem.has(o) // false Map 的键实际上是跟内存地址绑定的，只要内存地址不一样，就视为两个键 如果 Map 的键是一个简单类型的值（数字、字符串、布尔值），则只要两个值严格相等，Map 将其视为一个键 12345678910111213141516171819const map = new Map();map.set('foo', true);map.set('bar', false);map.size // 2map.set('edition', 6) // 键是字符串map.set(262, 'standard') // 键是数值map.set(undefined, 'nah') // 键是 undefinedconst hello = function() &#123;console.log('hello');&#125;;map.set(hello, 'Hello ES6!') // 键是函数map.get(hello) // Hello ES6!map.has('edition') // truemap.delete(undefined)map.clear() Map 结构转为数组结构，比较快速的方法是使用扩展运算符（…）。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[ES6的Set]]></title>
+    <url>%2F2018%2F07%2F30%2FES6%E7%9A%84Set%2F</url>
+    <content type="text"><![CDATA[SetES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。 Set 本身是一个构造函数，用来生成 Set 数据结构。 1234567891011121314151617const set = new Set([1, 2, 3, 4, 4, '4']);console.log(set) // Set &#123; 1, 2, 3, 4, '4' &#125;// 向 Set 加入值的时候，不会发生类型转换，所以5和"5"是两个不同的值console.log(...set) // 1 2 3 4 '4'console.log([...set]) // [ 1, 2, 3, 4, '4' ]// 去除数组的重复成员[...new Set(array)]function dedupe(array) &#123; return Array.from(new Set(array));&#125;dedupe([1, 1, 2, 3]) // [1, 2, 3] 属性Set.prototype.constructor：构造函数，默认就是Set函数。Set.prototype.size：返回Set实例的成员总数。 操作方法add(value)：添加某个值，返回 Set 结构本身。delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。has(value)：返回一个布尔值，表示该值是否为Set的成员。clear()：清除所有成员，没有返回值。 遍历方法keys()：返回键名的遍历器values()：返回键值的遍历器entries()：返回键值对的遍历器forEach()：使用回调函数遍历每个成员 Set 结构的实例默认可遍历，它的默认遍历器生成函数就是它的values方法。这意味着，可以省略values方法，直接用for…of循环遍历 Set。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[循环语句]]></title>
+    <url>%2F2018%2F07%2F30%2F%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%2F</url>
+    <content type="text"><![CDATA[基础用法123for (var i = 0; i &lt; 10; i++) &#123; console.log(i);&#125; forEach1234var myArray = [1,2,3,4]myArray.forEach(function (value) &#123; console.log(value);&#125;); 这段代码看起来更加简洁，但这种方法也有一个小缺陷：你不能使用break语句中断循环，也不能使用return语句返回到外层函数。 for in12345var arr = [1,2,3,4]for(var x in arr)&#123; console.log(typeof x) // string console.log(typeof arr[x]) // number&#125; 其实for…in循环是为了遍历对象而设计的，并不适合遍历数组，切记！切记！切记！重要的事情说三遍！！！) for…in循环便利数组绝对是一个糟糕的选择，原因如下： 在这段代码中，赋给index的值不是实际的数字，而是字符串“0”、“1”、“2”，此时很可能在无意之间进行字符串算数计算，例如：“2” + 1 == “21”，这给编码过程带来极大的不便。 作用于数组的for-in循环体除了遍历数组元素外，还会遍历自定义属性。举个例子，如果你的数组中有一个可枚举属性myArray.name，循环将额外执行一次，遍历到名为“name”的索引。就连数组原型链上的属性都能被访问到。 最让人震惊的是，在某些情况下，这段代码可能按照随机顺序遍历数组元素。 简而言之，for-in是为普通对象设计的，你可以遍历得到字符串类型的键，因此不适用于数组遍历。 for of1234567891011121314151617var arr = [ &#123; name: 'a', age: 10 &#125;, &#123; name: 'b', age: 20 &#125;, &#123; name: 'c', age: 30 &#125;,]for (var value of arr) &#123; console.log(value);&#125; 这是最简洁、最直接的遍历数组元素的语法这个方法避开了for-in循环的所有缺陷与forEach()不同的是，它可以正确响应break、continue和return语句 关于set 和 map其实不仅可以便利数组，ES6新增加的数据结构set和map也可以使用for-of循环来进行遍历123456789101112131415161718var engines = new Set(["Gecko", "Trident", "Webkit", "Webkit"]);for (var e of engines) &#123; console.log(e);&#125;// Gecko// Trident// Webkitvar es6 = new Map();es6.set("edition", 6);es6.set("committee", "TC39");es6.set("standard", "ECMA-262");for (var [name, value] of es6) &#123; console.log(name + ": " + value);&#125;// edition: 6// committee: TC39// standard: ECMA-262]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[底部固定版权信息]]></title>
+    <url>%2F2018%2F07%2F13%2F%E5%BA%95%E9%83%A8%E5%9B%BA%E5%AE%9A%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF%2F</url>
+    <content type="text"><![CDATA[底部固定的版权信息，会随着window的height浮动参照百度的写法，得到解决方案 123456// 主窗体min-height//固定底部position: absolutebottom: 10px]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[canvas]]></title>
+    <url>%2F2018%2F07%2F13%2Fcanvas%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[HBuilder调试夜神安卓模拟器方法]]></title>
     <url>%2F2018%2F07%2F12%2FHBuilder%E8%B0%83%E8%AF%95%E5%A4%9C%E7%A5%9E%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[HBuilder调试夜神安卓模拟器方法现在开发手机app的IDE很多，今天我就以我个人开发使用的HBuider开发工具讲一下手机app开发调试。HBuider支持真机调试，这个比较简单，只要安装好手机的驱动，把手机和电脑通过数据线连接就可以调试发布了，如果手机连接不上，可以在电脑和手机上都安装360手机助手基本上就可以了。今天重点说一下使用夜神安卓模拟器和HBuider的连接调试方法。第一步：下载安装夜神模拟器，这个在百度搜索就可以找官网，下载 安装就可以了。第二步：查找已经安装的夜神模拟的端口，这里说一下夜神模拟器默认端口是62001，但是有些版本可能不是这个端口，怎么查找到底是哪个端口呢？按照如下顺序进行就可以查找到你按装的夜神模拟器端口了。1.打开夜神模拟器，确保正常启动后，出现安卓桌面。2.打开夜神模拟器的安装文件夹，找到D:\YS\Nox\bin文件夹打开（D:\YS是夜神模拟器安装的路径根目录），找到【debugReport.bat】文件，双击启动该批处理文件。会显示如下图：nox adb port:52001already connected to 127.0.0.1:52001这里面显示了夜神模拟器的adb port 端口为：52001，并且已经可以正常连接了，出现这个内容证明夜神模拟器已经正常工作了。或者找到【debug.bat】文件，双击启动该批处理文件,也可以查看端口。3.找到夜神模拟器的adb 端口后，打开HBuider开发工具，在【工具】–&gt;【选项】打开界面如下图，选择【HBuider】，在最下方的” 第三方Android模拟器端口”中输入52001后【确定】就可以了，通过这些设置就可以在调试中看到夜神模拟器的选项了。4.如果没有出现夜神模拟器的连接项，那就需要你在电脑和夜神模拟器上安装360手机助手了，安装完360手机助手后，启动360卫士和360手机助手后，在360手机助手中连接手机，找到夜神手机后连接成功就行了。如果找不到也没有关系，也可以正常连接，这时再打开HBuider开发工具，就可以了。]]></content>
@@ -13,7 +48,7 @@
   <entry>
     <title></title>
     <url>%2F2018%2F07%2F11%2Fa%2F</url>
-    <content type="text"><![CDATA[var Single = (function () { var instance; function init() { // define private methods and properties //do something return { //define public methods and properties }; } return { // 获取实例 getInstance: function () { if (!instance) { instance = init(); } return instance; } } })(); var obj1 = Single.getInstance(); var obj2 = Single.getInstance(); // console.log(obj1 === obj2); console.log(obj1)]]></content>
+    <content type="text"><![CDATA[const inventors = [ { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 }, { first: 'wawa', last: 'fs', year: 1830, passed: 1905 }, { first: 'grvd', last: 'xcvxcv', year:1900, passed: 1977 }, { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 } ]; var res = inventors.filter(function(value){ return value.year>1800 && value.year]]></content>
   </entry>
   <entry>
     <title><![CDATA[设计模式]]></title>
@@ -345,7 +380,7 @@
   <entry>
     <title><![CDATA[Notyf]]></title>
     <url>%2F2018%2F05%2F16%2FNotyf%2F</url>
-    <content type="text"><![CDATA[Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required.项目地址https://github.com/caroso1222/notyf 123456789101112131415//实例化var notyf = new Notyf();//实例化传入配置参数var notyf = new Notyf(&#123; delay:1000, alertIcon: 'fa fa-exclamation-circle', confirmIcon: 'fa fa-check-circle' &#125;)//警告弹框，红色notyf.alert('aaa');//通知弹框，绿色notyf.confirm('bbb');]]></content>
+    <content type="text"><![CDATA[Notyf is a dead simple, responsive, vanilla javascript notification plugin. No jQuery required.项目地址https://github.com/caroso1222/notyf 123456789101112131415161718192021//实例化var notyf = new Notyf();// 每当实例化一个notyf对象时，DOM结构也就会生成一个div.nofty// 因此全局生成一个对象即可//实例化传入配置参数var notyf = new Notyf(&#123; delay:1000, alertIcon: 'fa fa-exclamation-circle', confirmIcon: 'fa fa-check-circle' &#125;)//警告弹框，红色notyf.alert('aaa');//通知弹框，绿色notyf.confirm('bbb');]]></content>
       <categories>
         <category>JS插件</category>
       </categories>
