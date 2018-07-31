@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[ES6细碎知识点]]></title>
-    <url>%2F2018%2F07%2F31%2FES6%E7%BB%86%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[数组方法]]></title>
     <url>%2F2018%2F07%2F30%2F%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[forEach对数组的每一个元素执行一次，但是改变了原数组12345var arr = ["a", "b", "c"]; arr.forEach(function(element,index) &#123; console.log(element,index); &#125;); map创建一个新数组，其结果是该数组元素都执行一次函数，原数组保持不变1234567var arr = ["a", "b", "c"];var newArr = arr.map(function(element,index) &#123; return element += "m";&#125;);console.log(arr,newArr) filter使指定函数测试数组的每一个元素，并放回一个通过元素的新数组。1234567var arr = [12, 5, 8, 130, 44];var newArr = arr.filter(function (value) &#123; return value &gt; 10&#125;)console.log(arr, newArr) some测试该数组有元素通过了指定函数的测试，如果有返回true，否则，返回false。12345var arr = [12, 5, 8, 130, 44];var res = arr.some(function (value) &#123; // true return value &gt; 10&#125;);console.log(res) //true every测试该数组是否全部通过指定函数测试，全部通过返回true，否则，返回false。12345var arr = [12, 5, 8, 130, 44];var res = arr.every(function (value) &#123; // true return value &gt; 10&#125;);console.log(res) //false]]></content>
@@ -48,7 +43,7 @@
   <entry>
     <title></title>
     <url>%2F2018%2F07%2F11%2Fa%2F</url>
-    <content type="text"><![CDATA[const inventors = [ { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 }, { first: 'wawa', last: 'fs', year: 1830, passed: 1905 }, { first: 'grvd', last: 'xcvxcv', year:1900, passed: 1977 }, { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 } ]; var res = inventors.filter(function(value){ return value.year>1800 && value.year]]></content>
+    <content type="text"><![CDATA[{ var a = 'a'; let b = 'b'; const c = 'c'; } console.log(a) console.log(b) console.log(c)]]></content>
   </entry>
   <entry>
     <title><![CDATA[设计模式]]></title>
