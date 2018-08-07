@@ -1542,7 +1542,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-31 09:48:38" itemprop="dateModified" datetime="2018-07-31T09:48:38+08:00">2018-07-31</time>
+                <time title="修改时间：2018-08-01 10:17:37" itemprop="dateModified" datetime="2018-08-01T10:17:37+08:00">2018-08-01</time>
               
             
           </span>
@@ -1577,15 +1577,17 @@
       
         
           
-            {
-    var  a = 'a';
-    let b = 'b';
-    const c = 'c';
+            function Dog(x,y){
+    this.x = x
+    this.y = y
 }
 
-console.log(a)
-console.log(b)
-console.log(c)
+Dog.prototype.eat = function(){
+    console.log('x='+ this.x,'y='+ this.y)
+}
+
+var dog = new Dog(1,2)
+dog.eat()
           
         
       
